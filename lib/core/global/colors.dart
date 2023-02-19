@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class CustomColor{
   //? HEX CODE OF cOLOR IS #FF581A
   static const Color primaryColor=Color(0xffFF581A);
+  static const Color successGreen=Colors.green;
+  static const Color cancelRed=Colors.red;
   static const MaterialColor primarySwatch = MaterialColor(
     0xffff581a, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
     <int, Color>{
