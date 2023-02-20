@@ -29,12 +29,15 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_text_kit: ^4.2.2
+  convex_bottom_bar: ^3.2.0
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.11.0
+  font_awesome_flutter: ^10.4.0
   get: ^4.6.5
   google_fonts: ^4.0.3
+  persistent_bottom_nav_bar: ^5.0.2
 flutter_icons:
   android: "launcher_icon"
   ios: true
