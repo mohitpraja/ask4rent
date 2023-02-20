@@ -8,8 +8,9 @@ class DashboardController extends GetxController {
   
   RxInt selectedIndex = 0.obs;
   List<Widget> screens = [
-    HomeView(),
-    LoginView(),
-    SplashView(),
+    const HomeView(),
+    const LoginView(),
+    const SplashView(),
+    const SplashView(),
   ];
 }

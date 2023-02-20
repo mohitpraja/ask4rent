@@ -1,4 +1,5 @@
 import 'package:ask4rent/core/global/colors.dart';
+import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/feature/dashboard/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,14 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       key: controller.scaffoldKey,
       appBar: AppBar(
         leading: const SizedBox(),
         leadingWidth: 0,
-        toolbarHeight: 60,
+        toolbarHeight: 70,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(
               width: 5,
@@ -63,30 +64,35 @@ class HomeView extends GetView<HomeController> {
               onPressed: () {},
               icon: Icon(
                 Icons.notifications,
-                size: Get.width * 0.08,
+                size: Get.width * 0.07,
               )),
           IconButton(
               onPressed: () =>
                   controller.scaffoldKey.currentState!.openDrawer(),
               icon: Icon(
                 Icons.menu,
-                size: Get.width * 0.08,
+                size: Get.width * 0.07,
               ))
         ],
       ),
       drawer: const Drawer(),
-      // body: Container(
-      //   margin: const EdgeInsets.all(15),
-      //   child: Column(
-      //     children: [
-      //       Container(
-      //         width: 30,
-      //         height: 30,
-      //         color: CustomColor.primaryColor,
-      //       )
-      //     ],
-      //   ),
-      // ),
+      body: Container(
+        height: Get.height*0.09,
+        margin: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: Get.width * 0.07,
+              height: Get.width * 0.07,
+              color: CustomColor.primaryColor,
+            ),
+            Text('Renting made easy',style: AppStyle.rentingMadeEasy),
+            const SizedBox(height: 5,),
+             Text('Easiest way to find & rent your home online.',style:AppStyle.subheading)
+          ],
+        ),
+      ),
     );
   }
 }

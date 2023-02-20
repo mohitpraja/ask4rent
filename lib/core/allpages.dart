@@ -18,6 +18,6 @@ List<GetPage> allpages = [
       binding: LoginBinding()),
   GetPage(
       name: Routes.dashboard,
-      page: () => DashboardView(),
+      page: () => const DashboardView(),
       binding: DashboardBinding()),
 ];
