@@ -11,7 +11,7 @@ class SplashView extends GetView {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: CustomColor.primaryColor,
+      color: primaryColor,
       child: Center(
           child: AnimatedTextKit(
             animatedTexts: [

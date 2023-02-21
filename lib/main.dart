@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'ask4rent',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch:CustomColor.primarySwatch,
+        primarySwatch:primarySwatch,
       ),
       initialRoute: Routes.splash,
       getPages: allpages,

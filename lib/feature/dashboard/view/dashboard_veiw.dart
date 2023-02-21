@@ -15,7 +15,7 @@ class DashboardView extends GetView<DashboardController> {
             selectedIndex: controller.selectedIndex.value,
             onItemSelected: (index) => controller.selectedIndex.value = index,
             backgroundColor: Colors.white,
-            waterDropColor: CustomColor.primaryColor,
+            waterDropColor: primaryColor,
             inactiveIconColor: Colors.black54,
             iconSize: 30,
             bottomPadding: 20,

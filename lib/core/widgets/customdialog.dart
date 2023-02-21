@@ -41,7 +41,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -67,7 +67,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -84,7 +84,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -120,7 +120,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -146,7 +146,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -163,7 +163,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -202,7 +202,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -228,7 +228,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -282,7 +282,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -308,7 +308,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -325,7 +325,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -363,7 +363,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -389,7 +389,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -444,7 +444,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -470,7 +470,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -525,7 +525,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -551,7 +551,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -568,7 +568,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -578,9 +578,7 @@ class CustomDialog {
             ],
           ),
         ]);
-  }
-
-  error1() {
+  }  error1() {
     Get.defaultDialog(
         title: '',
         titlePadding: EdgeInsets.zero,
@@ -606,7 +604,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -632,7 +630,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -649,7 +647,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -659,12 +657,9 @@ class CustomDialog {
             ],
           ),
         ]);
-  }
-
-  error2() {
+  }  error2() {
     Get.defaultDialog(
-        title: '',
-        titlePadding: EdgeInsets.zero,
+        title: '',        titlePadding: EdgeInsets.zero,
         contentPadding: btnCancelOnPress == null && btnOkOnPress == null
             ? EdgeInsets.zero
             : null,
@@ -687,7 +682,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -713,7 +708,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -730,7 +725,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -740,15 +735,11 @@ class CustomDialog {
             ],
           ),
         ]);
-  }
-
-  warning() {
-    Get.defaultDialog(
+  }  warning() {   Get.defaultDialog(
         title: '',
         titlePadding: EdgeInsets.zero,
         contentPadding: btnCancelOnPress == null && btnOkOnPress == null
-            ? EdgeInsets.zero
-            : null,
+            ? EdgeInsets.zero            : null,
         barrierDismissible: isDismissable ?? true,
         titleStyle: const TextStyle(fontSize: 0),
         content: Column(
@@ -769,7 +760,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -795,7 +786,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -812,7 +803,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -851,7 +842,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -877,7 +868,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -894,7 +885,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
@@ -933,7 +924,7 @@ class CustomDialog {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                   letterSpacing: 1,
-                  fontFamily: CustomFonts.ubuntu),
+                  fontFamily: ubuntu),
             ),
             const SizedBox(
               height: 10,
@@ -959,7 +950,7 @@ class CustomDialog {
                         onPressed: () {},
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.cancelRed,
+                        color: cancelRed,
                         child: const Text(
                           'Cancel',
                           style: TextStyle(color: Colors.white),
@@ -976,7 +967,7 @@ class CustomDialog {
                         onPressed: btnOkOnPress,
                         elevation: 0,
                         shape: const StadiumBorder(),
-                        color: CustomColor.successGreen,
+                        color: successGreen,
                         child: const Text(
                           'OK',
                           style: TextStyle(color: Colors.white),
