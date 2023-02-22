@@ -24,18 +24,19 @@ class SearchField extends GetView {
     return TextFormField(
       decoration: InputDecoration(
         hintText: 'Search by city name...',
+        suffixIcon: const Icon(Icons.search),
         contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 25),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10),
             borderSide: BorderSide(color: borderColor ?? primaryColor)),
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 25),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10),
             borderSide: BorderSide(color: borderColor ?? primaryColor)),
         errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 25),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10),
             borderSide: const BorderSide(color: Colors.red)),
         focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 25),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10),
             borderSide: const BorderSide(color: Colors.red)),
       ),
       validator: validator,
