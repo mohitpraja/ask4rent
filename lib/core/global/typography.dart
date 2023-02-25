@@ -35,7 +35,7 @@ class AppStyle {
       fontFamily: josefin,
       fontWeight: FontWeight.bold);
   static TextStyle drawerStyle = TextStyle(
-      fontSize: Get.width * 0.05,
+      fontSize: Get.width * 0.045,
       fontWeight: FontWeight.w500,
       fontFamily: alata);
   static TextStyle drawerHeading = TextStyle(
@@ -44,7 +44,7 @@ class AppStyle {
       fontWeight: FontWeight.w500,
       fontFamily: alata);
   static TextStyle drawerHeading1 = TextStyle(
-      fontSize: Get.width * 0.06,
+      fontSize: Get.width * 0.05,
       color: Colors.white,
       fontWeight: FontWeight.w500,
       fontFamily: alata);

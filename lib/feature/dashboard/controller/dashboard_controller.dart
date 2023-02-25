@@ -1,5 +1,6 @@
-import 'package:ask4rent/feature/dashboard/home/view/home_view.dart';
+import 'package:ask4rent/feature/dashboard/allpages/home/view/home_view.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
+import 'package:ask4rent/feature/profile/view/profile_view.dart';
 import 'package:ask4rent/feature/splash/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,6 @@ class DashboardController extends GetxController {
     const HomeView(),
     const LoginView(),
     const SplashView(),
-    const SplashView(),
+    const ProfileView(),
   ];
 }

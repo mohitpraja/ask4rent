@@ -5,3 +5,4 @@ String? ubuntu = GoogleFonts.ubuntu().fontFamily;
 String? alata = GoogleFonts.alata().fontFamily;
 String? josefin = GoogleFonts.josefinSans().fontFamily;
 String? spartan = GoogleFonts.leagueSpartan().fontFamily;
+String? lato = GoogleFonts.lato().fontFamily;

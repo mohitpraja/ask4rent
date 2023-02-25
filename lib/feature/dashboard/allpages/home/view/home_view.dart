@@ -2,10 +2,10 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
-import 'package:ask4rent/core/widgets/custombutton.dart';
+import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/customscroll.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
-import 'package:ask4rent/feature/dashboard/home/controller/home_controller.dart';
+import 'package:ask4rent/feature/dashboard/allpages/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -84,8 +84,7 @@ class HomeView extends GetView<HomeController> {
         behavior: CustomScroll(),
         child: SingleChildScrollView(
           child: Container(
-            height: Get.height * 0.7,
-            margin: const EdgeInsets.all(15),
+            margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -132,7 +131,8 @@ class HomeView extends GetView<HomeController> {
                 SizedBox(
                   height: Get.height * 0.05,
                 ),
-                Expanded(
+                SizedBox(
+                  height: Get.height*0.26,
                   child: ScrollConfiguration(
                     behavior: CustomScroll(),
                     child: ListView.builder(
@@ -162,7 +162,7 @@ class HomeView extends GetView<HomeController> {
                                   style: AppStyle.cityTitle,
                                 ),
                                 SizedBox(
-                                  height: Get.height * 0.01,
+                                  height: Get.height * 0.015,
                                 ),
                                 Text(
                                   '10+',
@@ -185,7 +185,7 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 SizedBox(
                                   width: Get.width,
-                                  child: CustomButton(
+                                  child: CustomElevatedButton(
                                     title: 'Explore',
                                     onPress: () {},
                                   ),

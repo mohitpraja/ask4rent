@@ -3,7 +3,7 @@ import 'package:ask4rent/core/global/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomButton extends GetView {
+class CustomElevatedButton extends GetView {
   final String title;
   final VoidCallback onPress;
   final TextStyle? textStyle;
@@ -12,7 +12,7 @@ class CustomButton extends GetView {
   final double? elevation;
   final double? borderRadius;
 
-  const CustomButton(
+  const CustomElevatedButton(
       {required this.title,
       required this.onPress,
       this.textStyle,
@@ -30,14 +30,10 @@ class CustomButton extends GetView {
       elevation: elevation ?? 0,
       shape: shape ??
           RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 5)),
+              borderRadius: BorderRadius.circular(borderRadius ?? 10)),
       child: Text(
         title,
-        style: textStyle ??
-            TextStyle(
-              color: Colors.white,
-              fontFamily: ubuntu
-            ),
+        style: textStyle ?? TextStyle(color: Colors.white,fontFamily: alata,letterSpacing: 1,fontWeight: FontWeight.bold),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:ask4rent/core/global/colors.dart';
-import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +48,7 @@ class CustomDrawer extends GetView {
                         imageUrl: '',
                         errorWidget: (context, url, error) => CircleAvatar(
                             backgroundColor: primaryShade1,
-                            child: Icon(
+                            child: const Icon(
                               Icons.person,
                               size: 35,
                               color: Colors.white,
@@ -62,9 +61,24 @@ class CustomDrawer extends GetView {
             ),
           ),
           ListTile(
+            leading: const Icon(Icons.dashboard),
+            horizontalTitleGap: 0,
+            title: Text('Dashboard', style: AppStyle.drawerStyle),
+          ),
+          ListTile(
             leading: const Icon(Icons.person_add_alt_1),
             horizontalTitleGap: 0,
             title: Text('Edit Profile', style: AppStyle.drawerStyle),
+          ),
+          ListTile(
+            leading: const Icon(Icons.task),
+            horizontalTitleGap: 0,
+            title: Text('List Properties', style: AppStyle.drawerStyle),
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            horizontalTitleGap: 0,
+            title: Text('Setting', style: AppStyle.drawerStyle),
           ),
           ListTile(
             leading: const Icon(Icons.exit_to_app),

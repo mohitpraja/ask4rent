@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 const Color primaryColor = Color(0xffFF581A);
 Color primaryShade1 = Colors.deepOrange.shade200;
 Color primaryShade2 = Colors.deepOrange.shade300;
+Color white = Colors.white;
 const Color successGreen = Colors.green;
 const Color cancelRed = Colors.red;
 const Color lightBlack = Colors.black54;
