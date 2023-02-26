@@ -69,7 +69,7 @@ class ProfileView extends GetView {
                           Text(
                             'Your Name',
                             style: TextStyle(
-                                fontSize: Get.width * 0.05, fontFamily: lato),
+                                fontSize: Get.width * 0.05, fontFamily: alata),
                           ),
                           const SizedBox(
                             height: 5,

@@ -31,6 +31,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
+  firebase_core: ^2.7.0
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.11.0
@@ -38,6 +39,8 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.3
   infinite_carousel: ^1.0.2
+  intl_phone_field: ^3.1.0
+  pinput: ^2.2.31
   water_drop_nav_bar: ^2.2.0+5
 flutter_icons:
   android: "launcher_icon"

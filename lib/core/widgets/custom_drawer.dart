@@ -73,7 +73,7 @@ class CustomDrawer extends GetView {
           ListTile(
             leading: const Icon(Icons.task),
             horizontalTitleGap: 0,
-            title: Text('List Properties', style: AppStyle.drawerStyle),
+            title: Text('Listed Properties', style: AppStyle.drawerStyle),
           ),
           ListTile(
             leading: const Icon(Icons.settings),

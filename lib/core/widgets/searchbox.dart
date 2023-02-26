@@ -4,7 +4,7 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SearchField extends GetView {
+class CustomSearchField extends GetView {
   final Color? borderColor;
   final double? borderRadius;
   @override
@@ -12,7 +12,7 @@ class SearchField extends GetView {
   Function(String?)? onChanged;
   final String? Function(String?)? validator;
 
-  SearchField(
+  CustomSearchField(
       {super.key,
       this.onChanged,
       this.validator,

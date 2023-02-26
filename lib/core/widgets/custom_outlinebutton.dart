@@ -21,9 +21,12 @@ class CustomOutlineButton extends StatelessWidget {
       color: Colors.white,
       elevation:elevation?? 0,
       onPressed: onPress,
-      child:child?? Text(
-        title??'',
-        style:textStyle?? const TextStyle(color: primaryColor),
+      child:Padding(
+        padding: const EdgeInsets.all(10),
+        child: child?? Text(
+          title??'',
+          style:textStyle?? const TextStyle(color: primaryColor),
+        ),
       ),
     );
   }

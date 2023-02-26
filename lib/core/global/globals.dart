@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-var commonSpace=Get.height * 0.015;
+var commonSpace=Get.height * 0.02;
 RxBool isPass = true.obs;
 showPass() {
   if (isPass.value == true) {
