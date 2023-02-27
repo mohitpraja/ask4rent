@@ -4,4 +4,10 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   RxBool isSearch = false.obs;
+  List cities=[
+    'Gwalior',
+    'Indore',
+    'Bhopal',
+
+  ];
 }
