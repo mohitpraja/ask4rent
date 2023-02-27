@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 class CustomSearchField extends GetView {
   final Color? borderColor;
   final double? borderRadius;
+  final TextInputType? textInputType;
+  final void Function()? onTap;
   @override
   final TextEditingController? controller;
   Function(String?)? onChanged;
@@ -18,10 +20,13 @@ class CustomSearchField extends GetView {
       this.validator,
       this.borderColor,
       this.controller,
+      this.textInputType,
+      this.onTap,
       this.borderRadius});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: textInputType,      
       decoration: InputDecoration(
         hintText: 'Search by city name...',
         suffixIcon: const Icon(Icons.search),
@@ -42,6 +47,7 @@ class CustomSearchField extends GetView {
       validator: validator,
       controller: controller,
       onChanged: onChanged,
+      onTap: onTap,
     );
   }
 }
