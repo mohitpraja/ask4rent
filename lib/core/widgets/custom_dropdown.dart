@@ -14,11 +14,13 @@ class CustomDropDown extends GetView {
       this.borderColor,
       this.value,
       this.borderRadius,
+      this.hinTextStyle,
       this.validator});
 
   final double? boxCornerRadius;
   Function(String?)? onChanged;
   final double? borderRadius;
+  final TextStyle? hinTextStyle;
   final String? Function(String?)? validator;
   List<DropdownMenuItem<String>>? items;
   String? hintText;
@@ -38,9 +40,10 @@ class CustomDropDown extends GetView {
       icon: icon ?? const Icon(Icons.arrow_drop_down),
       hint: Text(
         hintText ?? '',
-        style: TextStyle(
-          fontSize: Get.width * 0.04,
-        ),
+        style: hinTextStyle ??
+            TextStyle(
+              fontSize: Get.width * 0.04,
+            ),
       ),
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(

@@ -1,9 +1,11 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
+import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
+import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/customscroll.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
 import 'package:ask4rent/feature/dashboard/allpages/home/controller/home_controller.dart';
@@ -229,43 +231,77 @@ class HomeView extends GetView<HomeController> {
                 visible: controller.isSearch.value,
                 child: SafeArea(
                   child: Container(
-                      height: 300,
-                      width: Get.width,
-                      decoration: BoxDecoration(
-                          color: white,
-                          border: const Border(
-                              bottom:
-                                  BorderSide(color: primaryColor, width: 5))),
-                      child: Column(children: [
+                    color: Colors.black.withOpacity(0.3),
+                    height: Get.height,
+                    child: Column(
+                      children: [
                         Container(
-                          alignment: AlignmentDirectional.topEnd,
-                          child: IconButton(
-                              onPressed: () =>
-                                  controller.isSearch.value = false,
-                              icon: const Icon(Icons.close)),
-                        ),
-                        Row(children: [
-                          const Text('Where in'),
-                          Container(
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            width: Get.width*0.4,
-                            child: CustomDropDown(
-                              onChanged: (p0) {
-                                
-                              },
-                              borderColor: Colors.grey,
-                              borderRadius: 2,
-                              hintText: 'Select City',
-                             items:controller.cities.map((value) {
-                               return DropdownMenuItem<String>(
-                                value:value,
-                                child: Text(value));
-                             },).toList()
-                            ),
-                          ),
-                          const Text('do you want to live')
-                        ],)
-                      ])),
+                            height: 300,
+                            width: Get.width,
+                            decoration: BoxDecoration(
+                                color: white,
+                                border: const Border(
+                                    bottom: BorderSide(
+                                        color: primaryColor, width: 5))),
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              child: Column(children: [
+                                Container(
+                                  alignment: AlignmentDirectional.topEnd,
+                                  child: IconButton(
+                                      onPressed: () =>
+                                          controller.isSearch.value = false,
+                                      icon: const Icon(Icons.close)),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Where in',
+                                      style: AppStyle.search,
+                                    ),
+                                    Container(
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 5),
+                                      width: Get.width * 0.35,
+                                      height: 35,
+                                      child: CustomDropDown(
+                                          onChanged: (p0) {},
+                                          borderColor: Colors.grey,
+                                          hintText: 'Select City',
+                                          boxCornerRadius: 0,
+                                          borderRadius: 0,
+                                          hinTextStyle: TextStyle(
+                                              fontSize: Get.width * 0.04,
+                                              fontFamily: alata,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold),
+                                          items: controller.cities.map(
+                                            (value) {
+                                              return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Text(
+                                                    value,
+                                                    style: AppStyle.search,
+                                                  ));
+                                            },
+                                          ).toList()),
+                                    ),
+                                    Text('do you want to live',
+                                        style: AppStyle.search)
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: commonSpace,
+                                ),
+                                CustomTextFormField(
+                                  hintText: 'Enter location',
+                                  borderRadius: 0,
+                                )
+                              ]),
+                            )),
+                      ],
+                    ),
+                  ),
                 ),
               )
             ],

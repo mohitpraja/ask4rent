@@ -48,4 +48,8 @@ class AppStyle {
       color: Colors.white,
       fontWeight: FontWeight.w500,
       fontFamily: alata);
+  static TextStyle search = TextStyle(
+      fontSize: Get.width * 0.045,
+      fontFamily: alata,
+      fontWeight: FontWeight.bold);
 }
