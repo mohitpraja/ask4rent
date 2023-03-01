@@ -1,3 +1,4 @@
+import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,12 +10,16 @@ class CustomPasswordField extends StatelessWidget {
       this.onchanged,
       this.validator,
       this.initialValue,
+      this.borderColor,
+      this.borderRadius,
       this.hintext});
   final TextEditingController? controller;
   final Function(String)? onchanged;
   final String? Function(String?)? validator;
   final String? hintext;
   final String? initialValue;
+  final Color? borderColor;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +37,15 @@ class CustomPasswordField extends StatelessWidget {
                       ? const Icon(Icons.visibility_off)
                       : const Icon(Icons.visibility)),
               prefixIcon: const Icon(Icons.lock),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
+             enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderSide: BorderSide(color: borderColor ?? Colors.black54)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderSide: BorderSide(color: borderColor ?? primaryColor)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderSide: const BorderSide(color: Colors.red))),
           validator: validator,
           onChanged: onchanged,
           initialValue: initialValue,

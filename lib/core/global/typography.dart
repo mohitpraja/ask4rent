@@ -50,6 +50,6 @@ class AppStyle {
       fontFamily: alata);
   static TextStyle search = TextStyle(
       fontSize: Get.width * 0.045,
-      fontFamily: alata,
-      fontWeight: FontWeight.bold);
+      fontFamily: josefin,
+      );
 }

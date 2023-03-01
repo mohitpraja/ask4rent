@@ -150,7 +150,7 @@ class HomeView extends GetView<HomeController> {
                                 height: Get.height * 0.03,
                               ),
                               SizedBox(
-                                height: Get.height * 0.3,
+                                height: 250,
                                 child: ScrollConfiguration(
                                   behavior: CustomScroll(),
                                   child: ListView.builder(
@@ -231,12 +231,12 @@ class HomeView extends GetView<HomeController> {
                 visible: controller.isSearch.value,
                 child: SafeArea(
                   child: Container(
-                    color: Colors.black.withOpacity(0.3),
+                    color: Colors.black.withOpacity(0.75),
                     height: Get.height,
                     child: Column(
                       children: [
                         Container(
-                            height: 300,
+                            height: 350,
                             width: Get.width,
                             decoration: BoxDecoration(
                                 color: white,
@@ -245,7 +245,8 @@ class HomeView extends GetView<HomeController> {
                                         color: primaryColor, width: 5))),
                             child: Container(
                               margin: const EdgeInsets.all(8),
-                              child: Column(children: [
+                              child: Column(
+                                children: [
                                 Container(
                                   alignment: AlignmentDirectional.topEnd,
                                   child: IconButton(
@@ -260,8 +261,8 @@ class HomeView extends GetView<HomeController> {
                                       style: AppStyle.search,
                                     ),
                                     Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 5),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 5),
                                       width: Get.width * 0.35,
                                       height: 35,
                                       child: CustomDropDown(
@@ -271,10 +272,10 @@ class HomeView extends GetView<HomeController> {
                                           boxCornerRadius: 0,
                                           borderRadius: 0,
                                           hinTextStyle: TextStyle(
-                                              fontSize: Get.width * 0.04,
-                                              fontFamily: alata,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
+                                            fontSize: Get.width * 0.04,
+                                            fontFamily: josefin,
+                                            color: Colors.black,
+                                          ),
                                           items: controller.cities.map(
                                             (value) {
                                               return DropdownMenuItem<String>(
@@ -296,7 +297,31 @@ class HomeView extends GetView<HomeController> {
                                 CustomTextFormField(
                                   hintText: 'Enter location',
                                   borderRadius: 0,
+                                  borderColor: lightBlack,
+                                  suffixIcon: CustomElevatedButton(
+                                    title: 'Search',
+                                    borderRadius: 0,
+                                    onPress: () {},
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: commonSpace,
+                                ),
+                                Expanded(
+                                  child: GridView.count(
+                                          crossAxisCount: 4,
+                                          childAspectRatio: 8.0 / 3.0,
+                                      mainAxisSpacing: 10.0,
+                                      crossAxisSpacing: 10.0,
+                                          // Generate 100 widgets that display their index in the List.
+                                          children: List.generate(10, (index) {
+                                            return Container(
+                                              alignment: Alignment.center,
+                                              color:Colors.grey.withOpacity(0.3),
+                                            child: Text('Demo',textAlign: TextAlign.center,style: TextStyle(color: lightBlack,fontFamily: josefin),),);
+                                          })),
                                 )
+
                               ]),
                             )),
                       ],

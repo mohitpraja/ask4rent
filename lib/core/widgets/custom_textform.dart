@@ -15,6 +15,7 @@ class CustomTextFormField extends StatelessWidget {
       this.onchanged,
       this.readonly,
       this.borderColor,
+      this.suffixIcon,
       this.initialValue});
 
   final TextInputType? inputType;
@@ -26,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
   final Icon? preficIcon;
   final Color? borderColor;
   final double? borderRadius;
+  final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final Function(String)? onchanged;
@@ -45,9 +47,18 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hintText,
           counterText: '',
           prefixIcon: preficIcon,
-          border: OutlineInputBorder(
+          suffixIcon: suffixIcon,
+          enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRadius ?? 10),
-              borderSide: BorderSide(color: borderColor ?? primaryColor))),
+              borderSide: BorderSide(color: borderColor ?? Colors.black54)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderSide: BorderSide(color: borderColor ?? primaryColor)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderSide: const BorderSide(color: Colors.red)),
+              
+              ),
       validator: validator,
       controller: controller,
       onChanged: onchanged,
