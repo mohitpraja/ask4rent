@@ -14,11 +14,11 @@ class DashboardView extends GetView<DashboardController> {
           bottomNavigationBar: WaterDropNavBar(
             selectedIndex: controller.selectedIndex.value,
             onItemSelected: (index) => controller.selectedIndex.value = index,
-            backgroundColor: Colors.white,
-            waterDropColor: primaryColor,
+            backgroundColor: primaryColor,
+            waterDropColor: white,
+            bottomPadding: 20,
             inactiveIconColor: Colors.black54,
             iconSize: 30,
-            bottomPadding: 20,
             barItems: [
               BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home),
               BarItem(filledIcon: Icons.add, outlinedIcon: Icons.add),

@@ -41,7 +41,9 @@ class HomeView extends GetView<HomeController> {
                         style: AppStyle.appTitile,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          controller.selectCityBox.value = true;
+                        },
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -150,7 +152,7 @@ class HomeView extends GetView<HomeController> {
                                 height: Get.height * 0.03,
                               ),
                               SizedBox(
-                                height: 250,
+                                height: 230,
                                 child: ScrollConfiguration(
                                   behavior: CustomScroll(),
                                   child: ListView.builder(
@@ -245,8 +247,7 @@ class HomeView extends GetView<HomeController> {
                                         color: primaryColor, width: 5))),
                             child: Container(
                               margin: const EdgeInsets.all(8),
-                              child: Column(
-                                children: [
+                              child: Column(children: [
                                 Container(
                                   alignment: AlignmentDirectional.topEnd,
                                   child: IconButton(
@@ -307,25 +308,87 @@ class HomeView extends GetView<HomeController> {
                                 SizedBox(
                                   height: commonSpace,
                                 ),
-                                Expanded(
-                                  child: GridView.count(
+                                ScrollConfiguration(
+                                    behavior: CustomScroll(),
+                                    child: Expanded(
+                                      child: GridView.count(
                                           crossAxisCount: 4,
                                           childAspectRatio: 8.0 / 3.0,
-                                      mainAxisSpacing: 10.0,
-                                      crossAxisSpacing: 10.0,
+                                          mainAxisSpacing: 10.0,
+                                          crossAxisSpacing: 10.0,
                                           // Generate 100 widgets that display their index in the List.
                                           children: List.generate(10, (index) {
                                             return Container(
                                               alignment: Alignment.center,
-                                              color:Colors.grey.withOpacity(0.3),
-                                            child: Text('Demo',textAlign: TextAlign.center,style: TextStyle(color: lightBlack,fontFamily: josefin),),);
+                                              color:
+                                                  Colors.grey.withOpacity(0.3),
+                                              child: Text(
+                                                'Demo',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontFamily: josefin),
+                                              ),
+                                            );
                                           })),
-                                )
-
+                                    ))
                               ]),
                             )),
                       ],
                     ),
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: controller.selectCityBox.value,
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      Card(
+                        elevation: 10,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 70, horizontal: 0),
+                        child: SizedBox(
+                            height: 200,
+                            child: Container(
+                              margin: const EdgeInsets.all(8),
+                              child: Column(children: [
+                                Container(
+                                  alignment: AlignmentDirectional.topEnd,
+                                  child: IconButton(
+                                      onPressed: () => controller
+                                          .selectCityBox.value = false,
+                                      icon: const Icon(Icons.close)),
+                                ),
+                                SizedBox(
+                                  height: commonSpace,
+                                ),
+                                ScrollConfiguration(
+                                    behavior: CustomScroll(),
+                                    child: Expanded(
+                                      child: GridView.count(
+                                          crossAxisCount: 4,
+                                          childAspectRatio: 8.0 / 3.0,
+                                          mainAxisSpacing: 10.0,
+                                          crossAxisSpacing: 5.0,
+                                          // Generate 100 widgets that display their index in the List.
+                                          children: List.generate(10, (index) {
+                                            return Container(
+                                              alignment: Alignment.center,
+                                              color:
+                                                  Colors.grey.withOpacity(0.3),
+                                              child: Text(
+                                                'Demo',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontFamily: josefin),
+                                              ),
+                                            );
+                                          })),
+                                    ))
+                              ]),
+                            )),
+                      ),
+                    ],
                   ),
                 ),
               )

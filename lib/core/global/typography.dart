@@ -51,5 +51,6 @@ class AppStyle {
   static TextStyle search = TextStyle(
       fontSize: Get.width * 0.045,
       fontFamily: josefin,
+      fontWeight:FontWeight.w500
       );
 }
