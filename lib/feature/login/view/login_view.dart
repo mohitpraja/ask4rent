@@ -7,7 +7,7 @@ import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/customscroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

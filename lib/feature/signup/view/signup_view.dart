@@ -3,11 +3,11 @@ import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/apptitle.dart';
-import 'package:ask4rent/core/widgets/custom_appbar.dart';
+import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/customscroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,7 @@ class SignupView extends GetView {
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
         backgroundColor: white,
-        appBar:const CustomAppBar(),
+        appBar:const CustomWhiteAppBar(),
         body: ScrollConfiguration(
           behavior: CustomScroll(),
           child: SingleChildScrollView(

@@ -61,27 +61,27 @@ class CustomDrawer extends GetView {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.dashboard),
+            leading: const Icon(Icons.dashboard,color: drawerIconColor,),
             horizontalTitleGap: 0,
             title: Text('Dashboard', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.person_add_alt_1),
+            leading: const Icon(Icons.person_add_alt_1,color:drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Edit Profile', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.task),
+            leading: const Icon(Icons.task,color:drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Listed Properties', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
+            leading: const Icon(Icons.settings,color:drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Setting', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.exit_to_app),
+            leading: const Icon(Icons.exit_to_app,color:drawerIconColor),
             minLeadingWidth: 5,
             title: Text('Logout', style: AppStyle.drawerStyle),
             onTap: () async {},

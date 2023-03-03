@@ -6,9 +6,9 @@ import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/customscroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
-import 'package:ask4rent/feature/dashboard/allpages/home/controller/home_controller.dart';
+import 'package:ask4rent/feature/dashboard/dashboardPages/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -152,7 +152,7 @@ class HomeView extends GetView<HomeController> {
                                 height: Get.height * 0.03,
                               ),
                               SizedBox(
-                                height: 230,
+                                height: 220,
                                 child: ScrollConfiguration(
                                   behavior: CustomScroll(),
                                   child: ListView.builder(
@@ -316,7 +316,6 @@ class HomeView extends GetView<HomeController> {
                                           childAspectRatio: 8.0 / 3.0,
                                           mainAxisSpacing: 10.0,
                                           crossAxisSpacing: 10.0,
-                                          // Generate 100 widgets that display their index in the List.
                                           children: List.generate(10, (index) {
                                             return Container(
                                               alignment: Alignment.center,
@@ -370,7 +369,6 @@ class HomeView extends GetView<HomeController> {
                                           childAspectRatio: 8.0 / 3.0,
                                           mainAxisSpacing: 10.0,
                                           crossAxisSpacing: 5.0,
-                                          // Generate 100 widgets that display their index in the List.
                                           children: List.generate(10, (index) {
                                             return Container(
                                               alignment: Alignment.center,

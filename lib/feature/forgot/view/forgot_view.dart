@@ -1,9 +1,9 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
-import 'package:ask4rent/core/widgets/custom_appbar.dart';
+import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/customscroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:ask4rent/feature/forgot/controller/forgot_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +16,7 @@ class ForgotView extends GetView<ForgotController> {
     return Scaffold(
       backgroundColor: white,
       resizeToAvoidBottomInset: false,
-      appBar: const CustomAppBar(),
+      appBar: const CustomWhiteAppBar(),
       body: GestureDetector(
         onTap: () => Get.focusScope!.unfocus(),
         child: ScrollConfiguration(
