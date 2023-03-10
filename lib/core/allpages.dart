@@ -7,6 +7,8 @@ import 'package:ask4rent/feature/login/binding/login_bind.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
 import 'package:ask4rent/feature/otp/binding/otp_binding.dart';
 import 'package:ask4rent/feature/otp/view/otp_view.dart';
+import 'package:ask4rent/feature/property/binding/property_binding.dart';
+import 'package:ask4rent/feature/property/view/property_page.dart';
 import 'package:ask4rent/feature/signup/binding/signup_binding.dart';
 import 'package:ask4rent/feature/signup/view/signup_view.dart';
 import 'package:ask4rent/feature/splash/binding/splash_bind.dart';
@@ -38,4 +40,8 @@ List<GetPage> allpages = [
       name: Routes.forgot,
       page: () => const ForgotView(),
       binding: ForgotBinding()),
+  GetPage(
+      name: Routes.property,
+      page: () => const PropertyPage(),
+      binding: PropertyBinding()),
 ];
