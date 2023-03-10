@@ -152,7 +152,7 @@ class HomeView extends GetView<HomeController> {
                                 height: Get.height * 0.03,
                               ),
                               SizedBox(
-                                height: 220,
+                                height: 250,
                                 child: ScrollConfiguration(
                                   behavior: CustomScroll(),
                                   child: ListView.builder(
@@ -292,9 +292,7 @@ class HomeView extends GetView<HomeController> {
                                         style: AppStyle.search)
                                   ],
                                 ),
-                                SizedBox(
-                                  height: commonSpace,
-                                ),
+                               commonSpace(),
                                 CustomTextFormField(
                                   hintText: 'Enter location',
                                   borderRadius: 0,
@@ -305,9 +303,7 @@ class HomeView extends GetView<HomeController> {
                                     onPress: () {},
                                   ),
                                 ),
-                                SizedBox(
-                                  height: commonSpace,
-                                ),
+                               commonSpace(),
                                 ScrollConfiguration(
                                     behavior: CustomScroll(),
                                     child: Expanded(
@@ -358,9 +354,7 @@ class HomeView extends GetView<HomeController> {
                                           .selectCityBox.value = false,
                                       icon: const Icon(Icons.close)),
                                 ),
-                                SizedBox(
-                                  height: commonSpace,
-                                ),
+                                commonSpace(),
                                 ScrollConfiguration(
                                     behavior: CustomScroll(),
                                     child: Expanded(

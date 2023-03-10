@@ -48,33 +48,23 @@ class SignupView extends GetView {
                         hintText: 'Enter Name',
                         preficIcon: Icon(Icons.person),
                       ),
-                      SizedBox(
-                        height: commonSpace,
-                      ),
+                      commonSpace(),
                       const CustomTextFormField(
                         hintText: 'Enter Email',
                         inputType: TextInputType.emailAddress,
                          preficIcon: Icon(Icons.email),
                       ),
-                      SizedBox(
-                        height: commonSpace,
-                      ),
+                      commonSpace(),
                       const CustomTextFormField(
                         hintText: 'Enter Phone',
                         inputType: TextInputType.number,
                          preficIcon: Icon(Icons.phone),
                       ),
-                      SizedBox(
-                        height: commonSpace,
-                      ),
+                      commonSpace(),
                       const CustomPasswordField(),
-                      SizedBox(
-                        height: commonSpace,
-                      ),
+                      commonSpace(),
                       const CustomPasswordField(hintext: 'Confirm Password',),
-                       SizedBox(
-                        height: commonSpace,
-                      ),
+                       commonSpace(),
                       SizedBox(
                         width: Get.width,
                         child: CustomElevatedButton(title: 'Create Account',onPress: () {

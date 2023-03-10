@@ -11,20 +11,36 @@ class DashboardView extends GetView<DashboardController> {
     return Obx(() => Scaffold(
           backgroundColor: Colors.white,
           body: controller.screens[controller.selectedIndex.value],
-          bottomNavigationBar: WaterDropNavBar(
-            selectedIndex: controller.selectedIndex.value,
-            onItemSelected: (index) => controller.selectedIndex.value = index,
-            backgroundColor: primaryColor,
-            waterDropColor: lightBlack,
-            bottomPadding: 20,
-            inactiveIconColor: white,
-            iconSize: 30,
-            barItems: [
-              BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home),
-              BarItem(filledIcon: Icons.add, outlinedIcon: Icons.add),
-              BarItem(filledIcon: Icons.bookmark, outlinedIcon: Icons.bookmark),
-              BarItem(filledIcon: Icons.person, outlinedIcon: Icons.person),
-            ],
+          bottomNavigationBar: Container(
+            height: 65,
+            decoration: BoxDecoration(
+               borderRadius: BorderRadius.circular(5.0),
+            boxShadow: const [
+               BoxShadow(
+                color: Colors.grey,
+                offset: Offset(
+                  0.0,
+                  -5.0,
+                ),
+                blurRadius: 10.0,
+                spreadRadius: -5.0,
+              ), //
+            ]),
+            child: WaterDropNavBar(
+              selectedIndex: controller.selectedIndex.value,
+              onItemSelected: (index) => controller.selectedIndex.value = index,
+              backgroundColor: white,
+              waterDropColor: primaryColor,
+              bottomPadding: 15,
+              inactiveIconColor: lightBlack,
+              iconSize: 30,
+              barItems: [
+                BarItem(filledIcon: Icons.home , outlinedIcon: Icons.home),
+                BarItem(filledIcon: Icons.add, outlinedIcon: Icons.add),
+                BarItem(filledIcon: Icons.bookmark, outlinedIcon: Icons.bookmark),
+                BarItem(filledIcon: Icons.person, outlinedIcon: Icons.person),
+              ],
+            ),
           ),
         ));
   }

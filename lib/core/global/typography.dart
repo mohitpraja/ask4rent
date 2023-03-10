@@ -51,6 +51,9 @@ class AppStyle {
   static TextStyle search = TextStyle(
       fontSize: Get.width * 0.045,
       fontFamily: josefin,
-      fontWeight:FontWeight.w500
-      );
+      fontWeight: FontWeight.w500);
+  static TextStyle listPropHeading =
+      TextStyle(fontFamily: alata, fontSize: Get.width * 0.05);
+  static TextStyle listPropSubHeading =
+      TextStyle(fontFamily: alata);
 }

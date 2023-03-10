@@ -33,9 +33,7 @@ class LoginView extends GetView {
               margin: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: commonSpace,
-                  ),
+                  commonSpace(),
                   Column(
                     children: const [
                       AppTitle(),
@@ -55,11 +53,11 @@ class LoginView extends GetView {
                         hintText: 'Enter Phone number',
                         preficIcon: Icon(Icons.phone),
                       ),
-                      SizedBox(height: commonSpace),
+                     commonSpace(),
                       const CustomPasswordField(
                         hintext: 'Enter Password',
                       ),
-                      SizedBox(height: commonSpace),
+                      commonSpace(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -76,7 +74,7 @@ class LoginView extends GetView {
                           ),
                         ],
                       ),
-                      SizedBox(height: commonSpace),
+                       commonSpace(),
                       SizedBox(
                         width: Get.width,
                         child: CustomElevatedButton(
@@ -86,7 +84,7 @@ class LoginView extends GetView {
                           },
                         ),
                       ),
-                      SizedBox(height: commonSpace),
+                       commonSpace(),
                       Row(
                         children: [
                           const Expanded(child: Divider()),
@@ -101,7 +99,7 @@ class LoginView extends GetView {
                           const Expanded(child: Divider()),
                         ],
                       ),
-                      SizedBox(height: commonSpace),
+                      commonSpace(),
                       CustomOutlineButton(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
