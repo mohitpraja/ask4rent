@@ -11,6 +11,7 @@ class CustomElevatedButton extends GetView {
   final ShapeBorder? shape;
   final double? elevation;
   final double? borderRadius;
+  final double? padding;
 
   const CustomElevatedButton(
       {required this.title,
@@ -20,6 +21,7 @@ class CustomElevatedButton extends GetView {
       this.shape,
       this.elevation,
       this.borderRadius,
+      this.padding,
       super.key});
 
   @override
@@ -32,10 +34,15 @@ class CustomElevatedButton extends GetView {
           RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius ?? 10)),
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(padding ?? 10),
         child: Text(
           title,
-          style: textStyle ?? TextStyle(color: Colors.white,fontFamily: alata,letterSpacing: 1,fontWeight: FontWeight.bold),
+          style: textStyle ??
+              TextStyle(
+                  color: Colors.white,
+                  fontFamily: alata,
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.bold),
         ),
       ),
     );
