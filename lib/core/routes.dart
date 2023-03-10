@@ -5,4 +5,5 @@ class Routes{
   static String signup='/signup_view';
   static String otp='/otp_view';
   static String forgot='/forgot_view';
+  static String property='/property_page';
 }
