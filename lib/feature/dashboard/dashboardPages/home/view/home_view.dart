@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../../../../../core/routes.dart';
+
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 
@@ -210,7 +212,9 @@ class HomeView extends GetView<HomeController> {
                                                 width: Get.width,
                                                 child: CustomElevatedButton(
                                                   title: 'Explore',
-                                                  onPress: () {},
+                                                  onPress: () {
+                                                    Get.toNamed(Routes.property);
+                                                  },
                                                 ),
                                               )
                                             ],
