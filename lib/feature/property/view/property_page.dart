@@ -20,7 +20,7 @@ class PropertyPage extends GetView<PropertyController> {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.arrow_back, color: Colors.grey, size: 30)),
+            icon: const Icon(Icons.arrow_back, color: Colors.grey, size: 30)),
         backgroundColor: Colors.white,
         centerTitle: false,
         elevation: 0,

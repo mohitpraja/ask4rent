@@ -8,6 +8,7 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
+import 'package:ask4rent/core/widgets/customloader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -81,6 +82,7 @@ class LoginView extends GetView {
                           title: 'Login',
                           onPress: () {
                             Get.toNamed(Routes.dashboard);
+                            
                           },
                         ),
                       ),
@@ -114,7 +116,10 @@ class LoginView extends GetView {
                             )
                           ],
                         ),
-                        onPress: () {},
+                        onPress: () {
+                          CustomLoader().loader();
+                        },
+                        
                       )
                     ],
                   )),

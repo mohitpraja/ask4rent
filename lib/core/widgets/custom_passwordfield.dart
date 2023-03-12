@@ -37,15 +37,19 @@ class CustomPasswordField extends StatelessWidget {
                       ? const Icon(Icons.visibility_off)
                       : const Icon(Icons.visibility)),
               prefixIcon: const Icon(Icons.lock),
-             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+           enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 5),
               borderSide: BorderSide(color: borderColor ?? Colors.black54)),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 10),
+              borderRadius: BorderRadius.circular(borderRadius ?? 5),
               borderSide: BorderSide(color: borderColor ?? primaryColor)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 5),
+              borderSide: const BorderSide(color: Colors.red)),
           focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 10),
-              borderSide: const BorderSide(color: Colors.red))),
+              borderRadius: BorderRadius.circular(borderRadius ?? 5),
+              borderSide: const BorderSide(color: Colors.red)),
+              ),
           validator: validator,
           onChanged: onchanged,
           initialValue: initialValue,

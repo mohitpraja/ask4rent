@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.splash,
       getPages: allpages,
-
     );
   }
 }
