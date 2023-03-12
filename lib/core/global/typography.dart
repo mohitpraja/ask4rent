@@ -60,6 +60,9 @@ class AppStyle {
       fontWeight: FontWeight.w500);
   static TextStyle listPropHeading =
       TextStyle(fontFamily: alata, fontSize: Get.width * 0.05);
-  static TextStyle listPropSubHeading =
-      TextStyle(fontFamily: alata);
+  static TextStyle listPropSubHeading = TextStyle(fontFamily: alata);
+  static TextStyle priceTableStyle = TextStyle(
+      fontFamily: ubuntu,
+      fontSize: Get.width * 0.04,
+      fontWeight: FontWeight.w500);
 }

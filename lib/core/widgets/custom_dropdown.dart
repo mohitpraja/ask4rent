@@ -32,6 +32,7 @@ class CustomDropDown extends GetView {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
       elevation: 8,
+      menuMaxHeight: Get.height*0.6,
       borderRadius: BorderRadius.circular(
         boxCornerRadius ?? 5,
       ),

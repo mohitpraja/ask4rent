@@ -34,8 +34,32 @@ List states = [
   "Dadra and Nagar Haveli",
   "Daman and Diu",
 ];
-
-List cities = [
+List cities=[
+  'Mumbai',
+  'Bengaluru',
+  'Kolkata',
+  'Chennai',
+  'Hyderabad',
+  'Jaipur',
+  'Pune',
+  'Ahmedabad',
+  'Surat',
+  'New Delhi',
+  'Agra',
+  'Lucknow',
+  'Indore',
+  'Bhopal',
+  'Nagpur',
+  'Kanpur',
+  'Chandigarh',
+  'Amritsar',
+  'Vadodra',
+  'Patna',
+  'Nashik',
+  'Gwalior',
+  'Faridabad',
+];
+List stateWithCities = [
   {
     "state": "Andhra Pradesh",
     "districts": [

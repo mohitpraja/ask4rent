@@ -46,19 +46,19 @@ class SignupView extends GetView {
                     children: [
                       const CustomTextFormField(
                         hintText: 'Enter Name',
-                        preficIcon: Icon(Icons.person),
+                        prefixIcon: Icon(Icons.person),
                       ),
                       commonSpace(),
                       const CustomTextFormField(
                         hintText: 'Enter Email',
                         inputType: TextInputType.emailAddress,
-                         preficIcon: Icon(Icons.email),
+                         prefixIcon: Icon(Icons.email),
                       ),
                       commonSpace(),
                       const CustomTextFormField(
                         hintText: 'Enter Phone',
                         inputType: TextInputType.number,
-                         preficIcon: Icon(Icons.phone),
+                         prefixIcon: Icon(Icons.phone),
                       ),
                       commonSpace(),
                       const CustomPasswordField(),

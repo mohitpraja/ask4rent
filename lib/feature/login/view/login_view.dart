@@ -51,7 +51,7 @@ class LoginView extends GetView {
                     children: [
                       const CustomTextFormField(
                         hintText: 'Enter Phone number',
-                        preficIcon: Icon(Icons.phone),
+                        prefixIcon: Icon(Icons.phone),
                       ),
                      commonSpace(),
                       const CustomPasswordField(

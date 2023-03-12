@@ -63,7 +63,7 @@ class ForgotView extends GetView<ForgotController> {
                     Form(
                       child: CustomTextFormField(
                         hintText: 'Phone Number',
-                        preficIcon: const Icon(Icons.phone),
+                        prefixIcon: const Icon(Icons.phone),
                         inputType: TextInputType.number,
                         maxLength: 10,
                         controller: controller.phone,

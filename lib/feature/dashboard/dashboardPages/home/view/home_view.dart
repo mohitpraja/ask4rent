@@ -2,6 +2,7 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
+import 'package:ask4rent/core/localDB/cities.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
@@ -277,7 +278,7 @@ class HomeView extends GetView<HomeController> {
                                             fontFamily: josefin,
                                             color: Colors.black,
                                           ),
-                                          items: controller.cities.map(
+                                          items: cities.map(
                                             (value) {
                                               return DropdownMenuItem<String>(
                                                   value: value,
