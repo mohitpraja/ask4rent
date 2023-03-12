@@ -16,9 +16,11 @@ class PropertyPage extends GetView<PropertyController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(onPressed: () {
-
-        },icon: const Icon(Icons.arrow_back,color: Colors.grey, size: 30)),
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(Icons.arrow_back, color: Colors.grey, size: 30)),
         backgroundColor: Colors.white,
         centerTitle: false,
         elevation: 0,
@@ -59,14 +61,16 @@ class PropertyPage extends GetView<PropertyController> {
               const SizedBox(
                 width: 5,
               ),
-              FaIcon(
+              InkWell(onTap: () {
+
+              }, child:  FaIcon(
                 FontAwesomeIcons.chevronDown,
                 size: Get.width * 0.045,
                 color: Colors.black54,
+              ),),
+              const SizedBox(
+                width: 10,
               ),
-              SizedBox(
-                width: Get.width * 0.03,
-              )
             ],
           ),
         ],

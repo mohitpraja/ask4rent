@@ -19,6 +19,12 @@ class AppStyle {
       fontFamily: alata,
       letterSpacing: 1,
       fontSize: Get.width * 0.045);
+  static TextStyle sortBy = TextStyle(
+      color: Colors.black54,
+      fontWeight: FontWeight.w600,
+      fontFamily: alata,
+      letterSpacing: 1,
+      fontSize: Get.width * 0.04);
   static TextStyle rentingMadeEasy = TextStyle(
       fontSize: Get.width * 0.08,
       fontFamily: josefin,
