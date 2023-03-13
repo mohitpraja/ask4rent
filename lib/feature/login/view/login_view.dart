@@ -8,7 +8,7 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
-import 'package:ask4rent/core/widgets/customloader.dart';
+import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,14 +21,13 @@ class LoginView extends GetView {
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-         backgroundColor: white,
+        backgroundColor: white,
         appBar: AppBar(
           backgroundColor: white,
           elevation: 0,
-          
         ),
         body: ScrollConfiguration(
-          behavior:CustomScroll(),
+          behavior: CustomScroll(),
           child: SingleChildScrollView(
             child: Container(
               margin: const EdgeInsets.all(10),
@@ -54,7 +53,7 @@ class LoginView extends GetView {
                         hintText: 'Enter Phone number',
                         prefixIcon: Icon(Icons.phone),
                       ),
-                     commonSpace(),
+                      commonSpace(),
                       const CustomPasswordField(
                         hintext: 'Enter Password',
                       ),
@@ -63,7 +62,7 @@ class LoginView extends GetView {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           InkWell(
-                            onTap:() => Get.toNamed(Routes.forgot),
+                            onTap: () => Get.toNamed(Routes.forgot),
                             child: Text(
                               'Forgot Password',
                               style: TextStyle(
@@ -75,18 +74,17 @@ class LoginView extends GetView {
                           ),
                         ],
                       ),
-                       commonSpace(),
+                      commonSpace(),
                       SizedBox(
                         width: Get.width,
                         child: CustomElevatedButton(
                           title: 'Login',
                           onPress: () {
                             Get.toNamed(Routes.dashboard);
-                            
                           },
                         ),
                       ),
-                       commonSpace(),
+                      commonSpace(),
                       Row(
                         children: [
                           const Expanded(child: Divider()),
@@ -117,9 +115,12 @@ class LoginView extends GetView {
                           ],
                         ),
                         onPress: () {
-                          CustomLoader().loader();
+                          checkInternet(
+                            () {
+                              print('login cld');
+                            },
+                          );
                         },
-                        
                       )
                     ],
                   )),
@@ -135,7 +136,11 @@ class LoginView extends GetView {
                         onTap: () => Get.toNamed(Routes.signup),
                         child: Text(
                           'Sign up',
-                          style: TextStyle(color: primaryColor, fontFamily: alata,fontWeight: FontWeight.bold,fontSize: Get.width*0.04),
+                          style: TextStyle(
+                              color: primaryColor,
+                              fontFamily: alata,
+                              fontWeight: FontWeight.bold,
+                              fontSize: Get.width * 0.04),
                         ),
                       )
                     ],

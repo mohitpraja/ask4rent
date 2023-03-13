@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "328260184512",
-    "project_id": "ask4rent-8c61b",
-    "storage_bucket": "ask4rent-8c61b.appspot.com"
+    "project_number": "339968175264",
+    "project_id": "askforrent-45ba8",
+    "storage_bucket": "askforrent-45ba8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:328260184512:android:121489587f9e66e5144025",
+        "mobilesdk_app_id": "1:339968175264:android:6f06523014202071abedc5",
         "android_client_info": {
           "package_name": "com.example.ask4rent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "328260184512-gtqqbloo1vd6ct21te6gbsitqun3v19a.apps.googleusercontent.com",
+          "client_id": "339968175264-67a9n3oi36q8jfnqv645octtaodrtnam.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAM7y3F1-t2_GjK5ZLtag0sHNjiQwN4TAM"
+          "current_key": "AIzaSyBwdv9PMH7IBEm4x6vjlNaPc066apAr7xM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "328260184512-gtqqbloo1vd6ct21te6gbsitqun3v19a.apps.googleusercontent.com",
+              "client_id": "339968175264-67a9n3oi36q8jfnqv645octtaodrtnam.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

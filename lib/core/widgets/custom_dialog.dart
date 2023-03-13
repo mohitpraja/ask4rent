@@ -1,4 +1,3 @@
-import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +12,19 @@ class CustomDialog {
   final VoidCallback? btnOkOnPress;
   final VoidCallback? btnCancelOnPress;
   final bool? isDismissable;
+  Color successGreen = Colors.green;
+  Color cancelRed = Colors.red;
+  TextStyle titleStyle = TextStyle(
+      fontSize: Get.width * 0.07,
+      fontWeight: FontWeight.bold,
+      color: Colors.black54,
+      letterSpacing: 1,
+      fontFamily: ubuntu);
+  TextStyle descStyle = TextStyle(
+      color: Colors.black54,
+      fontSize: Get.width * 0.045,
+      fontFamily: ubuntu,
+      fontWeight: FontWeight.w500);
 
   success2() {
     Get.defaultDialog(
@@ -36,12 +48,7 @@ class CustomDialog {
             ),
             Text(
               'Success',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -50,10 +57,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -115,12 +119,7 @@ class CustomDialog {
                 height: 150, child: Image.asset('assets/gifs/success.gif')),
             Text(
               'Success',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -129,10 +128,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -197,12 +193,7 @@ class CustomDialog {
             ),
             Text(
               'Success',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -211,10 +202,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -277,12 +265,7 @@ class CustomDialog {
                 )),
             Text(
               'Success',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -291,10 +274,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -358,12 +338,7 @@ class CustomDialog {
             ),
             Text(
               'Info',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -372,10 +347,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -439,12 +411,7 @@ class CustomDialog {
             ),
             Text(
               'Info',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -453,10 +420,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -520,12 +484,7 @@ class CustomDialog {
             ),
             Text(
               'Error',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -534,10 +493,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -578,7 +534,9 @@ class CustomDialog {
             ],
           ),
         ]);
-  }  error1() {
+  }
+
+  error1() {
     Get.defaultDialog(
         title: '',
         titlePadding: EdgeInsets.zero,
@@ -599,12 +557,7 @@ class CustomDialog {
             ),
             Text(
               'Error',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -613,10 +566,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -657,9 +607,12 @@ class CustomDialog {
             ],
           ),
         ]);
-  }  error2() {
+  }
+
+  error2() {
     Get.defaultDialog(
-        title: '',        titlePadding: EdgeInsets.zero,
+        title: '',
+        titlePadding: EdgeInsets.zero,
         contentPadding: btnCancelOnPress == null && btnOkOnPress == null
             ? EdgeInsets.zero
             : null,
@@ -677,12 +630,7 @@ class CustomDialog {
             ),
             Text(
               'Error',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -691,10 +639,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -735,11 +680,15 @@ class CustomDialog {
             ],
           ),
         ]);
-  }  warning() {   Get.defaultDialog(
+  }
+
+  warning() {
+    Get.defaultDialog(
         title: '',
         titlePadding: EdgeInsets.zero,
         contentPadding: btnCancelOnPress == null && btnOkOnPress == null
-            ? EdgeInsets.zero            : null,
+            ? EdgeInsets.zero
+            : null,
         barrierDismissible: isDismissable ?? true,
         titleStyle: const TextStyle(fontSize: 0),
         content: Column(
@@ -755,12 +704,7 @@ class CustomDialog {
             ),
             Text(
               'Warning',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -769,10 +713,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -837,12 +778,7 @@ class CustomDialog {
             ),
             Text(
               'Warning',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -851,10 +787,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),
@@ -919,12 +852,7 @@ class CustomDialog {
             ),
             Text(
               'Warning',
-              style: TextStyle(
-                  fontSize: Get.width * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                  letterSpacing: 1,
-                  fontFamily: ubuntu),
+              style: titleStyle,
             ),
             const SizedBox(
               height: 10,
@@ -933,10 +861,7 @@ class CustomDialog {
                 ? const SizedBox()
                 : Text(
                     '$descText',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: Get.width * 0.037,
-                        fontWeight: FontWeight.w400),
+                    style: descStyle,
                   ),
           ],
         ),

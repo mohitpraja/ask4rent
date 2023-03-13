@@ -6,8 +6,7 @@ Color primaryShade1 = Colors.deepOrange.shade200;
 Color primaryShade2 = Colors.deepOrange.shade300;
 Color white = Colors.white;
 const Color drawerIconColor= Colors.black54;
-const Color successGreen = Colors.green;
-const Color cancelRed = Colors.red;
+
 const Color lightBlack = Colors.black54;
 const MaterialColor primarySwatch = MaterialColor(
   0xffff581a, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.

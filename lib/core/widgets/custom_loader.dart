@@ -14,12 +14,11 @@ class CustomLoader {
         barrierDismissible: isDismissable ?? false,
         Center(
           child: Container(
-            width: Get.width * 0.75,
+            width: Get.width * 0.7,
             decoration: BoxDecoration(
                 color: white, borderRadius: BorderRadius.circular(6)),
             padding: const EdgeInsets.all(15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularProgressIndicator(
                   color: primaryShade1,

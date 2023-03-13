@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAMF7owe_3XfTe8-YTENEO_yfPhfYQD9WM',
-    appId: '1:328260184512:web:51fbfccd70f3c890144025',
-    messagingSenderId: '328260184512',
-    projectId: 'ask4rent-8c61b',
-    authDomain: 'ask4rent-8c61b.firebaseapp.com',
-    storageBucket: 'ask4rent-8c61b.appspot.com',
-    measurementId: 'G-KRKZNEHZ2V',
+    apiKey: 'AIzaSyBIim6rDYFDh34rp9MKycOWKMFOYouomJI',
+    appId: '1:339968175264:web:24018c329edcd5bbabedc5',
+    messagingSenderId: '339968175264',
+    projectId: 'askforrent-45ba8',
+    authDomain: 'askforrent-45ba8.firebaseapp.com',
+    storageBucket: 'askforrent-45ba8.appspot.com',
+    measurementId: 'G-W74TVQFH1L',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAM7y3F1-t2_GjK5ZLtag0sHNjiQwN4TAM',
-    appId: '1:328260184512:android:121489587f9e66e5144025',
-    messagingSenderId: '328260184512',
-    projectId: 'ask4rent-8c61b',
-    storageBucket: 'ask4rent-8c61b.appspot.com',
+    apiKey: 'AIzaSyBwdv9PMH7IBEm4x6vjlNaPc066apAr7xM',
+    appId: '1:339968175264:android:6f06523014202071abedc5',
+    messagingSenderId: '339968175264',
+    projectId: 'askforrent-45ba8',
+    storageBucket: 'askforrent-45ba8.appspot.com',
   );
 }
