@@ -1,7 +1,11 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
+import 'package:ask4rent/core/global/globals.dart';
+import 'package:ask4rent/core/routes.dart';
+import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/feature/otp/controller/otp_controller.dart';
+import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
@@ -85,7 +89,7 @@ class OtpView extends GetView<OtpController> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  '+91 1234567890',
+                                  '+91 ${controller.phone}',
                                   style: TextStyle(
                                       fontSize: Get.height * 0.03,
                                       fontWeight: FontWeight.bold,
@@ -102,6 +106,7 @@ class OtpView extends GetView<OtpController> {
                               length: 6,
                               pinAnimationType: PinAnimationType.fade,
                               defaultPinTheme: controller.defaultPinTheme,
+                              onChanged: (value) => controller.otp = value,
                             ),
                             Text(
                               "Didn't recieve an OTP",
@@ -123,7 +128,27 @@ class OtpView extends GetView<OtpController> {
                               width: Get.width,
                               child: CustomElevatedButton(
                                 title: 'Verify',
-                                onPress: () {},
+                                onPress: () {
+                                  verifyOTP(
+                                      controller.otp, controller.verificationId,
+                                      () {
+                                    Fbase.createUser(
+                                            controller.name,
+                                            controller.email,
+                                            controller.password,
+                                            controller.phone)
+                                        .then((value) {
+                                      isButtonDisable.value = false;
+                                      CustomDialog(
+                                              btnOkOnPress: () =>
+                                                  Get.offAllNamed(Routes.login),
+                                              isDismissable: false,
+                                              descText:
+                                                  'You have successfully signed up')
+                                          .success();
+                                    });
+                                  });
+                                },
                               ),
                             )
                           ],

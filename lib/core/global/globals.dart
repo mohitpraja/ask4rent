@@ -1,3 +1,4 @@
+import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
@@ -43,21 +44,46 @@ Future checkInternet(fun) async {
   }
 }
 
-Future sendOtp() async {
+String verificationid = '';
+Future sendOtp(phone, fun) async {
   CustomLoader().loader();
   await Fbase.auth.verifyPhoneNumber(
-    phoneNumber: '+918103586806',
+    phoneNumber: '+91$phone',
     verificationCompleted: (PhoneAuthCredential credential) {},
     verificationFailed: (FirebaseAuthException e) {
       Get.back();
-      CustomDialog(descText: '${e.message}').error();
+      CustomDialog(
+        descText: '${e.message}',
+      ).error();
     },
     codeSent: (String verificationId, int? resendToken) {
+      verificationid = verificationId;
       Get.back();
-      checkInternet(() {
-        CustomDialog().success();
-      });
+      fun();
     },
     codeAutoRetrievalTimeout: (String verificationId) {},
   );
+}
+
+verifyOTP(otp, verifyId, fun) async {
+  print('otp : $otp');
+  print('id : $verifyId');
+  CustomLoader().loader();
+  AuthCredential phoneAuthCredential =
+      PhoneAuthProvider.credential(verificationId: verifyId, smsCode: otp);
+  try {
+    final authCred =
+        await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
+    if (authCred.user != null) {
+      Get.back();
+      fun();
+    }
+  } on FirebaseAuthException {
+    Get.back();
+    CustomDialog(
+      descText: 'invalid OTP',
+    ).error();
+    // const CustomSnackbar(msg: 'Invalid OTP', title: 'Warning').show();
+    // Get.back();
+  }
 }

@@ -75,7 +75,7 @@ class ForgotView extends GetView<ForgotController> {
                       child: CustomElevatedButton(
                         title: 'Reset Password',
                         onPress: () {
-                          sendOtp();
+                          // sendOtp(controller.phone.text);
                         },
                         
                       ),

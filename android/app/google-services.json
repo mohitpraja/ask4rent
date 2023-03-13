@@ -1,33 +1,78 @@
 {
   "project_info": {
-    "project_number": "339968175264",
-    "project_id": "askforrent-45ba8",
-    "storage_bucket": "askforrent-45ba8.appspot.com"
+    "project_number": "282436875647",
+    "project_id": "ubiticket-d84f4",
+    "storage_bucket": "ubiticket-d84f4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:339968175264:android:6f06523014202071abedc5",
+        "mobilesdk_app_id": "1:282436875647:android:6f6fdeafc7e50d7e04564a",
         "android_client_info": {
           "package_name": "com.example.ask4rent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "339968175264-67a9n3oi36q8jfnqv645octtaodrtnam.apps.googleusercontent.com",
+          "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBwdv9PMH7IBEm4x6vjlNaPc066apAr7xM"
+          "current_key": "AIzaSyBlSeOvuaDjIFOz1sK1Qbc8EJvOi7gCWYk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "339968175264-67a9n3oi36q8jfnqv645octtaodrtnam.apps.googleusercontent.com",
+              "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282436875647:android:046d829a9e6a555a04564a",
+        "android_client_info": {
+          "package_name": "com.example.ubiticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282436875647-99bh7gdlrrcj6k2gf1r971f47hi2em9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ubiticket",
+            "certificate_hash": "f0bc7d5bc6961f672d64b1079ec5ec0cca00a60a"
+          }
+        },
+        {
+          "client_id": "282436875647-p94fmo89svlcont9dt4rigdqavi09vk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ubiticket",
+            "certificate_hash": "ec34c25a037f9d54251f7996271f47d681b66ac9"
+          }
+        },
+        {
+          "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlSeOvuaDjIFOz1sK1Qbc8EJvOi7gCWYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

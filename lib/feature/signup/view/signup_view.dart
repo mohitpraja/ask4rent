@@ -5,6 +5,7 @@ import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/apptitle.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
+import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
@@ -53,7 +54,7 @@ class SignupView extends GetView<SignupController> {
                             hintText: 'Enter Name',
                             prefixIcon: const Icon(Icons.person),
                             validator: (p0) => nameValidator(p0),
-                            onchanged: (p0) => controller.name = p0.trim(),
+                            controller: controller.name,
                           ),
                           commonSpace(),
                           CustomTextFormField(
@@ -61,7 +62,7 @@ class SignupView extends GetView<SignupController> {
                             inputType: TextInputType.emailAddress,
                             prefixIcon: const Icon(Icons.email),
                             validator: (p0) => emailValidator(p0),
-                            onchanged: (p0) => controller.email = p0.trim(),
+                            controller: controller.email,
                           ),
                           commonSpace(),
                           CustomTextFormField(
@@ -70,18 +71,18 @@ class SignupView extends GetView<SignupController> {
                             maxLength: 10,
                             prefixIcon: const Icon(Icons.phone),
                             validator: (p0) => phoneValidator(p0),
-                            onchanged: (p0) => controller.phone = p0.trim(),
+                            controller: controller.phone,
                           ),
                           commonSpace(),
                           CustomPasswordField(
                             validator: (p0) => passwordValidator(p0),
-                            onchanged: (p0) => controller.password = p0.trim(),
+                            controller: controller.password,
                           ),
                           commonSpace(),
                           CustomPasswordField(
                             hintext: 'Confirm Password',
                             validator: (p0) => confirmPasswordValidator(
-                                p0, controller.password),
+                                p0, controller.password.text),
                           ),
                           commonSpace(),
                           SizedBox(
@@ -93,13 +94,19 @@ class SignupView extends GetView<SignupController> {
                                     .validate()) {
                                   checkInternet(
                                     () {
-                                      Fbase.createUser(
-                                              controller.name,
-                                              controller.email,
-                                              controller.password,
-                                              controller.phone)
-                                          .then((value) =>
-                                              CustomDialog(descText: 'You have succesfully signed up').success());
+                                      sendOtp(
+                                        controller.phone.text,
+                                        () {
+                                          print('cld');
+                                          Get.toNamed(Routes.otp, arguments: [
+                                            verificationid,
+                                            controller.name.text,
+                                            controller.email.text,
+                                            controller.phone.text,
+                                            controller.password.text
+                                          ]);
+                                        },
+                                      );
                                     },
                                   );
                                 }

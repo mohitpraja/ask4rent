@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 
 class SignupController extends GetxController{
   final signupFormKey=GlobalKey<FormState>();
-  String name='';
-  String email='';
-  String phone='';
-  String password='';
+  TextEditingController name=TextEditingController();
+  TextEditingController email=TextEditingController();
+  TextEditingController phone=TextEditingController();
+  TextEditingController password=TextEditingController();
   
 
 }
