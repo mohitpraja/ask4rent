@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+          "client_id": "282436875647-1lvao1s5r8a5s22sals0tm2bnt7bbaqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ask4rent",
+            "certificate_hash": "1ab5555dd5b5ec7b709bbbd6edc6d9438e1807f9"
+          }
+        },
+        {
+          "client_id": "282436875647-8reje48jj93vr6b3f8pfcuud9ffpq120.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+              "client_id": "282436875647-8reje48jj93vr6b3f8pfcuud9ffpq120.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -59,7 +67,7 @@
           }
         },
         {
-          "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+          "client_id": "282436875647-8reje48jj93vr6b3f8pfcuud9ffpq120.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -72,7 +80,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "282436875647-pu1dnve28bgd7o8oaa372f5vv7rl7k3d.apps.googleusercontent.com",
+              "client_id": "282436875647-8reje48jj93vr6b3f8pfcuud9ffpq120.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

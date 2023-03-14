@@ -4,15 +4,12 @@ import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/apptitle.dart';
-import 'package:ask4rent/core/widgets/custom_dialog.dart';
-import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:ask4rent/feature/signup/controller/signup_controller.dart';
-import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -97,7 +94,6 @@ class SignupView extends GetView<SignupController> {
                                       sendOtp(
                                         controller.phone.text,
                                         () {
-                                          print('cld');
                                           Get.toNamed(Routes.otp, arguments: [
                                             verificationid,
                                             controller.name.text,
