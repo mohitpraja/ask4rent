@@ -128,7 +128,9 @@ class OtpView extends GetView<OtpController> {
                               width: Get.width,
                               child: CustomElevatedButton(
                                 title: 'Verify',
+                                disableText: 'Verfying...',
                                 onPress: () {
+                                  isButtonDisable.value=true;
                                   verifyOTP(
                                       controller.otp, controller.verificationId,
                                       () {

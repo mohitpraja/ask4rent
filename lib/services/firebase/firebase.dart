@@ -1,5 +1,10 @@
+import 'package:ask4rent/core/routes.dart';
+import 'package:ask4rent/core/widgets/custom_dialog.dart';
+import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
 class Fbase {
@@ -20,6 +25,46 @@ class Fbase {
       'id': id,
       'date': date,
       'time': time
+    });
+  }
+
+  static RxMap userInfo = {}.obs;
+  static bool isMatch = false;
+  static Future login(phone, pass) async {
+    CustomLoader().loader();
+
+    Box<dynamic> db = await Hive.openBox('ubivisit');
+    firestore.collection('users').get().then((snapshot) {
+      // ignore: avoid_function_literals_in_foreach_calls
+      snapshot.docs.forEach(
+        (e) async {
+          Map<String, dynamic> data = e.data();
+          if ((data['phone'] == phone || data['email'] == phone) &&
+              data['password'] == pass) {
+            isMatch = true;
+            db.put('userInfo', {
+              'name': data['name'],
+              'email': data['email'],
+              'password': data['password'],
+              'id': data['id'],
+              'image': data['image'],
+              'phone': data['phone'],
+            });
+            db.put('isLogin', true);
+          }
+        },
+      );
+    }).then((value) {
+      Get.back();
+      if (isMatch) {
+        phone.clear();
+        pass.clear();
+        isMatch = false;
+        Get.offAllNamed(Routes.dashboard);
+      } else {
+        Get.back();
+        CustomDialog(descText: 'Invalid Creadentials').warning();
+      }
     });
   }
 }

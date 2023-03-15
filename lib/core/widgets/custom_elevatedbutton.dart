@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 class CustomElevatedButton extends GetView {
   final String title;
+  final String? disableText;
   final VoidCallback? onPress;
   final TextStyle? textStyle;
   final Color? textColor;
@@ -26,7 +27,8 @@ class CustomElevatedButton extends GetView {
       this.elevation,
       this.borderRadius,
       this.padding,
-      this.fonstSize});
+      this.fonstSize,
+      this.disableText});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class CustomElevatedButton extends GetView {
           child: Padding(
             padding: EdgeInsets.all(padding ?? 10),
             child: Text(
-              isButtonDisable.value ? 'Processing...' : title,
+              isButtonDisable.value ? disableText??'Processing...' : title,
               style: textStyle ??
                   TextStyle(
                     color: textColor ?? Colors.white,

@@ -1,8 +1,10 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/typography.dart';
+import 'package:ask4rent/core/routes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 class CustomDrawer extends GetView {
   const CustomDrawer({
@@ -61,30 +63,36 @@ class CustomDrawer extends GetView {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.dashboard,color: drawerIconColor,),
+            leading: const Icon(
+              Icons.dashboard,
+              color: drawerIconColor,
+            ),
             horizontalTitleGap: 0,
             title: Text('Dashboard', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.person_add_alt_1,color:drawerIconColor),
+            leading: const Icon(Icons.person_add_alt_1, color: drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Edit Profile', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.task,color:drawerIconColor),
+            leading: const Icon(Icons.task, color: drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Listed Properties', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.settings,color:drawerIconColor),
+            leading: const Icon(Icons.settings, color: drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Setting', style: AppStyle.drawerStyle),
           ),
           ListTile(
-            leading: const Icon(Icons.exit_to_app,color:drawerIconColor),
+            leading: const Icon(Icons.exit_to_app, color: drawerIconColor),
             minLeadingWidth: 5,
             title: Text('Logout', style: AppStyle.drawerStyle),
-            onTap: () async {},
+            onTap: () async {
+              Hive.deleteBoxFromDisk('ask4rent')
+                  .then((value) => Get.offAllNamed(Routes.login));
+            },
           ),
         ],
       ),

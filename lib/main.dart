@@ -5,9 +5,13 @@ import 'package:ask4rent/services/firebase/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:hive/hive.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  var directory=await getApplicationDocumentsDirectory();
+  Hive.init(directory.path);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

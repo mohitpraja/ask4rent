@@ -1,4 +1,3 @@
-import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
@@ -66,22 +65,19 @@ Future sendOtp(phone, fun) async {
 }
 
 verifyOTP(otp, verifyId, fun) async {
-  print('otp : $otp');
-  print('id : $verifyId');
-  CustomLoader().loader();
   AuthCredential phoneAuthCredential =
       PhoneAuthProvider.credential(verificationId: verifyId, smsCode: otp);
   try {
     final authCred =
         await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
     if (authCred.user != null) {
-      Get.back();
+      // Get.back();
       fun();
     }
   } on FirebaseAuthException {
-    Get.back();
+    // Get.back();
     CustomDialog(
-      descText: 'invalid OTP',
+      descText: 'Invalid OTP',
     ).error();
     // const CustomSnackbar(msg: 'Invalid OTP', title: 'Warning').show();
     // Get.back();

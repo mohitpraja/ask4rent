@@ -1,6 +1,7 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
+import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/apptitle.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
@@ -8,11 +9,12 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
-import 'package:ask4rent/core/widgets/custom_loader.dart';
+import 'package:ask4rent/feature/login/controller/login_cont.dart';
+import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginView extends GetView {
+class LoginView extends GetView <LoginController>{
   const LoginView({super.key});
 
   @override
@@ -47,15 +49,20 @@ class LoginView extends GetView {
                     height: Get.height * 0.1,
                   ),
                   Form(
+                  key:controller.loginFormKey,
                       child: Column(
                     children: [
-                      const CustomTextFormField(
+                      CustomTextFormField(
                         hintText: 'Enter Phone number',
-                        prefixIcon: Icon(Icons.phone),
+                        prefixIcon: const Icon(Icons.phone),
+                        controller: controller.phone,
+                        validator: (p0) => phoneValidator(p0),
                       ),
                       commonSpace(),
-                      const CustomPasswordField(
+                      CustomPasswordField(
                         hintext: 'Enter Password',
+                        controller: controller.password,
+                         validator: (p0) => passwordValidator(p0),
                       ),
                       commonSpace(),
                       Row(
@@ -80,7 +87,14 @@ class LoginView extends GetView {
                         child: CustomElevatedButton(
                           title: 'Login',
                           onPress: () {
-                            Get.toNamed(Routes.dashboard);
+                           if(controller.loginFormKey.currentState!.validate()){
+                             checkInternet(
+                            () {
+                              Fbase.login(controller.phone.text, controller.password.text);
+                            },
+                          );
+
+                           }
                           },
                         ),
                       ),
@@ -117,7 +131,6 @@ class LoginView extends GetView {
                         onPress: () {
                           checkInternet(
                             () {
-                              print('login cld');
                             },
                           );
                         },
