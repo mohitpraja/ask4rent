@@ -33,7 +33,7 @@ class Fbase {
   static Future login(phone, pass) async {
     CustomLoader().loader();
 
-    Box<dynamic> db = await Hive.openBox('ubivisit');
+    Box<dynamic> db = await Hive.openBox('ask4rent');
     firestore.collection('users').get().then((snapshot) {
       // ignore: avoid_function_literals_in_foreach_calls
       snapshot.docs.forEach(
@@ -57,8 +57,6 @@ class Fbase {
     }).then((value) {
       Get.back();
       if (isMatch) {
-        phone.clear();
-        pass.clear();
         isMatch = false;
         Get.offAllNamed(Routes.dashboard);
       } else {

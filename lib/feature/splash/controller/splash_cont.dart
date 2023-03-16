@@ -10,7 +10,7 @@ class SplashController extends GetxController {
   void onInit() {
     super.onInit();
     getdata();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       if (isLogin) {
           Get.offAllNamed(Routes.dashboard);
         
@@ -20,7 +20,7 @@ class SplashController extends GetxController {
     });
   }
    Future<void> getdata() async {
-    var db = await Hive.openBox('ubivisit');
-    isLogin = db.get('isLogin')!;
+    var db = await Hive.openBox('ask4rent');
+    isLogin = db.get('isLogin');
   }
 }
