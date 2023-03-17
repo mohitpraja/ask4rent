@@ -39,7 +39,7 @@ class CustomElevatedButton extends GetView {
           elevation: elevation ?? 0,
           shape: RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.all(Radius.circular(borderRadius ?? 5))),
+                  BorderRadius.all(Radius.circular(borderRadius ?? 5),)),
           child: Padding(
             padding: EdgeInsets.all(padding ?? 10),
             child: Text(

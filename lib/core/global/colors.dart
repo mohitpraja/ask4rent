@@ -23,3 +23,20 @@ const MaterialColor primarySwatch = MaterialColor(
     900: Color(0xff000000), //100%
   },
 );
+
+
+const gradientColor = RadialGradient(
+  tileMode: TileMode.mirror,
+  center: Alignment(0.65, -2.0),
+  radius: 7.25,
+  colors: [
+    Color(0xFFFCFCFC),
+    Color(0xFFFCFCFC),
+    Color(0xfff4f4f4),
+    Color(0xfffafafa),
+    Color(0xfff4f4f4),
+  ],
+  stops: [0.0, 0.218, 0.221, 0.317, 0.322],
+
+
+);
