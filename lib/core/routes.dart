@@ -6,4 +6,5 @@ class Routes{
   static String otp='/otp_view';
   static String forgot='/forgot_view';
   static String property='/property_page';
+  static String ownerSeeker='/owner_seeker_view';
 }

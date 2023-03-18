@@ -7,6 +7,8 @@ import 'package:ask4rent/feature/login/binding/login_bind.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
 import 'package:ask4rent/feature/otp/binding/otp_binding.dart';
 import 'package:ask4rent/feature/otp/view/otp_view.dart';
+import 'package:ask4rent/feature/ownerSeeker/binding/owner_seeker_binding.dart';
+import 'package:ask4rent/feature/ownerSeeker/view/owner_seeker_view.dart';
 import 'package:ask4rent/feature/property/binding/property_binding.dart';
 import 'package:ask4rent/feature/property/view/property_page.dart';
 import 'package:ask4rent/feature/signup/binding/signup_binding.dart';
@@ -44,4 +46,10 @@ List<GetPage> allpages = [
       name: Routes.property,
       page: () => const PropertyPage(),
       binding: PropertyBinding()),
+  GetPage(
+      name: Routes.ownerSeeker,
+      page: () => OwnerSeekerView(),
+      binding: OwnerSeekerBinding()),
 ];
+
+

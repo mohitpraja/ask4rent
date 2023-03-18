@@ -69,6 +69,7 @@ class CustomDrawer extends GetView {
             ),
             horizontalTitleGap: 0,
             title: Text('Dashboard', style: AppStyle.drawerStyle),
+            onTap: () => Get.toNamed(Routes.ownerSeeker),
           ),
           ListTile(
             leading: const Icon(Icons.person_add_alt_1, color: drawerIconColor),
