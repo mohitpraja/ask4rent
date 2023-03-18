@@ -9,12 +9,12 @@ import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
-import 'package:ask4rent/feature/dashboard/dashboardPages/home/controller/home_controller.dart';
+import 'package:ask4rent/feature/dashboardPages/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/routes.dart';
+import '../../../../core/routes.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});

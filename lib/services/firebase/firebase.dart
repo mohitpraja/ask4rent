@@ -28,10 +28,9 @@ class Fbase {
     });
   }
 
-  static RxMap userInfo = {}.obs;
-  static bool isMatch = false;
   static Future login(phone, pass) async {
     CustomLoader().loader();
+    bool isMatch = false;
 
     Box<dynamic> db = await Hive.openBox('ask4rent');
     firestore.collection('users').get().then((snapshot) {

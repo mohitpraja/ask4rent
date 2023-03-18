@@ -1,5 +1,5 @@
-import 'package:ask4rent/feature/dashboard/dashboardPages/addProperty/view/add_property_view.dart';
-import 'package:ask4rent/feature/dashboard/dashboardPages/home/view/home_view.dart';
+import 'package:ask4rent/feature/dashboardPages/addProperty/view/add_property_view.dart';
+import 'package:ask4rent/feature/dashboardPages/home/view/home_view.dart';
 import 'package:ask4rent/feature/profile/view/profile_view.dart';
 import 'package:ask4rent/feature/property/view/property_page.dart';
 import 'package:flutter/material.dart';
