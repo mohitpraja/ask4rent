@@ -7,4 +7,5 @@ class Routes{
   static String forgot='/forgot_view';
   static String property='/property_page';
   static String ownerSeeker='/owner_seeker_view';
+  static String editProfile='/editprofile_view';
 }

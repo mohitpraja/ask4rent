@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
@@ -10,6 +13,11 @@ import 'package:intl/intl.dart';
 class Fbase {
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
   static FirebaseAuth auth = FirebaseAuth.instance;
+  static FirebaseStorage storage = FirebaseStorage.instance;
+  static Stream<DocumentSnapshot<Object>> profileStream(id) {
+    return firestore.collection('users').doc(id).snapshots();
+  }
+
   static Future createUser(name, email, password, phone) {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
@@ -41,6 +49,7 @@ class Fbase {
           if ((data['phone'] == phone || data['email'] == phone) &&
               data['password'] == pass) {
             isMatch = true;
+            db.put('userId', data['id']);
             db.put('userInfo', {
               'name': data['name'],
               'email': data['email'],
@@ -62,6 +71,42 @@ class Fbase {
         Get.back();
         CustomDialog(descText: 'Invalid Creadentials').warning();
       }
+    });
+  }
+
+  static Future updateUserInfo(
+    id,
+    name,
+    email,
+  ) async {
+    firestore.collection('users').doc(id).update({
+      'name': name,
+      'email': email,
+    });
+  }
+
+  static Future uploadImage(
+    file,
+    id,
+  ) async {
+    print(file);
+    print(id);
+    final ext = file.path.split('.').last;
+    final ref = storage.ref().child('users/profiles/$id.$ext');
+    ref.putFile(file).then((p0) async {
+      log('image status:${p0.bytesTransferred / 1000}');
+      final imgUrl = await ref.getDownloadURL();
+      print(imgUrl);
+      firestore
+          .collection('users')
+          .doc(id)
+          .update({'image': imgUrl}).then((value) async {
+            Get.back();
+        CustomDialog(
+          descText: 'Image Updated',
+          btnOkOnPress: () => Get.back(),
+        ).success();
+      });
     });
   }
 }

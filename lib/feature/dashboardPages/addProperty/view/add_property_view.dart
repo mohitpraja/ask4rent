@@ -5,7 +5,6 @@ import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/localDB/cities.dart';
 import 'package:ask4rent/core/widgets/custom_appbar.dart';
-import 'package:ask4rent/core/widgets/custom_divider.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
@@ -55,7 +54,6 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             'Basic Info *',
                             style: AppStyle.listPropHeading,
                           ),
-                          const CustomDivider()
                         ],
                       ),
                       content: Form(
@@ -195,7 +193,6 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             style: TextStyle(
                                 fontFamily: alata, fontSize: Get.width * 0.05),
                           ),
-                          const CustomDivider()
                         ],
                       ),
                       content: Form(
@@ -288,7 +285,6 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             style: TextStyle(
                                 fontFamily: alata, fontSize: Get.width * 0.05),
                           ),
-                          const CustomDivider()
                         ],
                       ),
                       content: Form(
@@ -356,7 +352,6 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             style: TextStyle(
                                 fontFamily: alata, fontSize: Get.width * 0.05),
                           ),
-                          const CustomDivider()
                         ],
                       ),
                       content: Form(
@@ -475,7 +470,6 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             style: TextStyle(
                                 fontFamily: alata, fontSize: Get.width * 0.05),
                           ),
-                          const CustomDivider()
                         ],
                       ),
                       content: Column(

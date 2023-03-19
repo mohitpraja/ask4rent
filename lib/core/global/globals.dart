@@ -22,7 +22,6 @@ commonSpace1() {
 RxBool isPass = true.obs;
 RxBool isButtonDisable = false.obs;
 
-
 showPass() {
   if (isPass.value == true) {
     isPass.value = false;
@@ -84,3 +83,5 @@ verifyOTP(otp, verifyId, fun) async {
     // Get.back();
   }
 }
+
+

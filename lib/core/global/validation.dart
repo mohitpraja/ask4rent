@@ -23,8 +23,7 @@ passwordValidator(value) {
 
 nameValidator(value) {
   if (value!.isEmpty ||
-      !RegExp(r'^[a-z A-Z/+0-9]+$').hasMatch(value) ||
-      RegExp(r'^[0-9]+$').hasMatch(value)) {
+      !RegExp(r'^[a-z A-Z/+0-9]+$').hasMatch(value)) {
     return 'Enter Correct Field';
   } else {
     return null;

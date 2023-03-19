@@ -31,6 +31,7 @@ class CustomAppBar extends GetView with PreferredSizeWidget {
     return AppBar(
       title: Text(title,style: TextStyle(color: white,fontFamily: alata),),
       backgroundColor: appBarColor ?? primaryColor,
+      titleSpacing: 0,
       automaticallyImplyLeading: showBackButton ?? false,
       elevation: elevation ?? 5,
       leading:showBackButton!=true? null:leading ??
@@ -39,7 +40,7 @@ class CustomAppBar extends GetView with PreferredSizeWidget {
             icon: backIcon ??
                 const Icon(
                   Icons.arrow_back,
-                  color: lightBlack,
+                  color: Colors.white,
                 ),
           ),
     );

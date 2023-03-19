@@ -1,6 +1,8 @@
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/feature/dashboard/binding/dashboard_binding.dart';
 import 'package:ask4rent/feature/dashboard/view/dashboard_veiw.dart';
+import 'package:ask4rent/feature/editprofile/binding/editprofile_binding.dart';
+import 'package:ask4rent/feature/editprofile/view/editprofile_view.dart';
 import 'package:ask4rent/feature/forgot/binding/forgot_binding.dart';
 import 'package:ask4rent/feature/forgot/view/forgot_view.dart';
 import 'package:ask4rent/feature/login/binding/login_bind.dart';
@@ -48,8 +50,12 @@ List<GetPage> allpages = [
       binding: PropertyBinding()),
   GetPage(
       name: Routes.ownerSeeker,
-      page: () => OwnerSeekerView(),
+      page: () => const OwnerSeekerView(),
       binding: OwnerSeekerBinding()),
+  GetPage(
+      name: Routes.editProfile,
+      page: () => const EditProfileView(),
+      binding: EditProfileBinding()),
 ];
 
 

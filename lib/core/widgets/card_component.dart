@@ -22,13 +22,13 @@ class CardComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: outerPadding ?? EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: outerPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Container(
           padding: innerPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
             color: backgroundColor ?? white,
             borderRadius: BorderRadius.circular(12),
-            boxShadow:  [
+            boxShadow:  const [
               BoxShadow(
                 color: Color(0x3fd0d0d0),
                 blurRadius: 8,

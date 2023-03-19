@@ -20,7 +20,7 @@ class PropertyPage extends GetView<PropertyController> {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.arrow_back, color: Colors.grey, size: 30)),
+            icon: const Icon(Icons.arrow_back, color: Colors.grey, size: 30)),
         backgroundColor: Colors.white,
         centerTitle: false,
         elevation: 0,
@@ -116,9 +116,9 @@ class PropertyPage extends GetView<PropertyController> {
           ),
           Expanded(
             child: ListView.separated(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
-                padding: EdgeInsets.only(bottom: 3),
+                padding: const EdgeInsets.only(bottom: 3),
                 itemCount: controller.houseImage.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Stack(children: [
@@ -201,7 +201,7 @@ class PropertyPage extends GetView<PropertyController> {
                                         height: Get.width* 0.1,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                                            borderRadius: const BorderRadius.all(Radius.circular(5)),
                                             border: Border.all(color: Colors.grey,
                                             width: 1.5)
                                           ),
@@ -238,7 +238,7 @@ class PropertyPage extends GetView<PropertyController> {
                                       SizedBox(width: Get.width * 0.035),
                                       TextButton(
                                         onPressed: () {},
-                                        child: Text("Read more..."),
+                                        child: const Text("Read more..."),
                                       ),
                                     ],
                                   )

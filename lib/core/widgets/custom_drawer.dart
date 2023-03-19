@@ -1,4 +1,5 @@
 import 'package:ask4rent/core/global/colors.dart';
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -34,11 +35,10 @@ class CustomDrawer extends GetView {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                            // FBase.userInfo['name'],
-                            // 'Hi! ${FBase.userInfo['name'].split(' ').first}',
-                            'Name',
+                            // Fbase.userInfo['name'],
+                            'Hi! ${userInfo['name'].split(' ').first}',
                             style: AppStyle.drawerHeading),
-                        Text('1234567890', style: AppStyle.drawerHeading1),
+                        Text(userInfo['phone'], style: AppStyle.drawerHeading1),
                       ],
                     ),
                     ClipRRect(
@@ -69,12 +69,19 @@ class CustomDrawer extends GetView {
             ),
             horizontalTitleGap: 0,
             title: Text('Dashboard', style: AppStyle.drawerStyle),
-            onTap: () => Get.toNamed(Routes.ownerSeeker),
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.ownerSeeker);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.person_add_alt_1, color: drawerIconColor),
             horizontalTitleGap: 0,
             title: Text('Edit Profile', style: AppStyle.drawerStyle),
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.editProfile);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.task, color: drawerIconColor),
