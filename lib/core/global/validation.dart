@@ -6,36 +6,42 @@ isValid(value, msg) {
 }
 
 phoneValidator(value) {
-  if (value!.isEmpty || !RegExp(r'^[0-9]{10}$').hasMatch(value)) {
-    return 'Incorrect Phone Number';
+  if (value!.isEmpty) {
+    return 'Phone Number required';
+  } else if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) {
+    return 'Incorrect phone format';
   } else {
     return null;
   }
 }
 
 passwordValidator(value) {
-  if (value!.isEmpty || !RegExp(r'(?=.*?[#?!@$%^&*-]).{6,}$').hasMatch(value)) {
-    return 'Passwords must have at least one special character';
+  if (value!.isEmpty) {
+    return 'Passwords required';
+  }else if( !RegExp(r'(?=.*?[#?!@$%^&*-]).{4,}$').hasMatch(value)){
+    return  'Passwords must have at least one special character';
   } else {
     return null;
   }
 }
 
 nameValidator(value) {
-  if (value!.isEmpty ||
-      !RegExp(r'^[a-z A-Z/+0-9]+$').hasMatch(value)) {
-    return 'Enter Correct Field';
+  if (value!.isEmpty) {
+    return 'Name required';
+  }else if (!RegExp(r'^[a-z A-Z]+$').hasMatch(value)){
+    return 'Incorrect name format';
   } else {
     return null;
   }
 }
 
 emailValidator(value) {
-  if (value!.isEmpty ||
-      !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-          .hasMatch(value)) {
-    return 'Enter Correct Email';
-  } else {
+  if (value!.isEmpty) {
+    return 'Email required';
+  }else if(!RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+          .hasMatch(value)){
+            return 'Incorrect email format';
+          } else {
     return null;
   }
 }

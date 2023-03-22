@@ -4,11 +4,12 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpController extends GetxController {
-  String name=Get.arguments[1];
-  String email=Get.arguments[2];
-  String phone=Get.arguments[3];
-  String password=Get.arguments[4];
-  String verificationId=Get.arguments[0];
+  String name=Get.arguments[0]['name']??"";
+  String email=Get.arguments[0]['email']??"";
+  String phone=Get.arguments[0]['phone'];
+  String password=Get.arguments[0]['password']??"";
+  String verificationId=Get.arguments[0]['verification'];
+  String page=Get.arguments[1];
    var otp = '';
 
   final defaultPinTheme = PinTheme(
