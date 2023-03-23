@@ -45,8 +45,8 @@ dependencies:
   hive: ^2.2.3
   image_picker: ^0.8.7
   infinite_carousel: ^1.0.2
-  internet_connection_checker: ^1.0.0+1
   intl: ^0.17.0
+  internet_connection_checker: ^1.0.0+1
   intl_phone_field: ^3.1.0
   path_provider: ^2.0.13
   pinput: ^2.2.31

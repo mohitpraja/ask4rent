@@ -95,7 +95,10 @@ class HomeView extends GetView<HomeController> {
                       ),
                       actions: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                               print('noti cld');
+                              controller.setLoclity();
+                            },
                             icon: Icon(
                               Icons.notifications,
                               size: Get.width * 0.07,

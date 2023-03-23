@@ -21,7 +21,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
     return GestureDetector(
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
-          appBar: const CustomAppBar(title: 'List Your Property'),
+          appBar: const CustomAppBar(title: 'List Your Property',titleSpacing:15),
           body: Obx(
             () => Stepper(
                 controlsBuilder: (context, details) => const SizedBox(),

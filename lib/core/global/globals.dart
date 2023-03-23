@@ -73,6 +73,7 @@ verifyOTP(otp, verifyId, fun) async {
     }
   } on FirebaseAuthException {
     // Get.back();
+    isButtonDisable.value=false;
     CustomDialog(
       descText: 'Invalid OTP',
     ).error();

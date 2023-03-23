@@ -1,5 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
+import 'package:ask4rent/core/global/global_var.dart';
+import 'package:ask4rent/core/localDB/cities.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +13,7 @@ class HomeController extends GetxController {
   @override
   Future<void> onInit() async {
     db = await Hive.openBox('ask4rent');
-    userId =db.get('userId');
+    userId = db.get('userId');
     super.onInit();
   }
 
@@ -23,5 +26,9 @@ class HomeController extends GetxController {
   List userList = [];
   Stream<QuerySnapshot<Object?>> profileStream =
       Fbase.firestore.collection('users').snapshots();
-  
+  setLoclity() {
+   popularLocalities.forEach((key, value) { print(key);});
+   
+   
+  }
 }
