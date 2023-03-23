@@ -34,13 +34,78 @@ List states = [
   "Dadra and Nagar Haveli",
   "Daman and Diu",
 ];
-List cities=[
-  'Mumbai',
-  'Bengaluru',
-  'Kolkata',
-  'Chennai',
-  'Hyderabad',
-  'Jaipur',
+List cities = [
+  {
+    'Mumbai': [
+      {'city': 'Bandra Bandstand', 'properties': '20'},
+      {'city': 'Malabar Hill', 'properties': '20'},
+      {'city': 'Altamount Road', 'properties': '20'},
+      {'city': 'Hiranandani, Powai', 'properties': '20'},
+      {'city': 'Pali Hill, Bandra', 'properties': '20'},
+      {'city': 'Juhu', 'properties': '20'},
+      {'city': 'Tardeo', 'properties': '20'},
+    ]
+  },
+  {
+    'Bengaluru': [
+      {'city': 'Jayanagar', 'properties': 20},
+      {'city': 'Koramangala', 'properties': 20},
+      {'city': 'Malleshwaram', 'properties': 20},
+      {'city': 'Rajaji Nagar', 'properties': 20},
+      {'city': 'Frazer town', 'properties': 20},
+      {'city': 'Sadashiva Nagar', 'properties': 20},
+      {'city': 'Bellandur', 'properties': 20},
+      {'city': 'Benson Tower', 'properties': 20},
+    ]
+  },
+  {
+    'Kolkata': [
+      {'city': 'New town', 'properties': 20},
+      {'city': 'Rajarhat', 'properties': 20},
+      {'city': 'Howrah', 'properties': 20},
+      {'city': 'Joka', 'properties': 20},
+      {'city': 'Barasat', 'properties': 20},
+      {'city': 'Tollygunge', 'properties': 20},
+      {'city': 'Bhawanipur', 'properties': 20},
+      {'city': 'Jadavpur', 'properties': 20},
+    ],
+  },
+  {
+    'Chennai': [
+      {'city': 'Adyar', 'properties': 20},
+      {'city': 'Anna Nagar', 'properties': 20},
+      {'city': 'Besant Nagar', 'properties': 20},
+      {'city': 'Kotturpuram', 'properties': 20},
+      {'city': 'Mylapore ', 'properties': 20},
+      {'city': 'Nungambakkam ', 'properties': 20},
+      {'city': 'Thiruvanmiyur ', 'properties': 20},
+      {'city': 'Teynampet ', 'properties': 20},
+    ],
+  },
+  {
+    'Hyderabad': [
+      {'city': 'Kukatpally ', 'properties': 20},
+      {'city': 'Kondapur ', 'properties': 20},
+      {'city': 'Begumpet ', 'properties': 20},
+      {'city': 'Uppal', 'properties': 20},
+      {'city': 'Miyapur', 'properties': 20},
+      {'city': 'Dilsukhnagar  ', 'properties': 20},
+      {'city': 'Gachibowli  ', 'properties': 20},
+      {'city': 'Lingampally  ', 'properties': 20},
+    ]
+  },
+  {
+    'Jaipur': [
+      {'city': 'Jagatpura', 'properties': 20},
+      {'city': 'Kondapur ', 'properties': 20},
+      {'city': 'Begumpet ', 'properties': 20},
+      {'city': 'Uppal', 'properties': 20},
+      {'city': 'Miyapur', 'properties': 20},
+      {'city': 'Dilsukhnagar  ', 'properties': 20},
+      {'city': 'Gachibowli  ', 'properties': 20},
+      {'city': 'Lingampally  ', 'properties': 20},
+    ]
+  },
   'Pune',
   'Ahmedabad',
   'Surat',
