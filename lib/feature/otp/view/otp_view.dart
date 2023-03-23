@@ -130,26 +130,36 @@ class OtpView extends GetView<OtpController> {
                                 title: 'Verify',
                                 disableText: 'Verfying...',
                                 onPress: () {
-                                  isButtonDisable.value=true;
-                                  verifyOTP(
-                                      controller.otp, controller.verificationId,
-                                      () {
-                                    Fbase.createUser(
-                                            controller.name,
-                                            controller.email,
-                                            controller.password,
-                                            controller.phone)
-                                        .then((value) {
-                                      isButtonDisable.value = false;
-                                      CustomDialog(
-                                              btnOkOnPress: () =>
-                                                  Get.offAllNamed(Routes.login),
-                                              isDismissable: false,
-                                              descText:
-                                                  'You have successfully signed up')
-                                          .success();
+                                  isButtonDisable.value = true;
+                                  if (controller.page == 'signupPage') {
+                                    verifyOTP(controller.otp,
+                                        controller.verificationId, () {
+                                      Fbase.createUser(
+                                              controller.name,
+                                              controller.email,
+                                              controller.password,
+                                              controller.phone)
+                                          .then((value) {
+                                        isButtonDisable.value = false;
+                                        CustomDialog(
+                                                btnOkOnPress: () =>
+                                                    Get.offAllNamed(
+                                                        Routes.login),
+                                                isDismissable: false,
+                                                descText:
+                                                    'You have successfully signed up')
+                                            .success();
+                                      });
                                     });
-                                  });
+                                  } else if (controller.page == 'forgotPage') {
+                                    verifyOTP(
+                                        controller.otp,
+                                        controller.verificationId,
+                                        () {
+                                          isButtonDisable.value=false;
+                                          Get.offAllNamed(Routes.forgotPass,arguments: [{'phone':controller.phone}]);
+                                        });
+                                  }
                                 },
                               ),
                             )

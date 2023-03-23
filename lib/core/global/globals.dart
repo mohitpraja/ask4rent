@@ -45,19 +45,16 @@ Future checkInternet(fun) async {
 
 String verificationid = '';
 Future sendOtp(phone, fun) async {
-  CustomLoader().loader();
   await Fbase.auth.verifyPhoneNumber(
     phoneNumber: '+91$phone',
     verificationCompleted: (PhoneAuthCredential credential) {},
     verificationFailed: (FirebaseAuthException e) {
-      Get.back();
       CustomDialog(
         descText: '${e.message}',
       ).error();
     },
     codeSent: (String verificationId, int? resendToken) {
       verificationid = verificationId;
-      Get.back();
       fun();
     },
     codeAutoRetrievalTimeout: (String verificationId) {},

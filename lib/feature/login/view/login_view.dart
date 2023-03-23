@@ -5,7 +5,6 @@ import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/apptitle.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
-import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/custom_scroll.dart';
@@ -14,7 +13,7 @@ import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginView extends GetView <LoginController>{
+class LoginView extends GetView<LoginController> {
   const LoginView({super.key});
 
   @override
@@ -49,95 +48,98 @@ class LoginView extends GetView <LoginController>{
                     height: Get.height * 0.1,
                   ),
                   Form(
-                  key:controller.loginFormKey,
+                      key: controller.loginFormKey,
                       child: Column(
-                    children: [
-                      CustomTextFormField(
-                        hintText: 'Enter Phone number',
-                        prefixIcon: const Icon(Icons.phone),
-                        controller: controller.phone,
-                        validator: (p0) => phoneValidator(p0),
-                      ),
-                      commonSpace(),
-                      CustomPasswordField(
-                        hintext: 'Enter Password',
-                        controller: controller.password,
-                         validator: (p0) => passwordValidator(p0),
-                      ),
-                      commonSpace(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          InkWell(
-                            onTap: () => Get.toNamed(Routes.forgot),
-                            child: Text(
-                              'Forgot Password',
-                              style: TextStyle(
-                                  color: primaryColor,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,
-                                  fontFamily: alata),
+                          CustomTextFormField(
+                            hintText: 'Enter Phone number',
+                            maxLength: 10,
+                            inputType: TextInputType.number,
+                            prefixIcon: const Icon(Icons.phone),
+                            controller: controller.phone,
+                            validator: (p0) => phoneValidator(p0),
+                          ),
+                          commonSpace(),
+                          CustomPasswordField(
+                            hintext: 'Enter Password',
+                            controller: controller.password,
+                            validator: (p0) => passwordValidator(p0),
+                          ),
+                          commonSpace(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                onTap: () => Get.toNamed(Routes.forgot),
+                                child: Text(
+                                  'Forgot Password',
+                                  style: TextStyle(
+                                      color: primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1,
+                                      fontFamily: alata),
+                                ),
+                              ),
+                            ],
+                          ),
+                          commonSpace(),
+                          SizedBox(
+                            width: Get.width,
+                            child: CustomElevatedButton(
+                              title: 'Login',
+                              onPress: () {
+                                if (controller.loginFormKey.currentState!
+                                    .validate()) {
+                                  checkInternet(
+                                    () {
+                                      Fbase.login(controller.phone.text,
+                                          controller.password.text);
+                                    },
+                                  );
+                                }
+                              },
                             ),
                           ),
+                          //     commonSpace(),
+                          //     Row(
+                          //       children: [
+                          //         const Expanded(child: Divider()),
+                          //         Text(
+                          //           '  OR  ',
+                          //           style: TextStyle(
+                          //               color: lightBlack,
+                          //               letterSpacing: 1,
+                          //               fontFamily: alata,
+                          //               fontWeight: FontWeight.normal),
+                          //         ),
+                          //         const Expanded(child: Divider()),
+                          //       ],
+                          //     ),
+                          //     commonSpace(),
+                          //     CustomOutlineButton(
+                          //       child: Row(
+                          //         mainAxisAlignment: MainAxisAlignment.center,
+                          //         children: [
+                          //           Image.asset(
+                          //             'assets/images/google.png',
+                          //             width: 30,
+                          //           ),
+                          //           Text(
+                          //             'Continue with Google',
+                          //             style: TextStyle(fontFamily: alata),
+                          //           )
+                          //         ],
+                          //       ),
+                          //       onPress: () {
+                          //         checkInternet(
+                          //           () {
+                          //           },
+                          //         );
+                          //       },
+                          //     )
                         ],
-                      ),
-                      commonSpace(),
-                      SizedBox(
-                        width: Get.width,
-                        child: CustomElevatedButton(
-                          title: 'Login',
-                          onPress: () {
-                           if(controller.loginFormKey.currentState!.validate()){
-                             checkInternet(
-                            () {
-                              Fbase.login(controller.phone.text, controller.password.text);
-                            },
-                          );
-
-                           }
-                          },
-                        ),
-                      ),
-                      commonSpace(),
-                      Row(
-                        children: [
-                          const Expanded(child: Divider()),
-                          Text(
-                            '  OR  ',
-                            style: TextStyle(
-                                color: lightBlack,
-                                letterSpacing: 1,
-                                fontFamily: alata,
-                                fontWeight: FontWeight.normal),
-                          ),
-                          const Expanded(child: Divider()),
-                        ],
-                      ),
-                      commonSpace(),
-                      CustomOutlineButton(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/google.png',
-                              width: 30,
-                            ),
-                            Text(
-                              'Continue with Google',
-                              style: TextStyle(fontFamily: alata),
-                            )
-                          ],
-                        ),
-                        onPress: () {
-                          checkInternet(
-                            () {
-                            },
-                          );
-                        },
-                      )
-                    ],
-                  )),
-                  SizedBox(height: Get.height * 0.1),
+                      )),
+                  SizedBox(height: Get.height * 0.05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -89,24 +89,70 @@ class Fbase {
     file,
     id,
   ) async {
-    print(file);
-    print(id);
     final ext = file.path.split('.').last;
     final ref = storage.ref().child('users/profiles/$id.$ext');
     ref.putFile(file).then((p0) async {
       log('image status:${p0.bytesTransferred / 1000}');
       final imgUrl = await ref.getDownloadURL();
-      print(imgUrl);
       firestore
           .collection('users')
           .doc(id)
           .update({'image': imgUrl}).then((value) async {
-            Get.back();
+        Get.back();
         CustomDialog(
           descText: 'Image Updated',
+          isDismissable: false,
           btnOkOnPress: () => Get.back(),
         ).success();
       });
     });
   }
+
+  static RxBool isPhoneExist = false.obs;
+  static RxBool isEmailExist = false.obs;
+
+  static Future checkUser(phone, email) async {
+    await firestore
+        .collection('users')
+        .where('phone', isEqualTo: phone)
+        .get()
+        .then((e) {
+      if (e.docs.isNotEmpty) {
+        isPhoneExist.value = true;
+      } else {
+        isPhoneExist.value = false;
+      }
+    });
+    await firestore
+        .collection('users')
+        .where('email', isEqualTo: email)
+        .get()
+        .then((e) {
+      if (e.docs.isNotEmpty) {
+        isEmailExist.value = true;
+      } else {
+        isEmailExist.value = false;
+      }
+    });
+  }
+  static Future forgotPass(phone, password) async {
+    String id = '';
+    firestore.collection('users').get().then((snapshot) {
+      // ignore: avoid_function_literals_in_foreach_calls
+      snapshot.docs.forEach(
+        (e) async {
+          var data = e.data();
+          if (data['phone'] == phone || data['eamil'] == phone) {
+            id = data['id'];
+          }
+        },
+      );
+      firestore
+          .collection('users')
+          .doc(id)
+          .update({'password': password});
+    });
+  }
+
+
 }

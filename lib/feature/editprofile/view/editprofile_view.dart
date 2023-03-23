@@ -107,6 +107,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                     Get.back();
                                     Get.back();
                                   },
+                                  isDismissable: false,
                                   descText: 'Details Updated')
                               .success();
                         });

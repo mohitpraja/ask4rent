@@ -5,6 +5,8 @@ import 'package:ask4rent/feature/editprofile/binding/editprofile_binding.dart';
 import 'package:ask4rent/feature/editprofile/view/editprofile_view.dart';
 import 'package:ask4rent/feature/forgot/binding/forgot_binding.dart';
 import 'package:ask4rent/feature/forgot/view/forgot_view.dart';
+import 'package:ask4rent/feature/forgotpass/binding/forgotpass_binding.dart';
+import 'package:ask4rent/feature/forgotpass/view/forgotpass_view.dart';
 import 'package:ask4rent/feature/login/binding/login_bind.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
 import 'package:ask4rent/feature/otp/binding/otp_binding.dart';
@@ -56,6 +58,10 @@ List<GetPage> allpages = [
       name: Routes.editProfile,
       page: () => const EditProfileView(),
       binding: EditProfileBinding()),
+  GetPage(
+      name: Routes.forgotPass,
+      page: () => const ForgotPassView(),
+      binding: ForgotPassBinding()),
 ];
 
 
