@@ -16,7 +16,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 
@@ -30,11 +29,11 @@ class HomeView extends GetView<HomeController> {
           controller.userList = data!.map((e) => e.data()).toList();
           controller.userList.map((e) {
             if (e['id'] == controller.userId) {
-              userInfo['name']=e['name'];
-              userInfo['email']=e['email'];
-              userInfo['phone']=e['phone'];
-              userInfo['image']=e['image'];
-              userInfo['id']=e['id'];
+              userInfo['name'] = e['name'];
+              userInfo['email'] = e['email'];
+              userInfo['phone'] = e['phone'];
+              userInfo['image'] = e['image'];
+              userInfo['id'] = e['id'];
             }
           }).toList();
         }
@@ -96,7 +95,7 @@ class HomeView extends GetView<HomeController> {
                       actions: [
                         IconButton(
                             onPressed: () {
-                               print('noti cld');
+                              print('noti cld');
                               controller.setLoclity();
                             },
                             icon: Icon(
@@ -182,77 +181,113 @@ class HomeView extends GetView<HomeController> {
                                     child: ScrollConfiguration(
                                       behavior: CustomScroll(),
                                       child: ListView.builder(
-                                        itemCount: 10,
+                                        itemCount: localitiesByCity.length,
                                         scrollDirection: Axis.horizontal,
                                         itemBuilder: (context, index) {
                                           return Container(
-                                            margin: const EdgeInsets.all(10),
-                                            width: Get.width * 0.55,
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                border:
-                                                    const Border.fromBorderSide(
-                                                        BorderSide(
-                                                            color:
-                                                                primaryColor))),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 0,
-                                                      horizontal: 5),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  SizedBox(
-                                                    height: Get.height * 0.01,
-                                                  ),
-                                                  Text(
-                                                    'City Center',
-                                                    textAlign: TextAlign.center,
-                                                    style: AppStyle.cityTitle,
-                                                  ),
-                                                  SizedBox(
-                                                    height: Get.height * 0.015,
-                                                  ),
-                                                  Text(
-                                                    '10+',
-                                                    style: AppStyle.cityTitle,
-                                                  ),
-                                                  SizedBox(
-                                                    height: Get.height * 0.01,
-                                                  ),
-                                                  Text(
-                                                    'Properties for \n rent',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                        fontSize:
-                                                            Get.width * 0.05,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontFamily: alata,
-                                                        color: lightBlack),
-                                                  ),
-                                                  SizedBox(
-                                                    height: Get.height * 0.01,
-                                                  ),
-                                                  SizedBox(
-                                                    width: Get.width,
-                                                    child: CustomElevatedButton(
-                                                      title: 'Explore',
-                                                      onPress: () {
-                                                        Get.toNamed(
-                                                            Routes.property);
-                                                      },
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
+                                            width: Get.width * 0.6,
                                           );
+                                          //                                Container(
+                                          //   height: 250,
+                                          //   width: Get.width * 0.55,
+                                          //   decoration: BoxDecoration(
+                                          //     borderRadius: BorderRadius.circular(10),
+                                          //     image: DecorationImage(
+                                          //       image: AssetImage("assets/images/Intro3.png"),
+                                          //       fit: BoxFit.cover,
+                                          //     ),
+                                          //   ),
+                                          //   child: Container(
+                                          //     decoration: BoxDecoration(
+                                          //       borderRadius: BorderRadius.circular(10),
+                                          //       backgroundBlendMode: BlendMode.darken,
+                                          //       gradient: LinearGradient(colors: [
+                                          //         Colors.black.withOpacity(0.8),
+                                          //         Colors.grey.withOpacity(0.6)
+                                          //       ]),
+                                          //     ),
+                                          //     child: Column(
+                                          //       children: [
+                                          //         SizedBox(
+                                          //           height: 10,
+                                          //           child: CustomElevatedButton(
+                                          //             onPress: () {},
+                                          //             title: 'demo',
+                                          //           ),
+                                          //         ),
+                                          //       ],
+                                          //     ),
+                                          //   ),
+                                          // ),
+
+                                          // return Container(
+                                          //   margin: const EdgeInsets.all(10),
+                                          //   width: Get.width * 0.55,
+                                          //   alignment: Alignment.center,
+                                          //   decoration: BoxDecoration(
+                                          //       borderRadius:
+                                          //           BorderRadius.circular(10),
+                                          //       border:
+                                          //           const Border.fromBorderSide(
+                                          //               BorderSide(
+                                          //                   color:
+                                          //                       primaryColor))),
+                                          //   child: Padding(
+                                          //     padding:
+                                          //         const EdgeInsets.symmetric(
+                                          //             vertical: 0,
+                                          //             horizontal: 5),
+                                          //     child: Column(
+                                          //       mainAxisAlignment:
+                                          //           MainAxisAlignment
+                                          //               .spaceBetween,
+                                          //       children: [
+                                          //         SizedBox(
+                                          //           height: Get.height * 0.01,
+                                          //         ),
+                                          //         Text(
+                                          //           'City Center',
+                                          //           textAlign: TextAlign.center,
+                                          //           style: AppStyle.cityTitle,
+                                          //         ),
+                                          //         SizedBox(
+                                          //           height: Get.height * 0.015,
+                                          //         ),
+                                          //         Text(
+                                          //           '10+',
+                                          //           style: AppStyle.cityTitle,
+                                          //         ),
+                                          //         SizedBox(
+                                          //           height: Get.height * 0.01,
+                                          //         ),
+                                          //         Text(
+                                          //           'Properties for \n rent',
+                                          //           textAlign: TextAlign.center,
+                                          //           style: TextStyle(
+                                          //               fontSize:
+                                          //                   Get.width * 0.05,
+                                          //               fontWeight:
+                                          //                   FontWeight.w400,
+                                          //               fontFamily: alata,
+                                          //               color: lightBlack),
+                                          //         ),
+                                          //         SizedBox(
+                                          //           height: Get.height * 0.01,
+                                          //         ),
+                                          //         SizedBox(
+                                          //           width: Get.width,
+                                          //           child: CustomElevatedButton(
+                                          //             title: 'Explore',
+                                          //             onPress: () {
+                                          //               Get.toNamed(
+                                          //                   Routes.property);
+                                          //             },
+                                          //           ),
+                                          //         )
+                                          //       ],
+                                          //     ),
+                                          //   ),
+                                          // );
                                         },
                                       ),
                                     ),

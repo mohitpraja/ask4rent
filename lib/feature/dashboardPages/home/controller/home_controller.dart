@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/localDB/cities.dart';
@@ -27,8 +28,14 @@ class HomeController extends GetxController {
   Stream<QuerySnapshot<Object?>> profileStream =
       Fbase.firestore.collection('users').snapshots();
   setLoclity() {
-   popularLocalities.forEach((key, value) { print(key);});
-   
-   
+    popularLocalities.forEach((key, value) {
+      if (key == currLocation.value) {
+        print(key);
+        print(value);
+        print('match');
+        localitiesByCity.value = value;
+        log('$localitiesByCity');
+      }
+    });
   }
 }

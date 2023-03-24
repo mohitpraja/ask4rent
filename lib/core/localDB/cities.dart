@@ -34,7 +34,98 @@ List states = [
   "Dadra and Nagar Haveli",
   "Daman and Diu",
 ];
-Map<String, dynamic> popularLocalities = {
+
+ Map<String, List<Map<String, String>>> popularLocalities = {
+    "Mumbai": [
+      {
+        "city": 'Bandra Bandstand',
+        "description": '20',
+        "image": 'assets/city/mumbai/bandra.jpg'
+      },
+      {
+        "city": 'Malabar Hill',
+        "description": '20',
+        "image": 'assets/city/mumbai/malabar.jpg'
+      },
+      {
+        "city": 'Altamount Road',
+        "description": '20',
+        "image": 'assets/city/mumbai/altamount.jpg'
+      },
+      {
+        "city": 'Hiranandani, Powai',
+        "description": '20',
+        "image": 'assets/city/mumbai/hiranandani.jpg'
+      },
+      {
+        "city": 'Pali Hill, Bandra',
+        "description": '20',
+        "image": 'assets/city/mumbai/palihill.jpg'
+      },
+      {
+        "city": 'Juhu',
+        "description": '20',
+        "image": 'assets/city/mumbai/juhu.jpg'
+      },
+      {
+        "city": 'Tardeo',
+        "description": '20',
+        "image": 'assets/city/mumbai/tardeo.jpg'
+      },
+    ],
+    "Gwalior": [
+      {
+        "city": 'City center',
+        "description":
+            'The most happening place in City Centre. All facilities and the Market are within walking distance.',
+        "image": 'assets/city/gwalior/citycenter.png'
+      },
+      {
+        "city": 'Lashkar ',
+        "description":
+            'Lashkar is a fast developing region in Gwalior. The area is surrounded by Mokhira on the North, Bhaisawari on the West and Ghuwara on the East. Located on State Highway- 37, this locality enjoys good connectivity with its neighboring areas.',
+        "image": 'assets/city/gwalior/lashkar.jpg'
+      },
+      {
+        "city": 'Morar ',
+        "description":
+            'Morar is a fast developing area located in Gwalior, Madhya Pradesh. The locality is very well connected to other areas through roadways and railways.',
+        "image": 'assets/city/gwalior/morar.jfif'
+      },
+      {
+        "city": 'Thatipur',
+        "description":
+            'Thatipur is a fast developing area located in Gwalior, Madhya Pradesh. The locality is very well connected to other areas through roadways and railways.',
+        "image": 'assets/city/gwalior/thatipur.jfif'
+      },
+      {
+        "city": 'D.D. Nagar',
+        "description":
+            'D.D. Nagar is a popular locality situated in Gwalior and the pin code of this locality is 474004.',
+        "image": 'assets/city/gwalior/ddnagar.jfif'
+      },
+      {
+        "city": 'Kila Gate  ',
+        "description":
+            'Kila Gate is a fast developing region in Gwalior. The area is surrounded by Mokhira on the North, Bhaisawari on the West and Ghuwara on the East. Located on State Highway- 37, this locality enjoys good connectivity with its neighboring areas.',
+        "image": 'assets/city/gwalior/kilagate.jfif'
+      },
+      {
+        "city": 'Hajira  ',
+        "description":
+            'Hazira is an sublocality in Gadhaipura, Gwalior, Gwalior District, Madhya Pradesh, India.',
+        "image": 'assets/city/gwalior/hajira.jfif'
+      },
+      {
+        "city": 'Alkapuri  ',
+        "description":
+            'Alkapuri is a luxury locality situated in Gwalior. The pincode of this locality is 474011. This locality is near City Center, Govindpuri and Madhuwan Enclave. ',
+        "image": 'assets/city/gwalior/alkapuri.jpg'
+      },
+    ],
+  };
+  
+Map<String, dynamic> popularLocalities1 = {
     'Mumbai': [
       {
         'city': 'Bandra Bandstand',
