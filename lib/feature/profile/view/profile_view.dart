@@ -39,16 +39,26 @@ class ProfileView extends GetView <ProfileController>{
                     width: Get.width,
                     height: Get.height * 0.35,
                     color: primaryColor,
+                    
                     child: Center(
                       child: controller.imagePath.value != ''
-                            ? ClipRRect(
-                                borderRadius: BorderRadius.circular(75),
-                                child: Image.file(
-                                  File(controller.imagePath.value),
-                                  width: 120,
-                                  height: 120,
-                                  fit: BoxFit.cover,
-                                ))
+                            ? Container(
+                              decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.fromBorderSide(
+                                BorderSide(color: white, width: 3))),
+                              child: Padding(
+                                padding: const EdgeInsets.all(5),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(75),
+                                    child: Image.file(
+                                      File(controller.imagePath.value),
+                                      width: 120,
+                                      height: 120,
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                            )
                             : Container(
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,

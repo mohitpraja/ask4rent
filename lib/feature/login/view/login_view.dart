@@ -7,7 +7,7 @@ import 'package:ask4rent/core/widgets/apptitle.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/custom_scroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll_glow_remover.dart';
 import 'package:ask4rent/feature/login/controller/login_cont.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +27,7 @@ class LoginView extends GetView<LoginController> {
           backgroundColor: white,
           elevation: 0,
         ),
-        body: ScrollConfiguration(
-          behavior: CustomScroll(),
+        body: ScrollGlowRemover(
           child: SingleChildScrollView(
             child: Container(
               margin: const EdgeInsets.all(10),

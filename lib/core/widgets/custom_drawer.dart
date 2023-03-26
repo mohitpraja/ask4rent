@@ -47,7 +47,7 @@ class CustomDrawer extends GetView {
                         width: 60,
                         height: 60,
                         fit: BoxFit.cover,
-                        imageUrl: '',
+                        imageUrl: userInfo['image'],
                         errorWidget: (context, url, error) => CircleAvatar(
                             backgroundColor: primaryShade1,
                             child: const Icon(

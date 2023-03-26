@@ -9,7 +9,7 @@ import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/custom_scroll.dart';
+import 'package:ask4rent/core/widgets/custom_scroll_glow_remover.dart';
 import 'package:ask4rent/feature/signup/controller/signup_controller.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +25,7 @@ class SignupView extends GetView<SignupController> {
       child: Scaffold(
         backgroundColor: white,
         appBar: const CustomWhiteAppBar(),
-        body: ScrollConfiguration(
-          behavior: CustomScroll(),
+        body: ScrollGlowRemover(
           child: SingleChildScrollView(
             child: Obx(() => Container(
                   margin: const EdgeInsets.all(10),
