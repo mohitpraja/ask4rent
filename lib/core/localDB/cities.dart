@@ -34,174 +34,7 @@ List states = [
   "Dadra and Nagar Haveli",
   "Daman and Diu",
 ];
-// Map<String, dynamic> popularLocalities = {
-//     'Mumbai': [
-//       {
-//         'city': 'Bandra Bandstand',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/bandra.jpg'
-//       },
-//       {
-//         'city': 'Malabar Hill',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/malabar.jpg'
-//       },
-//       {
-//         'city': 'Altamount Road',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/altamount.jpg'
-//       },
-//       {
-//         'city': 'Hiranandani, Powai',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/hiranandani.jpg'
-//       },
-//       {
-//         'city': 'Pali Hill, Bandra',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/palihill.jpg'
-//       },
-//       {
-//         'city': 'Juhu',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/juhu.jpg'
-//       },
-//       {
-//         'city': 'Tardeo',
-//         'description': '20',
-//         'image': 'assets/city/mumbai/tardeo.jpg'
-//       },
-//     ],
-//     'Gwalior': [
-//       {
-//         'city': 'City center',
-//         'description':
-//             'The most happening place in City Centre. All facilities and the Market are within walking distance.',
-//         'image': 'assets/city/gwalior/citycenter.png'
-//       },
-//       {
-//         'city': 'Lashkar ',
-//         'description':
-//             'Lashkar is a fast developing region in Gwalior. The area is surrounded by Mokhira on the North, Bhaisawari on the West and Ghuwara on the East. Located on State Highway- 37, this locality enjoys good connectivity with its neighboring areas.'
-//             ,'image': 'assets/city/gwalior/lashkar.jpg'
-//       },
-//       {
-//         'city': 'Morar ',
-//         'description':
-//             'Morar is a fast developing area located in Gwalior, Madhya Pradesh. The locality is very well connected to other areas through roadways and railways.'
-//             ,'image': 'assets/city/gwalior/morar.jfif'
-//       },
-//       {
-//         'city': 'Thatipur',
-//         'description':
-//             'Thatipur is a fast developing area located in Gwalior, Madhya Pradesh. The locality is very well connected to other areas through roadways and railways.'
-//             ,'image': 'assets/city/gwalior/thatipur.jfif'
-//       },
-//       {
-//         'city': 'D.D. Nagar',
-//         'description':
-//             'D.D. Nagar is a popular locality situated in Gwalior and the pin code of this locality is 474004.'
-//             ,'image': 'assets/city/gwalior/ddnagar.jfif'
-//       },
-//       {
-//         'city': 'Kila Gate  ',
-//         'description':
-//             'Kila Gate is a fast developing region in Gwalior. The area is surrounded by Mokhira on the North, Bhaisawari on the West and Ghuwara on the East. Located on State Highway- 37, this locality enjoys good connectivity with its neighboring areas.'
-//             ,'image': 'assets/city/gwalior/kilagate.jfif'
-//       },
-//       {
-//         'city': 'Hajira  ',
-//         'description':
-//             'Hazira is an sublocality in Gadhaipura, Gwalior, Gwalior District, Madhya Pradesh, India.'
-//             ,'image': 'assets/city/gwalior/hajira.jfif'
-//       },
-//       {
-//         'city': 'Alkapuri  ',
-//         'description':
-//             'Alkapuri is a luxury locality situated in Gwalior. The pincode of this locality is 474011. This locality is near City Center, Govindpuri and Madhuwan Enclave. '
-//             ,'image': 'assets/city/gwalior/alkapuri.jpg'
-//       },
-//     ],
 
-// };
-// {
-//   'Bengaluru': [
-//     {'city': 'Jayanagar', 'properties': 20},
-//     {'city': 'Koramangala', 'properties': 20},
-//     {'city': 'Malleshwaram', 'properties': 20},
-//     {'city': 'Rajaji Nagar', 'properties': 20},
-//     {'city': 'Frazer town', 'properties': 20},
-//     {'city': 'Sadashiva Nagar', 'properties': 20},
-//     {'city': 'Bellandur', 'properties': 20},
-//     {'city': 'Benson Tower', 'properties': 20},
-//   ]
-// },
-// {
-//   'Kolkata': [
-//     {'city': 'New town', 'properties': 20},
-//     {'city': 'Rajarhat', 'properties': 20},
-//     {'city': 'Howrah', 'properties': 20},
-//     {'city': 'Joka', 'properties': 20},
-//     {'city': 'Barasat', 'properties': 20},
-//     {'city': 'Tollygunge', 'properties': 20},
-//     {'city': 'Bhawanipur', 'properties': 20},
-//     {'city': 'Jadavpur', 'properties': 20},
-//   ],
-// },
-// {
-//   'Chennai': [
-//     {'city': 'Adyar', 'properties': 20},
-//     {'city': 'Anna Nagar', 'properties': 20},
-//     {'city': 'Besant Nagar', 'properties': 20},
-//     {'city': 'Kotturpuram', 'properties': 20},
-//     {'city': 'Mylapore ', 'properties': 20},
-//     {'city': 'Nungambakkam ', 'properties': 20},
-//     {'city': 'Thiruvanmiyur ', 'properties': 20},
-//     {'city': 'Teynampet ', 'properties': 20},
-//   ],
-// },
-// {
-//   'Hyderabad': [
-//     {'city': 'Kukatpally ', 'properties': 20},
-//     {'city': 'Kondapur ', 'properties': 20},
-//     {'city': 'Begumpet ', 'properties': 20},
-//     {'city': 'Uppal', 'properties': 20},
-//     {'city': 'Miyapur', 'properties': 20},
-//     {'city': 'Dilsukhnagar  ', 'properties': 20},
-//     {'city': 'Gachibowli  ', 'properties': 20},
-//     {'city': 'Lingampally  ', 'properties': 20},
-//   ]
-// },
-// {
-//   'Jaipur': [
-//     {'city': 'Jagatpura', 'properties': 20},
-//     {'city': 'Kondapur ', 'properties': 20},
-//     {'city': 'Begumpet ', 'properties': 20},
-//     {'city': 'Uppal', 'properties': 20},
-//     {'city': 'Miyapur', 'properties': 20},
-//     {'city': 'Dilsukhnagar  ', 'properties': 20},
-//     {'city': 'Gachibowli  ', 'properties': 20},
-//     {'city': 'Lingampally  ', 'properties': 20},
-//   ]
-// },
-// 'Pune',
-// 'Ahmedabad',
-// 'Surat',
-// 'New Delhi',
-// 'Agra',
-// 'Lucknow',
-// 'Indore',
-// 'Bhopal',
-// 'Nagpur',
-// 'Kanpur',
-// 'Chandigarh',
-// 'Amritsar',
-// 'Vadodra',
-// 'Patna',
-// 'Nashik',
-
-// 'Faridabad',
-// ];
 List stateWithCities = [
   {
     "state": "Andhra Pradesh",
@@ -1111,37 +944,44 @@ Map<String, List<Map<String, String>>> popularLocalities = {
   "Mumbai": [
     {
       "city": 'Bandra Bandstand',
-      "description": '20',
+      "description":
+          'Bandra is indeed one of the most happening suburbs located within this city. The Bandstand area is called home to the rich and famous. ',
       "image": 'assets/city/mumbai/bandra.jpg'
     },
     {
       "city": 'Malabar Hill',
-      "description": '20',
+      "description":
+          'Malabar Hill is another area located in South Mumbai, known for its expensive houses and luxury cars. The neighbourhood spreads across a hill that slopes upwards from Chowpatty, giving fantastic views of Marine Drive. ',
       "image": 'assets/city/mumbai/malabar.jpg'
     },
     {
       "city": 'Altamount Road',
-      "description": '20',
+      "description":
+          'Situated in town, it is one of the most expensive homes in India; Mr Mukesh Ambani’s Antilla is located here, making itself one of the posh places in Mumbai.',
       "image": 'assets/city/mumbai/altamount.jpg'
     },
     {
       "city": 'Hiranandani, Powai',
-      "description": '20',
+      "description":
+          'The plush Hiranandani Complex is situated in the northern suburbs of Powai. The township stands for its classic example of how a neighbourhood can change the face of an attenuating suburb. ',
       "image": 'assets/city/mumbai/hiranandani.jpg'
     },
     {
       "city": 'Pali Hill, Bandra',
-      "description": '20',
+      "description":
+          'Named after the endemic Pali village of Bandra, this upmarket neighbourhood is set a notch above the rest of the suburbs, and it truly stands for what it portrays under the list of Mumbai’s posh areas.',
       "image": 'assets/city/mumbai/palihill.jpg'
     },
     {
       "city": 'Juhu',
-      "description": '20',
+      "description":
+          'Juhu is located in the western suburbs of Mumbai and is one of the most posh areas in Mumbai.',
       "image": 'assets/city/mumbai/juhu.jpg'
     },
     {
       "city": 'Tardeo',
-      "description": '20',
+      "description":
+          'Tardeo is an important arterial road in south Mumbai that connects significant commercial locations in the region. It is also home to India’s richest man',
       "image": 'assets/city/mumbai/tardeo.jpg'
     },
   ],
@@ -1196,13 +1036,98 @@ Map<String, List<Map<String, String>>> popularLocalities = {
     },
   ],
   "Bengaluru": [
-    {"city": 'Jayanagar', "description": '', "image": ''},
-    {"city": 'Koramangala', "description": '', "image": ''},
-    {"city": 'Malleshwaram', "description": '', "image": ''},
-    {"city": 'Rajaji Nagar', "description": '', "image": ''},
-    {"city": 'Frazer town', "description": '', "image": ''},
-    {"city": 'Sadashiva Nagar', "description": '', "image": ''},
-    {"city": 'Bellandur', "description": '', "image": ''},
-    {"city": 'Benson Tower', "description": '', "image": ''},
+    {
+      "city": 'Basavanagudi',
+      "description":
+          'Basavanagudi, located in Southern Bengaluru, is one of the best posh areas in Bangalore. The residential cum commercial settlement area is one of the oldest towns in the city. ',
+      "image": 'assets/city/bengluru/basavanagudi.jpg'
+    },
+    {
+      "city": 'Jayanagar',
+      "description":
+          "In southern Bengaluru, Jayanagar is an affluent residential region that has both commercial and institutional institutions. It is one of the city's oldest and most upscale neighborhoods, consisting mostly of independent houses and multi-storey apartments.",
+      "image": 'assets/city/bengluru/jayanagar.jpg'
+    },
+    {
+      "city": 'Koramangala',
+      "description":
+          'Koramangala, in South-East Bengaluru, is an affluent residential-cum-commercial neighborhood.',
+      "image": 'assets/city/bengluru/koramangala.jpg'
+    },
+    {
+      "city": 'Malleshwaram',
+      "description":
+          'One of the oldest localities and a well-planned area situated in the north-western part of Bangalore is Malleshwaram or Malleshwara.',
+      "image": 'assets/city/bengluru/malleshwaram.jpg'
+    },
+    {
+      "city": 'Rajaji Nagar',
+      "description":
+          "Rajaji Nagar is one of the Bengaluru's largest suburb and is named after C. Rajagopalachari. ",
+      "image": 'assets/city/bengluru/rajajinagar.gif'
+    },
+    {
+      "city": 'Frazer town',
+      "description":
+          'Frazer town (or Fraser town) is a popular posh area in Bangalore cantonment.',
+      "image": 'assets/city/bengluru/frazertown.jpg'
+    },
+    {
+      "city": 'Sadashiva Nagar',
+      "description":
+          'Sadashiva Nagar has grown to attract many homebuyers as one of the most affluent neighborhoods in the city of Bangalore',
+      "image": 'assets/city/bengluru/sadashivnagar.jpg'
+    },
+    {
+      "city": 'Bellandur',
+      "description":
+          'Bellandur is a developed, well placed area near ORR and Sarjapur Road junction, located in South-East Bengaluru.',
+      "image": 'assets/city/bengluru/bellandur.jpg'
+    },
+  ],
+  "Indore": [
+    {
+      "city": 'Vijay Nagar',
+      "description":
+          'In Indore, Madhya Pradesh, India, Vijay Nagar is a major residential town. The Indore Development Authority was in charge of its establishment. ',
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Nipania',
+      "description":
+          "Nipania is a well-known residential area in Indore. Vijay Nagar, Bicholi Mardana, Talawali Chanda, Bhawrasla, and Khajrana are all similar to Nipania.",
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Mahalakshmi Nagar',
+      "description":
+          'Mahalakshmi Nagar is a well-known residential area in Indore’s north-eastern region. It is located near Khajrana, Vijay Nagar, LIG Colony, New Palasia, and Jhalariya. ',
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Rau',
+      "description":
+          'The AB Road, Indore Bypass Road, and Rau-Pithampur Road provide excellent connectivity to Rau, which is a major residential neighbourhood.',
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Ujjain Road',
+      "description":
+          "Ujjain Road is a luxury locality situated in Indore. This locality is near Narayan Bagh, Avantika Nagar and Kushwaha Nagar.",
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Saket Nagar',
+      "description":
+          'Saket Nagar is one of the localities in Indore. This locality is near Chandralok Colony, Tilak Nagar and Kanadia Road.',
+      "image": 'assets/city/'
+    },
+    {
+      "city": 'Tulsi Nagar',
+      "description":
+          'Saket Nagar',
+      "image": 'assets/city/'
+    },
+    
   ],
 };
