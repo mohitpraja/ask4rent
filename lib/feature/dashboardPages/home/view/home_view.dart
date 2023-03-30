@@ -4,6 +4,7 @@ import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/localDB/cities.dart';
+import 'package:ask4rent/core/widgets/card_component.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
@@ -15,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -76,7 +78,7 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 Text(
                                   currLocation.value == ''
-                                      ? 'Loding...'
+                                      ? 'Loading...'
                                       : currLocation.value,
                                   style: AppStyle.appCity,
                                 ),
@@ -125,38 +127,112 @@ class HomeView extends GetView<HomeController> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    width: Get.width * 0.07,
-                                    height: Get.width * 0.07,
-                                    color: primaryColor,
-                                  ),
+                                  CardComponent(
+                                      outerPadding: EdgeInsets.zero,
+                                      child: Column(children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  userInfo['name']??'',
+                                                  style: TextStyle(
+                                                      color: primaryColor,
+                                                      fontSize:
+                                                          Get.width * 0.06,
+                                                      fontFamily: alata),
+                                                ),
+                                                Text(
+                                                  'user',
+                                                  style: TextStyle(
+                                                      color: lightBlack,
+                                                      fontSize:
+                                                          Get.width * 0.045,
+                                                      fontFamily: ubuntu),
+                                                ),
+                                              ],
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  border: Border.fromBorderSide(
+                                                      BorderSide(
+                                                          color: primaryColor,
+                                                          width: 3))),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(75),
+                                                child: CachedNetworkImage(
+                                                  width: 60,
+                                                  height: 60,
+                                                  fit: BoxFit.cover,
+                                                  imageUrl: userInfo['image'],
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.indigo.shade100,
+                                                    backgroundImage:
+                                                        const AssetImage(
+                                                            'assets/images/person.png'),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Divider(),
+                                        Padding(
+                                          padding: const EdgeInsets.all(10),
+                                          child: Text(
+                                            currLocation.value == ''
+                                                ? 'Fetching current location...'
+                                                : controller.currAddress.value,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: lightBlack,
+                                                fontFamily: ubuntu,
+                                                fontSize: Get.width * 0.04),
+                                          ),
+                                        )
+                                      ])),
                                   SizedBox(
-                                    height: Get.height * 0.03,
+                                    height: Get.height * 0.02,
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Renting made easy',
-                                          style: AppStyle.rentingMadeEasy),
-                                      const SizedBox(height: 5),
-                                      Text(
-                                          'Easiest way to find & rent your home online.',
-                                          style: AppStyle.subheading),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: Get.height * 0.03,
-                                  ),
+                                  // Container(
+                                  //   width: Get.width * 0.07,
+                                  //   height: Get.width * 0.07,
+                                  //   color: primaryColor,
+                                  // ),
+                                  // SizedBox(
+                                  //   height: Get.height * 0.03,
+                                  // ),
+                                  // Column(
+                                  //   crossAxisAlignment:
+                                  //       CrossAxisAlignment.start,
+                                  //   children: [
+                                  //     Text('Renting made easy',
+                                  //         style: AppStyle.rentingMadeEasy),
+                                  //     const SizedBox(height: 5),
+                                  //     Text(
+                                  //         'Easiest way to find & rent your home online.',
+                                  //         style: AppStyle.subheading),
+                                  //   ],
+                                  // ),
+                                  // SizedBox(
+                                  //   height: Get.height * 0.03,
+                                  // ),
                                   CustomSearchField(
                                     textInputType: TextInputType.none,
                                     onTap: () {
                                       controller.isSearch.value = true;
                                     },
                                   ),
-                                  SizedBox(
-                                    height: Get.height * 0.05,
-                                  ),
+                                  commonSpace(),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -170,7 +246,7 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                       Text(
                                         currLocation.value == ''
-                                            ? 'Loding...'
+                                            ? 'Loading...'
                                             : currLocation.value,
                                         style: AppStyle.popularLocalityOrange,
                                       ),

@@ -31,6 +31,7 @@ class HomeController extends GetxController {
   String userId = '';
   RxBool isBuild = false.obs;
   RxBool isLoader = false.obs;
+  RxString currAddress=''.obs;
   late Box<dynamic> db;
   List userList = [];
   RxList filterList = [].obs;
@@ -163,7 +164,6 @@ class HomeController extends GetxController {
   getCurrentPosition() async {
     //permission
     // ignore: unused_local_variable
-    String address;
     isLoader.value = true;
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied ||
@@ -175,8 +175,10 @@ class HomeController extends GetxController {
       List<Placemark> placemark = await placemarkFromCoordinates(
           currentposition.latitude, currentposition.longitude);
 
-      address =
-          '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+      // currAddress.value =
+      //     '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+      currAddress.value =
+          '${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
       currLocation.value = placemark[0].locality == ''
           ? 'Gwalior'
           : placemark[0].locality.toString();
