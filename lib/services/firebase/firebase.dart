@@ -135,6 +135,7 @@ class Fbase {
       }
     });
   }
+
   static Future forgotPass(phone, password) async {
     String id = '';
     firestore.collection('users').get().then((snapshot) {
@@ -147,12 +148,32 @@ class Fbase {
           }
         },
       );
-      firestore
-          .collection('users')
-          .doc(id)
-          .update({'password': password});
+      firestore.collection('users').doc(id).update({'password': password});
     });
   }
 
-
+  static Future addProperty(propertyType, address, houseNum, pin, city, state,
+      area, furnishingStatus, propertyDescription, phone, email, rent) async {
+    String id = DateTime.now().millisecondsSinceEpoch.toString();
+    var currDate = DateTime.now();
+    String time = DateFormat('jm').format(currDate);
+    String date = DateFormat('dd-MM-yyyy').format(currDate);
+    return firestore.collection('property').doc(id).set({
+      'id': id,
+      'date': date,
+      'time': time,
+      'propertyType': propertyType,
+      'address': address,
+      'houseNum': houseNum,
+      'pin': pin,
+      'city': city,
+      'state': state,
+      'area': area,
+      'furnishingStatus': furnishingStatus,
+      'propertyDescription': propertyDescription,
+      'phone': phone,
+      'email': email??'',
+      'rent': rent,
+    });
+  }
 }

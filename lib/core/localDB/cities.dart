@@ -1076,7 +1076,7 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "city": 'Sadashiva Nagar',
       "description":
           'Sadashiva Nagar has grown to attract many homebuyers as one of the most affluent neighborhoods in the city of Bangalore',
-      "image": 'assets/city/bengluru/sadashivnagar.jpg'
+      "image": 'assets/city/bengluru/sadashivanagar.jpg'
     },
     {
       "city": 'Bellandur',

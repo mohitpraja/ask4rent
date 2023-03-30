@@ -1,4 +1,5 @@
 import 'package:ask4rent/core/global/fonts.dart';
+import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/widgets/card_component.dart';
 import 'package:ask4rent/feature/ownerseekpages/owner/controller/owner_controller.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,279 +30,261 @@ class OwnerView extends GetView<OwnerController> {
               ],
             ),
           ),
-          Expanded(
-              child: CardComponent(
+          CardComponent(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
                   children: [
-                    Column(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Icon(
-                              CupertinoIcons.home,
-                              color: Colors.grey,
-                              size: Get.width * 0.1,
-                            ),
-                            SizedBox(
-                              width: Get.width * 0.02,
-                            ),
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.07,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ],
+                        Icon(
+                          CupertinoIcons.home,
+                          color: Colors.grey,
+                          size: Get.width * 0.1,
+                        ),
+                        SizedBox(
+                          width: Get.width * 0.02,
                         ),
                         Text(
-                          "Properties",
+                          "0",
                           style: TextStyle(
-                              fontSize: Get.width * 0.042,
+                              fontSize: Get.width * 0.07,
                               color: Colors.grey,
                               fontWeight: FontWeight.w500),
                         ),
-
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: Get.width * 0.042,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Active",
-                          style: TextStyle(
-                              fontSize: Get.width * 0.04,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        SizedBox(height: Get.width*0.015,),
-                        Text(
-                          "Inactive",
-                          style: TextStyle(
-                              fontSize: Get.width * 0.04,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500),
-                        )
                       ],
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          "0",
-                          style: TextStyle(
-                              fontSize: Get.width * 0.04,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        SizedBox(height: Get.width*0.015,),
-                        Text(
-                          "0",
-                          style: TextStyle(
-                              fontSize: Get.width * 0.04,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
+                    Text(
+                      "Properties",
+                      style: AppStyle.ownerSeekerStyle1,
                     ),
                   ],
                 )
               ],
             ),
-          )),
-          Expanded(
-              child: CardComponent(
-                child: Column(
+            SizedBox(
+              height: Get.width * 0.042,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  CupertinoIcons.mail_solid,
-                                  color: Colors.grey,
-                                  size: Get.width * 0.1,
-                                ),
-                                SizedBox(
-                                  width: Get.width * 0.02,
-                                ),
-                                Text(
-                                  "0",
-                                  style: TextStyle(
-                                      fontSize: Get.width * 0.07,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              "Responses",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.042,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-
-                          ],
-                        )
-                      ],
+                    Text(
+                      "Active",
+                      style: AppStyle.ownerSeekerStyle2,
                     ),
                     SizedBox(
-                      height: Get.width * 0.042,
+                      height: Get.width * 0.015,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Today",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(height: Get.width*0.015,),
-                            Text(
-                              "Last 7 days",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(height: Get.width*0.015,),
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                      ],
+                    Text(
+                      "Inactive",
+                      style: AppStyle.ownerSeekerStyle2,
                     )
                   ],
                 ),
-              )),
-          Expanded(
-              child: CardComponent(
-                child: Column(
+                Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.calendar_month,
-                                  color: Colors.grey,
-                                  size: Get.width * 0.1,
-                                ),
-                                SizedBox(
-                                  width: Get.width * 0.02,
-                                ),
-                                Text(
-                                  "0",
-                                  style: TextStyle(
-                                      fontSize: Get.width * 0.07,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              "Site Visits",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.042,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-
-                          ],
-                        )
-                      ],
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
-                      height: Get.width * 0.042,
+                      height: Get.width * 0.015,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Scheduled",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(height: Get.width*0.015,),
-                            Text(
-                              "Cancelled",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(height: Get.width*0.015,),
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: Get.width * 0.04,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                      ],
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
-              )),
+              ],
+            )
+          ],
+            ),
+          ),
+          CardComponent(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Icon(
+                          CupertinoIcons.mail_solid,
+                          color: Colors.grey,
+                          size: Get.width * 0.1,
+                        ),
+                        SizedBox(
+                          width: Get.width * 0.02,
+                        ),
+                        Text(
+                          "0",
+                          style: TextStyle(
+                              fontSize: Get.width * 0.07,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "Responses",
+                      style: AppStyle.ownerSeekerStyle1,
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: Get.width * 0.042,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Today",
+                      style: AppStyle.ownerSeekerStyle2,
+                    ),
+                    SizedBox(
+                      height: Get.width * 0.015,
+                    ),
+                    Text(
+                      "Last 7 days",
+                      style: AppStyle.ownerSeekerStyle2,
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: Get.width * 0.015,
+                    ),
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ],
+            )
+          ],
+            ),
+          ),
+          CardComponent(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.calendar_month,
+                          color: Colors.grey,
+                          size: Get.width * 0.1,
+                        ),
+                        SizedBox(
+                          width: Get.width * 0.02,
+                        ),
+                        Text(
+                          "0",
+                          style: TextStyle(
+                              fontSize: Get.width * 0.07,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "Site Visits",
+                      style: AppStyle.ownerSeekerStyle1,
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: Get.width * 0.042,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Scheduled",
+                      style: AppStyle.ownerSeekerStyle2,
+                    ),
+                    SizedBox(
+                      height: Get.width * 0.015,
+                    ),
+                    Text(
+                      "Cancelled",
+                      style: AppStyle.ownerSeekerStyle2,
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: Get.width * 0.015,
+                    ),
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ],
+            )
+          ],
+            ),
+          ),
         ],
       ),
     );

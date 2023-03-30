@@ -61,39 +61,43 @@ class AddPropertyView extends GetView<AddPropertyController> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Property *',
-                                style: AppStyle.listPropSubHeading,
-                              ),
-                              commonSpace1(),
-                              CustomDropDown(
-                                hintText: 'Select Property',
-                                borderColor: lightBlack,
-                                onChanged: (p0) {},
-                                items: [
-                                  'Residental Property',
-                                  'Commercial Property',
-                                  'PG Property',
-                                ].map((e) {
-                                  return DropdownMenuItem<String>(
-                                      value: e,
-                                      child: Text(e,
-                                          style: TextStyle(
-                                              color: lightBlack,
-                                              fontFamily: alata,
-                                              fontSize: 15)));
-                                }).toList(),
-                                validator: (value) =>
-                                    isValid(value, 'Property Required'),
-                              ),
-                              commonSpace1(),
+                              // Text(
+                              //   'Property *',
+                              //   style: AppStyle.listPropSubHeading,
+                              // ),
+                              // commonSpace1(),
+                              // CustomDropDown(
+                              //   hintText: 'Select Property',
+                              //   borderColor: lightBlack,
+                              //   onChanged: (p0) {},
+                              //   items: [
+                              //     'Residental Property',
+                              //     'Commercial Property',
+                              //     'PG Property',
+                              //   ].map((e) {
+                              //     return DropdownMenuItem<String>(
+                              //         value: e,
+                              //         child: Text(e,
+                              //             style: TextStyle(
+                              //                 color: lightBlack,
+                              //                 fontFamily: alata,
+                              //                 fontSize: 15)));
+                              //   }).toList(),
+                              //   validator: (value) =>
+                              //       isValid(value, 'Property Required'),
+                              // ),
+                              // commonSpace1(),
                               Text('Property-Type *',
                                   style: AppStyle.listPropSubHeading),
                               commonSpace1(),
                               CustomDropDown(
                                 hintText: 'Select Property-Type',
                                 borderColor: lightBlack,
-                                onChanged: (p0) {},
+                                onChanged: (p0) {
+                                  controller.propertyType.text=p0!;
+                                  debugPrint(controller.propertyType.text);
+                                },
+
                                 items: [
                                   'Appartment',
                                   'Shop',
@@ -119,6 +123,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               commonSpace1(),
                               CustomTextFormField(
                                 hintText: 'Address',
+                                onchanged: (p0) =>  controller.address.text=p0,
                                 validator: (value) =>
                                     isValid(value, 'Address required'),
                               ),
@@ -128,6 +133,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   Expanded(
                                       child: CustomTextFormField(
                                     hintText: 'House No.',
+                                    onchanged: (p0) =>  controller.houseNum.text=p0,
                                     validator: (value) =>
                                         isValid(value, 'House no. required'),
                                   )),
@@ -137,6 +143,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   Expanded(
                                       child: CustomTextFormField(
                                     hintText: 'PIN',
+                                    onchanged: (p0) =>  controller.pin.text=p0,
                                     inputType: TextInputType.number,
                                     validator: (value) =>
                                         isValid(value, 'PIN required'),
@@ -146,6 +153,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               commonSpace1(),
                               CustomTextFormField(
                                 hintText: 'City',
+                                onchanged: (p0) =>  controller.city.text=p0,
                                 validator: (value) =>
                                     isValid(value, 'City required'),
                               ),
@@ -153,7 +161,9 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               CustomDropDown(
                                 hintText: 'State',
                                 borderColor: lightBlack,
-                                onChanged: (p0) {},
+                                onChanged: (p0) {
+                                   controller.state.text=p0!;
+                                },
                                 items: states.map((e) {
                                   return DropdownMenuItem<String>(
                                       value: e,
@@ -206,6 +216,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               CustomTextFormField(
                                 inputType: TextInputType.number,
                                 hintText: 'Area in Sqft',
+                                onchanged: (p0) =>  controller.area.text=p0,
                                 validator: (value) =>
                                     isValid(value, 'Area required'),
                               ),
@@ -216,7 +227,9 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               CustomDropDown(
                                 hintText: 'Furnishing Status',
                                 borderColor: lightBlack,
-                                onChanged: (p0) {},
+                                onChanged: (p0) {
+                                   controller.furnishingStatus.text=p0!;
+                                },
                                 items: [
                                   'Unfurnished',
                                   'Semi-furnished',
@@ -239,6 +252,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               commonSpace1(),
                               CustomTextFormField(
                                 hintText: 'Add Property Details',
+                                onchanged: (p0) =>  controller.propertyDescription.text=p0,
                                 maxLines: 5,
                                 contentPadding: const EdgeInsets.all(10),
                                 validator: (value) => isValid(
@@ -298,16 +312,17 @@ class AddPropertyView extends GetView<AddPropertyController> {
                             CustomTextFormField(
                               hintText: 'Contact Number',
                               inputType: TextInputType.number,
+                              onchanged: (p0) =>  controller.phone.text=p0,
                               maxLength: 10,
-                              validator: (value) =>
-                                  isValid(value, 'Contact Number required'),
+                              validator: (value) =>phoneValidator(value),
                             ),
                             commonSpace1(),
                             Text('Email Address',
                                 style: AppStyle.listPropSubHeading),
                             commonSpace1(),
-                            const CustomTextFormField(
+                             CustomTextFormField(
                               hintText: 'Email Address',
+                              onchanged: (p0) =>  controller.email.text=p0,
                               inputType: TextInputType.emailAddress,
                             ),
                             commonSpace1(),
@@ -326,7 +341,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   title: 'Next',
                                   onPress: () {
                                     if (controller
-                                        .propertyDetailsFormKey.currentState!
+                                        .contactDetailsFormKey.currentState!
                                         .validate()) {
                                       controller.currentStep.value < 3
                                           ? controller.currentStep.value += 1
@@ -366,8 +381,10 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               hintText: 'Expected Month Rent',
                               inputType: TextInputType.number,
                               maxLength: 5,
-                              onchanged: (value) =>
-                                  controller.getRentVal(value),
+                              onchanged: (value){
+                                  controller.rent.text=value;
+                                  controller.getRentVal(value);
+                                  },
                               validator: (value) =>
                                   isValid(value, 'Monthly Rent required'),
                             ),
@@ -500,7 +517,9 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                 CustomElevatedButton(
                                   title: 'Click here to Upload'.toUpperCase(),
                                   padding: 0,
-                                  onPress: () {},
+                                  onPress: () {
+
+                                  },
                                 ),
                               ],
                             ),
@@ -508,6 +527,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                           commonSpace(),
                         //  controller.uploadImages
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomOutlineButton(
                                   onPress: () {
@@ -521,6 +541,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                 CustomElevatedButton(
                                   title: 'Submit',
                                  onPress: () {
+                                  controller.addProperty();
                                    
                                  },
                                 )

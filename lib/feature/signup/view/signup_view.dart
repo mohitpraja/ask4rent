@@ -9,7 +9,7 @@ import 'package:ask4rent/core/widgets/custom_white_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/custom_scroll_glow_remover.dart';
+import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/feature/signup/controller/signup_controller.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';

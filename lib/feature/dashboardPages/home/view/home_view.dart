@@ -8,7 +8,7 @@ import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/custom_scroll_glow_remover.dart';
+import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
 import 'package:ask4rent/feature/dashboardPages/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 Text(
                                   currLocation.value == ''
-                                      ? 'Loding...'
+                                      ? 'Loading...'
                                       : currLocation.value,
                                   style: AppStyle.appCity,
                                 ),
@@ -170,7 +170,7 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                       Text(
                                         currLocation.value == ''
-                                            ? 'Loding...'
+                                            ? 'Loading...'
                                             : currLocation.value,
                                         style: AppStyle.popularLocalityOrange,
                                       ),
@@ -266,8 +266,10 @@ class HomeView extends GetView<HomeController> {
                                                           Text(
                                                             localitiesByCity[
                                                                 index]['city'],
+                                                                
                                                             style: TextStyle(
                                                                 color: white,
+                                                                height: 1.1 ,
                                                                 fontFamily:
                                                                     alata,
                                                                 fontSize:

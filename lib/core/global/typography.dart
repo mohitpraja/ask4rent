@@ -71,4 +71,14 @@ class AppStyle {
       fontFamily: ubuntu,
       fontSize: Get.width * 0.04,
       fontWeight: FontWeight.w500);
+  static TextStyle ownerSeekerStyle1 = TextStyle(
+      fontSize: Get.width * 0.045,
+      color: Colors.grey,
+      fontFamily: ubuntu,
+      fontWeight: FontWeight.w600);
+  static TextStyle ownerSeekerStyle2 = TextStyle(
+      fontSize: Get.width * 0.04,
+      color: Colors.grey,
+      fontFamily: ubuntu,
+      fontWeight: FontWeight.w500);
 }

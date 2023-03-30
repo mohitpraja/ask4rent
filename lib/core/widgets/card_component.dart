@@ -27,6 +27,7 @@ class CardComponent extends StatelessWidget {
           padding: innerPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
             color: backgroundColor ?? white,
+            border: Border.all(color: primaryColor.withOpacity(0.1)),
             borderRadius: BorderRadius.circular(12),
             boxShadow:  const [
               BoxShadow(
