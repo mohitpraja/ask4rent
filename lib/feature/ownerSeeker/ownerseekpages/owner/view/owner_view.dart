@@ -1,7 +1,7 @@
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/widgets/card_component.dart';
-import 'package:ask4rent/feature/ownerseekpages/owner/controller/owner_controller.dart';
+import 'package:ask4rent/feature/ownerSeeker/ownerseekpages/owner/controller/owner_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

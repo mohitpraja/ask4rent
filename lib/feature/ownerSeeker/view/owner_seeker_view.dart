@@ -1,6 +1,5 @@
 import 'package:ask4rent/core/global/colors.dart';
-import 'package:ask4rent/core/global/fonts.dart';
-import 'package:ask4rent/core/widgets/scrollglowremover.dart';
+import 'package:ask4rent/core/widgets/remove_glow.dart';
 import 'package:ask4rent/feature/ownerSeeker/controller/owner_seeker_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +19,7 @@ class OwnerSeekerView extends GetView<OwnerSeekerController> {
                 Get.back();
               },
               child: Icon(Icons.arrow_back, color: white, size: 25)),
-          title:  Text('Dashboard',style: TextStyle(fontFamily: alata),),
+          title: const Text('Dashboard'),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(60),
             child: Material(
@@ -36,7 +35,8 @@ class OwnerSeekerView extends GetView<OwnerSeekerController> {
             ),
           ),
         ),
-        body: ScrollGlowRemover(child: TabBarView(children: controller.tabPages)),
+        body: ScrollConfiguration(
+            behavior: MyBehavior(), child: TabBarView(children: controller.tabPages)),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/widgets/card_component.dart';
-import 'package:ask4rent/feature/ownerseekpages/seeker/controller/seeker_controller.dart';
+import 'package:ask4rent/feature/ownerSeeker/ownerseekpages/seeker/controller/seeker_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

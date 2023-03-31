@@ -1,6 +1,6 @@
 import 'package:ask4rent/core/global/fonts.dart';
-import 'package:ask4rent/feature/ownerseekpages/owner/view/owner_view.dart';
-import 'package:ask4rent/feature/ownerseekpages/seeker/view/seeker_view.dart';
+import 'package:ask4rent/feature/ownerSeeker/ownerseekpages/owner/view/owner_view.dart';
+import 'package:ask4rent/feature/ownerSeeker/ownerseekpages/seeker/view/seeker_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
