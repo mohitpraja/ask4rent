@@ -5,6 +5,8 @@ import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class AddPropertyController extends GetxController {
   RxInt currentStep = 0.obs;
@@ -16,6 +18,7 @@ class AddPropertyController extends GetxController {
   RxInt houseRent = 0.obs;
   RxDouble commissionAmt = (0.0).obs;
   RxDouble receiveRent = (0.0).obs;
+  RxList finalImages = [].obs;
 
   TextEditingController propertyType = TextEditingController();
   TextEditingController address = TextEditingController();
@@ -65,6 +68,87 @@ class AddPropertyController extends GetxController {
       ],
     ),
   ]);
+  choosePic() {
+    Get.bottomSheet(
+      SizedBox(
+        height: 150,
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            const Center(
+              child: Text(
+                'Choose Profile Picture',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  child: Column(
+                    children: const [
+                      Icon(
+                        Icons.photo,
+                        size: 30,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text('Gallery'),
+                    ],
+                  ),
+                  onTap: () async{
+
+                     Get.back();
+                          final List<XFile> images =
+                              await ImagePicker().pickMultiImage();
+                          finalImages.addAll(images);
+                  },
+                ),
+                const SizedBox(
+                  width: 60,
+                ),
+                InkWell(
+                  child: Column(
+                    children: const [
+                      Icon(
+                        Icons.camera,
+                        size: 30,
+                        color: Colors.grey,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text('Camera')
+                    ],
+                  ),
+                  onTap: () async{
+                     Get.back();
+                          final XFile? img = await ImagePicker()
+                              .pickImage(source: ImageSource.camera);
+                          finalImages.add(img);
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      backgroundColor: Colors.white,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+  }
+
+
+
+
   addProperty() {
     checkInternet(() {
       CustomLoader().loader();
