@@ -1,5 +1,8 @@
 import 'dart:developer';
+import 'dart:io';
 
+import 'package:ask4rent/core/global/global_var.dart';
+import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
@@ -152,28 +155,44 @@ class Fbase {
     });
   }
 
-  static Future addProperty(propertyType, address, houseNum, pin, city, state,
-      area, furnishingStatus, propertyDescription, phone, email, rent) async {
+  static Future addProperty(
+      propertyType,
+      address,
+      houseNum,
+      pin,
+      city,
+      state,
+      area,
+      furnishingStatus,
+      propertyDescription,
+      phone,
+      email,
+      rent,
+      images) async {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
     String date = DateFormat('dd-MM-yyyy').format(currDate);
-    return firestore.collection('property').doc(id).set({
-      'id': id,
-      'date': date,
-      'time': time,
-      'propertyType': propertyType,
-      'address': address,
-      'houseNum': houseNum,
-      'pin': pin,
-      'city': city,
-      'state': state,
-      'area': area,
-      'furnishingStatus': furnishingStatus,
-      'propertyDescription': propertyDescription,
-      'phone': phone,
-      'email': email??'',
-      'rent': rent,
+    uploadFiles(images).then((value) {
+      log('final urls : $imagesUrls');
+      return firestore.collection('property').doc(id).set({
+        'id': id,
+        'date': date,
+        'time': time,
+        'propertyType': propertyType,
+        'address': address,
+        'houseNum': houseNum,
+        'pin': pin,
+        'city': city,
+        'state': state,
+        'area': area,
+        'furnishingStatus': furnishingStatus,
+        'propertyDescription': propertyDescription,
+        'phone': phone,
+        'email': email ?? '',
+        'rent': rent,
+        'houseImages': imagesUrls
+      });
     });
   }
 }

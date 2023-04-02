@@ -5,7 +5,6 @@ import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 class AddPropertyController extends GetxController {
@@ -19,6 +18,7 @@ class AddPropertyController extends GetxController {
   RxDouble commissionAmt = (0.0).obs;
   RxDouble receiveRent = (0.0).obs;
   RxList finalImages = [].obs;
+  
 
   TextEditingController propertyType = TextEditingController();
   TextEditingController address = TextEditingController();
@@ -39,35 +39,6 @@ class AddPropertyController extends GetxController {
     receiveRent.value = int.parse(value) - commissionAmt.value;
   }
 
-  Widget uploadImages = Column(children: [
-    Row(
-      children: [
-        Expanded(
-          child: Container(
-              width: 150,
-              height: 150,
-              color: Colors.red,
-              child: Image.asset(
-                'assets/images/icon.png',
-                fit: BoxFit.contain,
-              )),
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Container(
-              width: 150,
-              height: 150,
-              color: Colors.red,
-              child: Image.asset(
-                'assets/images/forgotpass.png',
-                fit: BoxFit.contain,
-              )),
-        ),
-      ],
-    ),
-  ]);
   choosePic() {
     Get.bottomSheet(
       SizedBox(
@@ -101,12 +72,11 @@ class AddPropertyController extends GetxController {
                       Text('Gallery'),
                     ],
                   ),
-                  onTap: () async{
-
-                     Get.back();
-                          final List<XFile> images =
-                              await ImagePicker().pickMultiImage();
-                          finalImages.addAll(images);
+                  onTap: () async {
+                    Get.back();
+                    final List<XFile> images =
+                        await ImagePicker().pickMultiImage();
+                    finalImages.addAll(images);
                   },
                 ),
                 const SizedBox(
@@ -126,11 +96,11 @@ class AddPropertyController extends GetxController {
                       Text('Camera')
                     ],
                   ),
-                  onTap: () async{
-                     Get.back();
-                          final XFile? img = await ImagePicker()
-                              .pickImage(source: ImageSource.camera);
-                          finalImages.add(img);
+                  onTap: () async {
+                    Get.back();
+                    final XFile? img = await ImagePicker()
+                        .pickImage(source: ImageSource.camera);
+                    finalImages.add(img);
                   },
                 ),
               ],
@@ -145,9 +115,6 @@ class AddPropertyController extends GetxController {
       ),
     );
   }
-
-
-
 
   addProperty() {
     checkInternet(() {
@@ -164,13 +131,16 @@ class AddPropertyController extends GetxController {
           propertyDescription.text,
           phone.text,
           email.text,
-          rent.text);
-    }).then((value) {
+          rent.text,
+          finalImages
+          ).then((value) {
       Get.back();
       CustomDialog(
+        isDismissable: false,
         descText: 'Your property added successfully',
         btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
       ).success();
+    });
     });
   }
 }

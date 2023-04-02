@@ -40,10 +40,10 @@ class HomeController extends GetxController {
     popularLocalities.forEach((key, value) {
       if (key == currLocation.value) {
         localitiesByCity.value = value;
-        log('$localitiesByCity');
+        // log('$localitiesByCity');
       }
     });
-    popularLocalities.forEach((key, value) { log(key);});
+    // popularLocalities.forEach((key, value) { log(key);});
   }
 
   searchCity() {
@@ -164,6 +164,7 @@ class HomeController extends GetxController {
     //permission
     // ignore: unused_local_variable
     String address;
+     currLocation.value='';
     isLoader.value = true;
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied ||
@@ -177,9 +178,9 @@ class HomeController extends GetxController {
 
       address =
           '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
-      currLocation.value = placemark[0].locality == ''
-          ? 'Gwalior'
-          : placemark[0].locality.toString();
+      String locality = placemark[0].subAdministrativeArea!.split(' ').first;
+
+      currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
       setLoclity();
       isLoader.value = false;
     }

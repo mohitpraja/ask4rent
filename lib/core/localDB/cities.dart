@@ -1090,44 +1090,130 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "city": 'Vijay Nagar',
       "description":
           'In Indore, Madhya Pradesh, India, Vijay Nagar is a major residential town. The Indore Development Authority was in charge of its establishment. ',
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/vijaynagar.png'
     },
     {
       "city": 'Nipania',
       "description":
           "Nipania is a well-known residential area in Indore. Vijay Nagar, Bicholi Mardana, Talawali Chanda, Bhawrasla, and Khajrana are all similar to Nipania.",
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/Nipania.jpg'
     },
     {
       "city": 'Mahalakshmi Nagar',
       "description":
           'Mahalakshmi Nagar is a well-known residential area in Indore’s north-eastern region. It is located near Khajrana, Vijay Nagar, LIG Colony, New Palasia, and Jhalariya. ',
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/Mahalakshmi.jpg'
     },
     {
       "city": 'Rau',
       "description":
           'The AB Road, Indore Bypass Road, and Rau-Pithampur Road provide excellent connectivity to Rau, which is a major residential neighbourhood.',
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/rau.jpg'
     },
     {
       "city": 'Ujjain Road',
       "description":
           "Ujjain Road is a luxury locality situated in Indore. This locality is near Narayan Bagh, Avantika Nagar and Kushwaha Nagar.",
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/Ujjain.jpg'
     },
     {
       "city": 'Saket Nagar',
       "description":
           'Saket Nagar is one of the localities in Indore. This locality is near Chandralok Colony, Tilak Nagar and Kanadia Road.',
-      "image": 'assets/city/'
+      "image": 'assets/city/indore/Saket.jpg'
     },
     {
       "city": 'Tulsi Nagar',
       "description":
-          'Saket Nagar',
-      "image": 'assets/city/'
+          'It is located in the northeast side of suburbs of Indore and is easily accessible to Vijay nagar, the new business district.',
+      "image": 'assets/city/indore/Tulsi.jpg'
     },
-    
+  ],
+  "New Delhi": [
+    {
+      "city": ' Vasant Kunj',
+      "description":
+          'Vasant Kunj is one of the oldest and poshest neighbourhoods in the South Delhi posh area. The region has great connectivity with other major hubs in the cities and it is the home of a lot of A list celebrities, bureaucrats and VIPs of Delhi.',
+      "image": 'assets/city/newdelhi/VasantKunj.jpg'
+    },
+    {
+      "city": 'Lutyens Bungalow Zone',
+      "description":
+          "This is undoubtedly the poshest area in Delhi and arguably the most expensive real estate land parcel in India.",
+      "image": 'assets/city/newdelhi/LutyensBungalowZone.jpg'
+    },
+    {
+      "city": 'Golf Links',
+      "description":
+          'Another top posh area in Delhi, Golf Links is an extension of the Lutyens Bungalow Zone and has some of the most luxurious real estates in the city.',
+      "image": 'assets/city/newdelhi/GolfLinks.jpg'
+    },
+    {
+      "city": 'Shanti Niketan',
+      "description":
+          'Shanti Niketan is an old and popular Delhi posh colony. It is one of the most sought after posh residential areas in Delhi.',
+      "image": 'assets/city/newdelhi/ShantiNiketan.jpg'
+    },
+    {
+      "city": 'Saket',
+      "description":
+          "Saket is a posh area in New Delhi and it's considered the headquarters of the posh South Delhi posh localities.",
+      "image": 'assets/city/newdelhi/Saket.jpg'
+    },
+    {
+      "city": 'Chanakyapuri',
+      "description":
+          'Chanakyapuri is also one of the best posh areas in Delhi housing several diplomats and government officials.',
+      "image": 'assets/city/newdelhi/Chanakyapuri.jpg'
+    },
+    {
+      "city": 'Jor Bagh',
+      "description":
+          'Jor Bagh is located within a walking distance from a lot of historical monuments and has lots of green gardens and hangout spaces.',
+      "image": 'assets/city/newdelhi/JorBagh.jpg'
+    },
+    {
+      "city": 'Dwarka Sub City',
+      "description":
+          'When we talk about established, posh residential areas of Delhi, the list is incomplete without Dwarka Sub City.',
+      "image": 'assets/city/newdelhi/DwarkaSubCity.jpg'
+    },
+  ],
+  "Kolkata": [
+    {
+      "city": ' Alipore ',
+      "description":
+          "Alipore is one of Kolkata’s high-end neighbourhoods. It is located in the southern suburbs. It is home to India’s largest zoological park as well as the country’s national library.",
+      "image": 'assets/city/kolkata/alipore.jpg'
+    },
+    {
+      "city": 'Bhowanipore ',
+      "description":
+          "Bhowanipore is located in the southern part of Kolkata and is the city’s entertainment capital.",
+      "image": 'assets/city/kolkata/Bhowanipore.jpeg'
+    },
+    {
+      "city": 'Ballygunge',
+      "description": 'Ballygunge is another affluent neighbourhood in Kolkata.',
+      "image": 'assets/city/kolkata/Ballygunge.jpg'
+    },
+    {
+      "city": 'Park Street',
+      "description":
+          'Park Street has been Kolkata’s main recreational area since the British era. Park Street has it all, from food and music to culture and history. ',
+      "image": 'assets/city/kolkata/ParkStreet.jpeg'
+    },
+    {
+      "city": 'Salt Lake (Bidhannagar)',
+      "description":
+          "Salt Lake or BidhanNagar is one of the planned satellite towns of Kolkata. It is also the main IT hub of the city. ",
+      "image": 'assets/city/kolkata/SaltLake.jpg'
+    },
+    {
+      "city": 'Gariahat',
+      "description":
+          "Gariahat is a prestigious neighbourhood on Kolkata’s southern outskirts. It is a residential as well as a commercial neighbourhood.",
+      "image": 'assets/city/kolkata/Gariahat.jpg'
+    },
   ],
 };
