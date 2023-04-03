@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/global_var.dart';
@@ -99,6 +101,7 @@ class HomeView extends GetView<HomeController> {
                         IconButton(
                             onPressed: () {
                               // controller.getCurrentPosition();
+                              log(currAddress.value);
                             },
                             icon: Icon(
                               Icons.notifications,

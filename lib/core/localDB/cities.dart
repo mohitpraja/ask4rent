@@ -1216,4 +1216,78 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "image": 'assets/city/kolkata/Gariahat.jpg'
     },
   ],
+  "Chennai": [
+    {
+      "city": 'Nungambakkam ',
+      "description":
+          "Nungambakkam holds an important role in the Central Business District. One of the poshest places in Chennai",
+      "image": 'assets/city/chennai/Nungambakkam.jpeg'
+    },
+    {
+      "city": 'Poes Garden',
+      "description":
+          "Another one of the poshest residential areas in Chennai that rivals Boat Club is Poes Garden.",
+      "image": 'assets/city/chennai/PoesGarden.jpg'
+    },
+    {
+      "city": 'Besant Nagar',
+      "description": 'If you are not looking for one of the most expensive, but one of the best posh areas in Chennai, look no further than the beach attraction of the city.',
+      "image": 'assets/city/chennai/BesantNagar.jpeg'
+    },
+    {
+      "city": 'Adyar',
+      "description":
+          'Situated on the southern banks of the river Adyar, its namesake Adyar or Adaiyaaru comes among the top posh areas in Chennai.',
+      "image": 'assets/city/chennai/Adyar.jpg'
+    },
+    {
+      "city": 'Velachery',
+      "description":
+          "While Velachery used to be the growing home to a budding IT sector in Chennai, it has increasingly emerged as the preferred area to buy homes.",
+      "image": 'assets/city/chennai/Velachery.jpg'
+    },
+    {
+      "city": 'Thiruvanmiyur',
+      "description":
+          "Located in southern Chennai, Thiruvanmiyur is a prime residential area. ",
+      "image": 'assets/city/chennai/Thiruvanmiyur.jpeg'
+    },
+  ],
+  "Hyderabad": [
+    {
+      "city": 'Jubilee Hills',
+      "description":
+          "Jubilee Hills is a posh area, located between IT’s Hyderabad IT of HITEC City and one of the rich areas in Hyderabad’s commercial district of Banjara Hills.",
+      "image": 'assets/city/hyderabad/Jubilee-Hills.jpg'
+    },
+    {
+      "city": 'HITEC City',
+      "description":
+          "This is another IT hub featuring software companies. It also boasts a hospital stadium and a shopping mall that provides a comfortable and convenient lifestyle for its citizens.",
+      "image": 'assets/city/hyderabad/HITEC-City.jpg'
+    },
+    {
+      "city": 'Gachibowli',
+      "description": 'Gachibowli is a well-known posh residential area in Hyderabad. It is close to Hitech City and is home to a number of well-known corporations (Accenture, Microsoft, TCS, Amazon etc)',
+      "image": 'assets/city/hyderabad/Gachibowli.jpg'
+    },
+    {
+      "city": 'Miyapur',
+      "description":
+          'For those looking for a mid-priced home, Miyapur offers a variety of options.',
+      "image": 'assets/city/hyderabad/Miyapur.jpg'
+    },
+    {
+      "city": 'Ameerpet',
+      "description":
+          "Ameerpet is a commercial/residential centre in northwest Hyderabad. Commercial and residential units abound.",
+      "image": 'assets/city/hyderabad/Ameerpet.jpg'
+    },
+    {
+      "city": 'SR Nagar',
+      "description":
+          "Sanjeeva Reddy Nagar, a.k.a. Hyderabad’s SR Nagar is mostly residential. Neelam Sanjeeva Reddy, India’s sixth president, named it. ",
+      "image": 'assets/city/hyderabad/SR-Nagar.jpg'
+    },
+  ],
 };

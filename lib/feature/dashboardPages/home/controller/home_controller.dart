@@ -164,7 +164,7 @@ class HomeController extends GetxController {
     //permission
     // ignore: unused_local_variable
     String address;
-     currLocation.value='';
+    currLocation.value = '';
     isLoader.value = true;
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied ||
@@ -176,11 +176,12 @@ class HomeController extends GetxController {
       List<Placemark> placemark = await placemarkFromCoordinates(
           currentposition.latitude, currentposition.longitude);
 
-      address =
-          '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+      currAddress.value =
+          '${placemark[0].name},${placemark[0].street},${placemark[0].isoCountryCode},${placemark[0].country},${placemark[0].postalCode},${placemark[0].administrativeArea},${placemark[0].subAdministrativeArea},${placemark[0].locality},${placemark[0].subLocality},${placemark[0].thoroughfare},${placemark[0].subThoroughfare}';
       String locality = placemark[0].subAdministrativeArea!.split(' ').first;
 
-      currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
+      currLocation.value =
+          placemark[0].subAdministrativeArea == '' ? 'Gwalior' : locality;
       setLoclity();
       isLoader.value = false;
     }
