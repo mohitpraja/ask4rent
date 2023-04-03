@@ -4,10 +4,12 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/localDB/cities.dart';
+import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/nodatafound.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -36,6 +38,7 @@ class HomeController extends GetxController {
   RxList filterList = [].obs;
   Stream<QuerySnapshot<Object?>> profileStream =
       Fbase.firestore.collection('users').snapshots();
+
   setLoclity() {
     popularLocalities.forEach((key, value) {
       if (key == currLocation.value) {
@@ -164,25 +167,54 @@ class HomeController extends GetxController {
     //permission
     // ignore: unused_local_variable
     String address;
-     currLocation.value='';
+    currLocation.value = '';
     isLoader.value = true;
-    LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied ||
-        permission == LocationPermission.deniedForever) {
-      permission = await Geolocator.requestPermission();
-    } else {
-      Position currentposition = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.best);
-      List<Placemark> placemark = await placemarkFromCoordinates(
-          currentposition.latitude, currentposition.longitude);
+    bool locationEnabled;
 
-      address =
-          '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
-      String locality = placemark[0].subAdministrativeArea!.split(' ').first;
-
-      currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
-      setLoclity();
-      isLoader.value = false;
+    locationEnabled = await Geolocator.isLocationServiceEnabled();
+    print("request called");
+    print(locationEnabled);
+    if (!locationEnabled) {
+      print("location is not enabled");
+      Get.snackbar(
+          "Warning", "Please enable location to find the current location");
     }
+
+    LocationPermission permission = await Geolocator.checkPermission();
+    // if (permission == LocationPermission.denied ||
+    //     permission == LocationPermission.deniedForever) {
+    //   permission = await Geolocator.requestPermission();
+    // }
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        Get.snackbar("Warning",
+            "Please give location permission to find the current location");
+      }
+    }
+
+      if (permission == LocationPermission.deniedForever) {
+        CustomDialog(
+                descText:
+                    'Location forever denied Please give permission form settings')
+            .warning();
+      }
+    Position currentPosition = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+
+    //convert into address [geocoding]
+    List<Placemark> placemark = await placemarkFromCoordinates(
+        currentPosition.latitude, currentPosition.longitude);
+
+    address =
+        '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+    String locality = placemark[0].subAdministrativeArea!.split(' ').first;
+
+    currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
+    setLoclity();
+    isLoader.value = false;
+
+    print("this is placemark : --> $placemark <--end");
   }
+
 }
