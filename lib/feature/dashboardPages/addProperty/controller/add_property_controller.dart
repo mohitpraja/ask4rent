@@ -18,7 +18,6 @@ class AddPropertyController extends GetxController {
   RxDouble commissionAmt = (0.0).obs;
   RxDouble receiveRent = (0.0).obs;
   RxList finalImages = [].obs;
-  
 
   TextEditingController propertyType = TextEditingController();
   TextEditingController address = TextEditingController();
@@ -119,28 +118,30 @@ class AddPropertyController extends GetxController {
   addProperty() {
     checkInternet(() {
       CustomLoader().loader();
-      Fbase.addProperty(
-          propertyType.text,
-          address.text,
-          houseNum.text,
-          pin.text,
-          city.text,
-          state.text,
-          area.text,
-          furnishingStatus.text,
-          propertyDescription.text,
-          phone.text,
-          email.text,
-          rent.text,
-          finalImages
-          ).then((value) {
-      Get.back();
-      CustomDialog(
-        isDismissable: false,
-        descText: 'Your property added successfully',
-        btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
-      ).success();
-    });
+      Fbase.uploadPropertyImages(finalImages).then((value) {
+        Fbase.addProperty(
+                propertyType.text,
+                address.text,
+                houseNum.text,
+                pin.text,
+                city.text,
+                state.text,
+                area.text,
+                furnishingStatus.text,
+                propertyDescription.text,
+                phone.text,
+                email.text,
+                rent.text,
+                )
+            .then((value) {
+          Get.back();
+          CustomDialog(
+            isDismissable: false,
+            descText: 'Your property added successfully',
+            btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
+          ).success();
+        });
+      });
     });
   }
 }

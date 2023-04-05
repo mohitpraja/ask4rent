@@ -916,29 +916,29 @@ List stateWithCities = [
 ];
 
 List cities = [
-  'Mumbai',
-  'Bengaluru',
-  'Kolkata',
-  'Chennai',
-  'Hyderabad',
-  'Jaipur',
-  'Pune',
-  'Ahmedabad',
-  'Surat',
-  'New Delhi',
   'Agra',
-  'Lucknow',
-  'Indore',
-  'Bhopal',
-  'Nagpur',
-  'Kanpur',
-  'Chandigarh',
+  'Ahmedabad',
   'Amritsar',
-  'Vadodra',
-  'Patna',
-  'Nashik',
-  'Gwalior',
+  'Bengaluru',
+  'Bhopal',
+  'Chandigarh',
+  'Chennai',
   'Faridabad',
+  'Gwalior',
+  'Hyderabad',
+  'Indore',
+  'Jaipur',
+  'Kanpur',
+  'Kolkata',
+  'Lucknow',
+  'Mumbai',
+  'Nagpur',
+  'Nashik',
+  'New Delhi',
+  'Patna',
+  'Pune',
+  'Surat',
+  'Vadodra',
 ];
 Map<String, List<Map<String, String>>> popularLocalities = {
   "Mumbai": [
@@ -1288,6 +1288,49 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "description":
           "Sanjeeva Reddy Nagar, a.k.a. Hyderabad’s SR Nagar is mostly residential. Neelam Sanjeeva Reddy, India’s sixth president, named it. ",
       "image": 'assets/city/hyderabad/SR-Nagar.jpg'
+    },
+  ],
+  "Agra": [
+    {
+      "city": 'Shastripuram',
+      "description":
+          "Shastripuram is a mid segment locality situated in Agra. The pincode of this locality is 282007",
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Dayal Bagh',
+      "description":
+          "Dayal Bagh is a luxury locality situated in Agra. The pincode of this locality is 282005.",
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Sikandra',
+      "description": 'Sikandra is a affordable locality situated in Agra. The pincode of this locality is 282007. This locality has 70+ properties to buy and 30+ properties to rent.',
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Avas Vikas Colony',
+      "description":
+          'Avas Vikas Colony is a mid segment locality situated in Agra.',
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Kamla Nagar,',
+      "description":
+          "Kamla Nagar is a luxury locality situated in Agra. The pincode of this locality is 282004.",
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Rohta',
+      "description":
+          "hta is one of the localities in Agra. This locality is near Nainana Jat, Taal Semri and Bagichi. ",
+      "image": 'assets/city/agra/'
+    },
+    {
+      "city": 'Khandari',
+      "description":
+          "Khandari is one of the localities in Agra. The pincode of this locality is 282002. ",
+      "image": 'assets/city/agra/'
     },
   ],
 };

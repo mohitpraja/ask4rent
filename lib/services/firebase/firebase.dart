@@ -156,42 +156,55 @@ class Fbase {
   }
 
   static Future addProperty(
-      propertyType,
-      address,
-      houseNum,
-      pin,
-      city,
-      state,
-      area,
-      furnishingStatus,
-      propertyDescription,
-      phone,
-      email,
-      rent,
-      images) async {
+    propertyType,
+    address,
+    houseNum,
+    pin,
+    city,
+    state,
+    area,
+    furnishingStatus,
+    propertyDescription,
+    phone,
+    email,
+    rent,
+  ) async {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
     String date = DateFormat('dd-MM-yyyy').format(currDate);
-    uploadFiles(images).then((value) {
-      log('final urls : $imagesUrls');
-      return firestore.collection('property').doc(id).set({
-        'id': id,
-        'date': date,
-        'time': time,
-        'propertyType': propertyType,
-        'address': address,
-        'houseNum': houseNum,
-        'pin': pin,
-        'city': city,
-        'state': state,
-        'area': area,
-        'furnishingStatus': furnishingStatus,
-        'propertyDescription': propertyDescription,
-        'phone': phone,
-        'email': email ?? '',
-        'rent': rent,
-        'houseImages': imagesUrls
+    return firestore.collection('property').doc(id).set({
+      'id': id,
+      'date': date,
+      'time': time,
+      'propertyType': propertyType,
+      'address': address,
+      'houseNum': houseNum,
+      'pin': pin,
+      'city': city,
+      'state': state,
+      'area': area,
+      'furnishingStatus': furnishingStatus,
+      'propertyDescription': propertyDescription,
+      'phone': phone,
+      'email': email ?? '',
+      'rent': rent,
+      'houseImages': propertyImagesUrls
+    });
+  }
+
+  static Future uploadPropertyImages(images) async {
+    log('upload file cld');
+    String id = DateTime.now().millisecondsSinceEpoch.toString();
+    images.forEach((file) async {
+      log('file : $file');
+      final ext = file.path.split('.').last;
+      final ref =
+          Fbase.storage.ref().child('houses/${userInfo['id']}/$id.$ext');
+      ref.putFile(File(file.path)).then((p0) async {
+        await ref
+            .getDownloadURL()
+            .then((value) => propertyImagesUrls.add(value));
       });
     });
   }

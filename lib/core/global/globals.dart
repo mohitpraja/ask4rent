@@ -85,18 +85,6 @@ verifyOTP(otp, verifyId, fun) async {
     // Get.back();
   }
 }
-List imagesUrls = [];
-Future uploadFiles(images) async {
-  log('upload file cld');
-  imagesUrls.clear();
-    String id = DateTime.now().millisecondsSinceEpoch.toString();
-    images.forEach((file) async {
-      log('file : $file');
-      final ext = file.path.split('.').last;
-      final ref = Fbase.storage.ref().child('houses/${userInfo['id']}/$id.$ext');
-      ref.putFile(File(file.path)).then((p0) async {
-        await ref.getDownloadURL().then((value) => imagesUrls.add(value));
-      });
-    });
-  }
+
+
 

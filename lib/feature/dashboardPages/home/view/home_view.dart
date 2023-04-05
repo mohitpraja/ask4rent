@@ -10,6 +10,7 @@ import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
+import 'package:ask4rent/core/widgets/nointernet.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
 import 'package:ask4rent/feature/dashboardPages/home/controller/home_controller.dart';
@@ -42,7 +43,7 @@ class HomeView extends GetView<HomeController> {
         return GestureDetector(
             onTap: () => Get.focusScope!.unfocus(),
             child: Obx(
-              () => Stack(
+              () =>Stack(
                 children: [
                   Scaffold(
                     resizeToAvoidBottomInset: false,
@@ -102,6 +103,9 @@ class HomeView extends GetView<HomeController> {
                             onPressed: () {
                               // controller.getCurrentPosition();
                               log(currAddress.value);
+                              List word = currAddress.split(',');
+                              log('word :$word');
+                             
                             },
                             icon: Icon(
                               Icons.notifications,
@@ -269,10 +273,9 @@ class HomeView extends GetView<HomeController> {
                                                           Text(
                                                             localitiesByCity[
                                                                 index]['city'],
-                                                                
                                                             style: TextStyle(
                                                                 color: white,
-                                                                height: 1.1 ,
+                                                                height: 1.1,
                                                                 fontFamily:
                                                                     alata,
                                                                 fontSize:
