@@ -10,7 +10,6 @@ import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
-import 'package:ask4rent/core/widgets/nointernet.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/core/widgets/searchbox.dart';
 import 'package:ask4rent/feature/dashboardPages/home/controller/home_controller.dart';

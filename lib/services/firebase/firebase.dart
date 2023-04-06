@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:ask4rent/core/global/global_var.dart';
-import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
@@ -173,6 +171,7 @@ class Fbase {
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
     String date = DateFormat('dd-MM-yyyy').format(currDate);
+    log('img urls : $propertyImagesUrls');
     return firestore.collection('property').doc(id).set({
       'id': id,
       'date': date,
@@ -193,19 +192,23 @@ class Fbase {
     });
   }
 
-  static Future uploadPropertyImages(images) async {
-    log('upload file cld');
-    String id = DateTime.now().millisecondsSinceEpoch.toString();
-    images.forEach((file) async {
-      log('file : $file');
+  static Future<List<String>?> uploadPropertyImages(images) async {
+    if (images.isEmpty) return null;
+
+    List<String> downloadUrls = [];
+
+    await Future.forEach(images, (dynamic file) async {
+      String id = DateTime.now().millisecondsSinceEpoch.toString();
       final ext = file.path.split('.').last;
-      final ref =
-          Fbase.storage.ref().child('houses/${userInfo['id']}/$id.$ext');
-      ref.putFile(File(file.path)).then((p0) async {
-        await ref
-            .getDownloadURL()
-            .then((value) => propertyImagesUrls.add(value));
-      });
+      Reference ref = FirebaseStorage.instance
+          .ref()
+          .child('houses/${userInfo['id']}/$id.$ext');
+      final UploadTask uploadTask = ref.putFile(File(file.path));
+      final TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
+      final url = await taskSnapshot.ref.getDownloadURL();
+      downloadUrls.add(url);
     });
+    propertyImagesUrls = downloadUrls;
+    return downloadUrls;
   }
 }

@@ -1,7 +1,4 @@
-import 'dart:developer';
-import 'dart:io';
 
-import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';

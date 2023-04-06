@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
@@ -76,6 +79,9 @@ class AddPropertyController extends GetxController {
                     final List<XFile> images =
                         await ImagePicker().pickMultiImage();
                     finalImages.addAll(images);
+                    for (var element in finalImages) {
+                      log('ele :${element.path}');
+                    }
                   },
                 ),
                 const SizedBox(
@@ -116,24 +122,27 @@ class AddPropertyController extends GetxController {
   }
 
   addProperty() {
-    checkInternet(() {
+    checkInternet(() async {
+      propertyImagesUrls!.clear();
       CustomLoader().loader();
-      Fbase.uploadPropertyImages(finalImages).then((value) {
+      log('img empty urls : $propertyImagesUrls');
+      await Fbase.uploadPropertyImages(finalImages).then((value) {
+        log('images : $propertyImagesUrls');
+
         Fbase.addProperty(
-                propertyType.text,
-                address.text,
-                houseNum.text,
-                pin.text,
-                city.text,
-                state.text,
-                area.text,
-                furnishingStatus.text,
-                propertyDescription.text,
-                phone.text,
-                email.text,
-                rent.text,
-                )
-            .then((value) {
+          propertyType.text,
+          address.text,
+          houseNum.text,
+          pin.text,
+          city.text,
+          state.text,
+          area.text,
+          furnishingStatus.text,
+          propertyDescription.text,
+          phone.text,
+          email.text,
+          rent.text,
+        ).then((value) {
           Get.back();
           CustomDialog(
             isDismissable: false,
