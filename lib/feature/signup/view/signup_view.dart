@@ -138,6 +138,7 @@ class SignupView extends GetView<SignupController> {
                                     Fbase.isEmailExist.value = false;
                                     if (controller.signupFormKey.currentState!
                                         .validate()) {
+                                          Get.focusScope!.unfocus;
                                       checkInternet(() {
                                         Fbase.checkUser(controller.phone.text,
                                                 controller.email.text)

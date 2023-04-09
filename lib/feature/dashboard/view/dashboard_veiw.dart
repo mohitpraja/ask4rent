@@ -46,7 +46,7 @@ class DashboardView extends GetView<DashboardController> {
                   BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home),
                   BarItem(filledIcon: Icons.add, outlinedIcon: Icons.add),
                   BarItem(
-                      filledIcon: Icons.bookmark, outlinedIcon: Icons.bookmark),
+                      filledIcon: Icons.bookmark,outlinedIcon: Icons.bookmark),
                   BarItem(filledIcon: Icons.person, outlinedIcon: Icons.person),
                 ],
               ),

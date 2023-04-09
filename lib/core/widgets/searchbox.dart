@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 class CustomSearchField extends GetView {
   final Color? borderColor;
+  final String? hintText;
   final double? borderRadius;
   final TextInputType? textInputType;
   final void Function()? onTap;
@@ -21,6 +22,7 @@ class CustomSearchField extends GetView {
       this.borderColor,
       this.controller,
       this.textInputType,
+      this.hintText,
       this.onTap,
       this.borderRadius});
   @override
@@ -28,7 +30,7 @@ class CustomSearchField extends GetView {
     return TextFormField(
       keyboardType: textInputType,      
       decoration: InputDecoration(
-        hintText: 'Search by city name...',
+        hintText:hintText?? 'Search by city name...',
         suffixIcon: const Icon(Icons.search),
         contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
         enabledBorder: OutlineInputBorder(

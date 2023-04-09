@@ -1,6 +1,17 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
 class PropertyController extends GetxController{
+  String city=Get.arguments[0]['locality'];
+  RxString localCity=''.obs;
+  List propertyList=[];
+  @override
+  void onInit() {
+    localCity.value=city;
+    log('this is City :${localCity.value}');
+    super.onInit();
+  }
 
   late List<String> houseImage = [
     "assets/images/house1.jpg",

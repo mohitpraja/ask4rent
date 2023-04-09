@@ -81,4 +81,8 @@ class AppStyle {
       color: Colors.grey,
       fontFamily: ubuntu,
       fontWeight: FontWeight.w500);
+  static TextStyle titleStyle = TextStyle(
+      fontSize: Get.width * 0.05, fontFamily: alata, color: lightBlack);
+  static TextStyle titleStyle1 = TextStyle(
+      fontSize: Get.width * 0.04, fontFamily: ubuntu, color: lightBlack);
 }

@@ -15,6 +15,8 @@ class Fbase {
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
   static FirebaseAuth auth = FirebaseAuth.instance;
   static FirebaseStorage storage = FirebaseStorage.instance;
+  static Stream<QuerySnapshot<Object?>> propertyStream =
+      Fbase.firestore.collection('property').snapshots();
   static Stream<DocumentSnapshot<Object>> profileStream(id) {
     return firestore.collection('users').doc(id).snapshots();
   }
@@ -154,6 +156,7 @@ class Fbase {
   }
 
   static Future addProperty(
+    title,
     propertyType,
     address,
     houseNum,
@@ -176,6 +179,7 @@ class Fbase {
       'id': id,
       'date': date,
       'time': time,
+      'title':title,
       'propertyType': propertyType,
       'address': address,
       'houseNum': houseNum,

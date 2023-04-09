@@ -15,6 +15,10 @@ import 'package:ask4rent/feature/ownerSeeker/binding/owner_seeker_binding.dart';
 import 'package:ask4rent/feature/ownerSeeker/view/owner_seeker_view.dart';
 import 'package:ask4rent/feature/property/binding/property_binding.dart';
 import 'package:ask4rent/feature/property/view/property_page.dart';
+import 'package:ask4rent/feature/propertyDetail/binding/property_detail_binding.dart';
+import 'package:ask4rent/feature/propertyDetail/view/property_detail_view.dart';
+import 'package:ask4rent/feature/savedProperty/binding/saved_property_binding.dart';
+import 'package:ask4rent/feature/savedProperty/view/saved_property_view.dart';
 import 'package:ask4rent/feature/signup/binding/signup_binding.dart';
 import 'package:ask4rent/feature/signup/view/signup_view.dart';
 import 'package:ask4rent/feature/splash/binding/splash_bind.dart';
@@ -62,6 +66,14 @@ List<GetPage> allpages = [
       name: Routes.forgotPass,
       page: () => const ForgotPassView(),
       binding: ForgotPassBinding()),
+  GetPage(
+      name: Routes.propertyDetail,
+      page: () => const PropertyDetailView(),
+      binding: PropertyDetailBinding()),
+  GetPage(
+      name: Routes.savedProperty,
+      page: () => const SavedPropertyView(),
+      binding: SavedPropertyBinding()),
 ];
 
 

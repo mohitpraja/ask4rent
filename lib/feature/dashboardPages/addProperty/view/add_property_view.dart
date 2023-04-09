@@ -73,6 +73,17 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                   Text('Title *',
+                                      style: AppStyle.listPropSubHeading),
+                                  commonSpace1(),
+                                   CustomTextFormField(
+                                    hintText: 'Property Title',
+                                    onchanged: (p0) =>
+                                        controller.title.text = p0,
+                                    validator: (value) =>
+                                        isValid(value, 'Property title required'),
+                                  ),
+
                                   // Text(
                                   //   'Property *',
                                   //   style: AppStyle.listPropSubHeading,
@@ -98,7 +109,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   //   validator: (value) =>
                                   //       isValid(value, 'Property Required'),
                                   // ),
-                                  // commonSpace1(),
+                                  commonSpace1(),
                                   Text('Property-Type *',
                                       style: AppStyle.listPropSubHeading),
                                   commonSpace1(),
@@ -540,7 +551,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                       ),
                                       CustomElevatedButton(
                                         title:
-                                            'Click here to Upload'.toUpperCase(),
+                                            'Upload Photos'.toUpperCase(),
                                         padding: 0,
                                         onPress: () {
                                           controller.choosePic();

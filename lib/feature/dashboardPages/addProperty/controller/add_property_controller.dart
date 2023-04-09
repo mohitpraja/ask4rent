@@ -22,6 +22,7 @@ class AddPropertyController extends GetxController {
   RxDouble receiveRent = (0.0).obs;
   RxList finalImages = [].obs;
 
+  TextEditingController title = TextEditingController();
   TextEditingController propertyType = TextEditingController();
   TextEditingController address = TextEditingController();
   TextEditingController houseNum = TextEditingController();
@@ -130,6 +131,7 @@ class AddPropertyController extends GetxController {
         log('images : $propertyImagesUrls');
 
         Fbase.addProperty(
+          title.text,
           propertyType.text,
           address.text,
           houseNum.text,

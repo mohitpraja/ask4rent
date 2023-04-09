@@ -6,6 +6,7 @@ import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/localDB/cities.dart';
+import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/core/widgets/custom_dropdown.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
@@ -42,7 +43,7 @@ class HomeView extends GetView<HomeController> {
         return GestureDetector(
             onTap: () => Get.focusScope!.unfocus(),
             child: Obx(
-              () =>Stack(
+              () => Stack(
                 children: [
                   Scaffold(
                     resizeToAvoidBottomInset: false,
@@ -104,7 +105,6 @@ class HomeView extends GetView<HomeController> {
                               log(currAddress.value);
                               List word = currAddress.split(',');
                               log('word :$word');
-                             
                             },
                             icon: Icon(
                               Icons.notifications,
@@ -308,7 +308,17 @@ class HomeView extends GetView<HomeController> {
                                                           SizedBox(
                                                             child:
                                                                 CustomElevatedButton(
-                                                              onPress: () {},
+                                                              onPress: () {
+                                                                Get.toNamed(
+                                                                    Routes
+                                                                        .property,
+                                                                    arguments: [
+                                                                      {
+                                                                        'locality':
+                                                                            localitiesByCity[index]['city']
+                                                                      }
+                                                                    ]);
+                                                              },
                                                               title: 'Explore',
                                                               bgColor: white,
                                                               textColor:
