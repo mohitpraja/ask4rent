@@ -51,6 +51,7 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                   onTap: () {
                     SwipeImageGallery(
                       context: context,
+                      
                       itemBuilder: (context, index) {
                         return Image.network(
                             controller.propertyDetails['houseImages'][index]);
@@ -218,7 +219,7 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                         fontWeight: FontWeight.w400,
                         color: primaryColor)),
                 const SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 SizedBox(
                   width: Get.width,

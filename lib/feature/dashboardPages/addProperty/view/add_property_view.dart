@@ -14,6 +14,7 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/feature/dashboardPages/addProperty/controller/add_property_controller.dart';
+import 'package:ask4rent/feature/dashboardPages/addProperty/view/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -140,6 +141,10 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                         isValid(value, 'Property-type Required'),
                                   ),
                                   commonSpace1(),
+                                  CustomElevatedButton(onPress: () {
+                                    Get.to(Home());
+                                    
+                                  },title:'Address'),
                                   Text('City where your property located *',
                                       style: AppStyle.listPropSubHeading),
                                   commonSpace1(),
