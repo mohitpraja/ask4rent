@@ -8,6 +8,9 @@
         android:label="ask4rent"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+        <meta-data 
+          android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyCoAEij3160njXQcrfSAvzeA461Ty-j-bs"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -24,9 +27,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-            <meta-data 
-              android:name="com.google.android.geo.API_KEY"
-              android:value="AIzaSyBbXbSLd8Itk_2D3-0g0w4gK1zhq0oHArA"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
