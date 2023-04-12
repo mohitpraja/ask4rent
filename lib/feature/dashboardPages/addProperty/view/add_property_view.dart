@@ -142,7 +142,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   ),
                                   commonSpace1(),
                                   CustomElevatedButton(onPress: () {
-                                    Get.to(Home());
+                                    Get.to(const Home());
                                     
                                   },title:'Address'),
                                   Text('City where your property located *',
