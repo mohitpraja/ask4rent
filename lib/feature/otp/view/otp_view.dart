@@ -1,5 +1,6 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';

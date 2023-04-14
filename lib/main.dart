@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primarySwatch,
       ),
-      initialRoute: Routes.addressMap,
+      initialRoute: Routes.splash,
       getPages: allpages,
     );
   }

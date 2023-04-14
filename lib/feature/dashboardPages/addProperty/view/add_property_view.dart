@@ -14,9 +14,10 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/feature/dashboardPages/addProperty/controller/add_property_controller.dart';
-import 'package:ask4rent/feature/dashboardPages/addProperty/view/map.dart';
+import 'package:ask4rent/feature/dashboardPages/addProperty/view/google_places.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class AddPropertyView extends GetView<AddPropertyController> {
   const AddPropertyView({super.key});
@@ -144,6 +145,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   CustomElevatedButton(
                                       onPress: () {
                                         Get.toNamed(Routes.addressMap);
+                                        // Get.to(RoutesWidget());
                                       },
                                       title: 'Address'),
                                   Text('City where your property located *',

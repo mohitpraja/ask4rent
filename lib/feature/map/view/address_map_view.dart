@@ -3,12 +3,10 @@ import 'dart:convert';
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
-import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
+import 'package:ask4rent/core/widgets/searchbox.dart';
 import 'package:ask4rent/feature/map/controller/address_map_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -41,14 +39,17 @@ class AddressMapView extends GetView<AddressMapController> {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 1, vertical: 40),
+                    margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 40),
                     width: Get.width,
-                    child: CustomElevatedButton(
-                      onPress: controller.handlePressButton,
-                      bgColor: white,
-                      textColor: lightBlack,
-                      title: "Search places...",
+                    child: CustomSearchField(
+                      onChanged: (p0) => controller.autoComplete(p0),
                     ),
+                    // child: CustomElevatedButton(
+                    //   onPress: controller.handlePressButton,
+                    //   bgColor: white,
+                    //   textColor: lightBlack,
+                    //   title: "Search places...",
+                    // ),
                   ),
                 ),
                 Align(
@@ -61,7 +62,7 @@ class AddressMapView extends GetView<AddressMapController> {
                         controller.getCurrentLocation();
                       },
 
-                      child: Icon(
+                      child: const Icon(
                         FontAwesomeIcons.locationCrosshairs,
                         color: lightBlack,
                       ),

@@ -1,6 +1,6 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
-import 'package:ask4rent/core/global/globals.dart';
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,4 +1,5 @@
 
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
@@ -21,7 +22,7 @@ commonSpace1() {
 }
 
 RxBool isPass = true.obs;
-RxBool isButtonDisable = false.obs;
+
 
 showPass() {
   if (isPass.value == true) {
@@ -44,7 +45,7 @@ Future checkInternet(fun) async {
   }
 }
 
-String verificationid = '';
+
 Future sendOtp(phone, fun) async {
   await Fbase.auth.verifyPhoneNumber(
     phoneNumber: '+91$phone',

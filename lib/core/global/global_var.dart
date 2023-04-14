@@ -8,6 +8,8 @@ RxString currLocation = ''.obs;
 RxString currAddress = ''.obs;
 RxList localitiesByCity = [].obs;
 RxBool isInternet = false.obs;
+RxBool isButtonDisable = false.obs;
+String verificationid = '';
 List<String>? propertyImagesUrls = [];
 var logger = Logger();
 Position? currentPosition;
