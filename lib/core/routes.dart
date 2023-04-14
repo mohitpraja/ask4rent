@@ -11,4 +11,5 @@ class Routes{
   static String forgotPass='/forgotPass_view';
   static String propertyDetail='/property_detail_view';
   static String savedProperty='/saved_property_view';
+  static String addressMap='/address_map_view';
 }

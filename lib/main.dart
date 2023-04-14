@@ -10,7 +10,7 @@ import 'package:hive/hive.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  var directory=await getApplicationDocumentsDirectory();
+  var directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -28,11 +28,10 @@ class MyApp extends StatelessWidget {
       title: 'ask4rent',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch:primarySwatch,
+        primarySwatch: primarySwatch,
       ),
-      initialRoute: Routes.splash,
+      initialRoute: Routes.addressMap,
       getPages: allpages,
     );
   }
 }
-

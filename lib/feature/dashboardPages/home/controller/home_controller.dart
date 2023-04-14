@@ -193,12 +193,12 @@ class HomeController extends GetxController {
                   'Location forever denied Please give permission form settings')
           .warning();
     }
-    Position currentPosition = await Geolocator.getCurrentPosition(
+    currentPosition = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
 
     //convert into address [geocoding]
     List<Placemark> placemark = await placemarkFromCoordinates(
-        currentPosition.latitude, currentPosition.longitude);
+        currentPosition!.latitude, currentPosition!.longitude);
 
     currAddress.value =
         '${placemark[0].name},${placemark[0].street},${placemark[0].isoCountryCode},${placemark[0].country},${placemark[0].postalCode},${placemark[0].administrativeArea},${placemark[0].subAdministrativeArea},${placemark[0].locality},${placemark[0].subLocality},${placemark[0].thoroughfare},${placemark[0].subThoroughfare}';
@@ -208,6 +208,7 @@ class HomeController extends GetxController {
           ? currLocation.value = element
           : currLocation.value = placemark[0].locality!;
     }
+
 
     // String locality = placemark[0].subAdministrativeArea!.split(' ').first;
 

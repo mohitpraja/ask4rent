@@ -9,6 +9,8 @@ import 'package:ask4rent/feature/forgotpass/binding/forgotpass_binding.dart';
 import 'package:ask4rent/feature/forgotpass/view/forgotpass_view.dart';
 import 'package:ask4rent/feature/login/binding/login_bind.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
+import 'package:ask4rent/feature/map/binding/address_map_binding.dart';
+import 'package:ask4rent/feature/map/view/address_map_view.dart';
 import 'package:ask4rent/feature/otp/binding/otp_binding.dart';
 import 'package:ask4rent/feature/otp/view/otp_view.dart';
 import 'package:ask4rent/feature/ownerSeeker/binding/owner_seeker_binding.dart';
@@ -74,6 +76,10 @@ List<GetPage> allpages = [
       name: Routes.savedProperty,
       page: () => const SavedPropertyView(),
       binding: SavedPropertyBinding()),
+  GetPage(
+      name: Routes.addressMap,
+      page: () => const AddressMapView(),
+      binding: AddressMapBinding()),
 ];
 
 

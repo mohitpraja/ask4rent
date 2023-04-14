@@ -31,8 +31,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
           return Future(() => true);
         },
         child: Scaffold(
-            appBar:
-                const CustomAppBar(title: 'List Your Property', titleSpacing: 15),
+            appBar: const CustomAppBar(
+                title: 'List Your Property', titleSpacing: 15),
             body: Obx(
               () => ScrollGlowRemover(
                 child: Stepper(
@@ -74,15 +74,15 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                   Text('Title *',
+                                  Text('Title *',
                                       style: AppStyle.listPropSubHeading),
                                   commonSpace1(),
-                                   CustomTextFormField(
+                                  CustomTextFormField(
                                     hintText: 'Property Title',
                                     onchanged: (p0) =>
                                         controller.title.text = p0,
-                                    validator: (value) =>
-                                        isValid(value, 'Property title required'),
+                                    validator: (value) => isValid(
+                                        value, 'Property title required'),
                                   ),
 
                                   // Text(
@@ -137,14 +137,15 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                                   fontFamily: alata,
                                                   fontSize: 15)));
                                     }).toList(),
-                                    validator: (value) =>
-                                        isValid(value, 'Property-type Required'),
+                                    validator: (value) => isValid(
+                                        value, 'Property-type Required'),
                                   ),
                                   commonSpace1(),
-                                  CustomElevatedButton(onPress: () {
-                                    Get.to(const Home());
-                                    
-                                  },title:'Address'),
+                                  CustomElevatedButton(
+                                      onPress: () {
+                                        Get.toNamed(Routes.addressMap);
+                                      },
+                                      title: 'Address'),
                                   Text('City where your property located *',
                                       style: AppStyle.listPropSubHeading),
                                   commonSpace1(),
@@ -163,8 +164,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                         hintText: 'House No.',
                                         onchanged: (p0) =>
                                             controller.houseNum.text = p0,
-                                        validator: (value) =>
-                                            isValid(value, 'House no. required'),
+                                        validator: (value) => isValid(
+                                            value, 'House no. required'),
                                       )),
                                       const SizedBox(
                                         width: 10,
@@ -183,7 +184,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   commonSpace1(),
                                   CustomTextFormField(
                                     hintText: 'City',
-                                    onchanged: (p0) => controller.city.text = p0,
+                                    onchanged: (p0) =>
+                                        controller.city.text = p0,
                                     validator: (value) =>
                                         isValid(value, 'City required'),
                                   ),
@@ -248,7 +250,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   CustomTextFormField(
                                     inputType: TextInputType.number,
                                     hintText: 'Area in Sqft',
-                                    onchanged: (p0) => controller.area.text = p0,
+                                    onchanged: (p0) =>
+                                        controller.area.text = p0,
                                     validator: (value) =>
                                         isValid(value, 'Area required'),
                                   ),
@@ -284,8 +287,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                   commonSpace1(),
                                   CustomTextFormField(
                                     hintText: 'Add Property Details',
-                                    onchanged: (p0) =>
-                                        controller.propertyDescription.text = p0,
+                                    onchanged: (p0) => controller
+                                        .propertyDescription.text = p0,
                                     maxLines: 5,
                                     contentPadding: const EdgeInsets.all(10),
                                     validator: (value) => isValid(
@@ -310,8 +313,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                               .currentState!
                                               .validate()) {
                                             controller.currentStep.value < 2
-                                                ? controller.currentStep.value +=
-                                                    1
+                                                ? controller
+                                                    .currentStep.value += 1
                                                 : null;
                                           }
                                         },
@@ -379,7 +382,8 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                             .contactDetailsFormKey.currentState!
                                             .validate()) {
                                           controller.currentStep.value < 3
-                                              ? controller.currentStep.value += 1
+                                              ? controller.currentStep.value +=
+                                                  1
                                               : null;
                                         }
                                       },
@@ -498,10 +502,12 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                     CustomElevatedButton(
                                       title: 'Next',
                                       onPress: () {
-                                        if (controller.priceFormKey.currentState!
+                                        if (controller
+                                            .priceFormKey.currentState!
                                             .validate()) {
                                           controller.currentStep.value < 4
-                                              ? controller.currentStep.value += 1
+                                              ? controller.currentStep.value +=
+                                                  1
                                               : null;
                                         }
                                       },
@@ -555,8 +561,7 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                         height: 5,
                                       ),
                                       CustomElevatedButton(
-                                        title:
-                                            'Upload Photos'.toUpperCase(),
+                                        title: 'Upload Photos'.toUpperCase(),
                                         padding: 0,
                                         onPress: () {
                                           controller.choosePic();
@@ -568,8 +573,9 @@ class AddPropertyView extends GetView<AddPropertyController> {
                               ),
                               commonSpace(),
                               Visibility(
-                                visible:
-                                    controller.finalImages.isEmpty ? false : true,
+                                visible: controller.finalImages.isEmpty
+                                    ? false
+                                    : true,
                                 child: ScrollGlowRemover(
                                   child: SizedBox(
                                     height: controller.finalImages.length > 3
@@ -580,11 +586,13 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                       crossAxisSpacing: 5,
                                       mainAxisSpacing: 5,
                                       children: List.generate(
-                                          controller.finalImages.length, (index) {
+                                          controller.finalImages.length,
+                                          (index) {
                                         return Container(
                                           decoration: BoxDecoration(
                                               border: Border.all(
-                                                  width: .5, color: lightBlack)),
+                                                  width: .5,
+                                                  color: lightBlack)),
                                           child: Stack(
                                             alignment: Alignment.center,
                                             children: [
@@ -598,17 +606,18 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                                   top: 0,
                                                   child: GestureDetector(
                                                     onTap: () {
-                                                       for (var element in controller.finalImages) {
-                                                         log(
-                                                              'before ele :${element.path}');
-                                                       }
+                                                      for (var element
+                                                          in controller
+                                                              .finalImages) {
+                                                        log('before ele :${element.path}');
+                                                      }
                                                       controller.finalImages
                                                           .removeAt(index);
-                                                      for (var element in controller.finalImages) {
-                                                        log(
-                                                              'after final ele :${element.path}');
+                                                      for (var element
+                                                          in controller
+                                                              .finalImages) {
+                                                        log('after final ele :${element.path}');
                                                       }
-                                                      
                                                     },
                                                     child: Container(
                                                       width: 20,
