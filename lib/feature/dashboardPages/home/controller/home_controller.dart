@@ -10,7 +10,6 @@ import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:geocode/geocode.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';

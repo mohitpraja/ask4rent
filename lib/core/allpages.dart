@@ -74,9 +74,11 @@ List<GetPage> allpages = [
       name: Routes.adminHome,
       page: () => const AdminHomeView(),
       binding: AdminHomeBinding()),
+  GetPage(
       name: Routes.propertyDetail,
       page: () => const PropertyDetailView(),
       binding: PropertyDetailBinding()),
+     
   GetPage(
       name: Routes.savedProperty,
       page: () => const SavedPropertyView(),
