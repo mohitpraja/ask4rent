@@ -1,4 +1,6 @@
 import 'package:ask4rent/core/routes.dart';
+import 'package:ask4rent/feature/admin_dashboard/home/binding/admin_home_binding.dart';
+import 'package:ask4rent/feature/admin_dashboard/home/view/admin_home_view.dart';
 import 'package:ask4rent/feature/dashboard/binding/dashboard_binding.dart';
 import 'package:ask4rent/feature/dashboard/view/dashboard_veiw.dart';
 import 'package:ask4rent/feature/editprofile/binding/editprofile_binding.dart';
@@ -69,6 +71,9 @@ List<GetPage> allpages = [
       page: () => const ForgotPassView(),
       binding: ForgotPassBinding()),
   GetPage(
+      name: Routes.adminHome,
+      page: () => const AdminHomeView(),
+      binding: AdminHomeBinding()),
       name: Routes.propertyDetail,
       page: () => const PropertyDetailView(),
       binding: PropertyDetailBinding()),

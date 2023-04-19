@@ -10,6 +10,7 @@ import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:geocode/geocode.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
@@ -168,6 +169,7 @@ class HomeController extends GetxController {
     currLocation.value = '';
     isLoader.value = true;
     bool locationEnabled;
+
     locationEnabled = await Geolocator.isLocationServiceEnabled();
     if (!locationEnabled) {
       // Get.snackbar(
@@ -197,6 +199,7 @@ class HomeController extends GetxController {
         desiredAccuracy: LocationAccuracy.high);
 
     //convert into address [geocoding]
+
     List<Placemark> placemark = await placemarkFromCoordinates(
         currentPosition!.latitude, currentPosition!.longitude);
 
