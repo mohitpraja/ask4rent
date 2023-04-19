@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
@@ -9,6 +10,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:swipe_image_gallery/swipe_image_gallery.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PropertyDetailView extends GetView<PropertyDetailController> {
   const PropertyDetailView({super.key});
@@ -51,7 +53,6 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                   onTap: () {
                     SwipeImageGallery(
                       context: context,
-                      
                       itemBuilder: (context, index) {
                         return Image.network(
                             controller.propertyDetails['houseImages'][index]);
@@ -85,19 +86,19 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                       return index == 0
                           ? const SizedBox()
                           : GestureDetector(
-                             onTap: () {
-                    SwipeImageGallery(
-                      context: context,
-                      itemBuilder: (context, index) {
-                        return Image.network(
-                            controller.propertyDetails['houseImages'][index]);
-                      },
-                      initialIndex: index,
-                      itemCount:
-                          controller.propertyDetails['houseImages'].length,
-                    ).show();
-                  },
-                            child: Container(
+                              onTap: () {
+                                SwipeImageGallery(
+                                  context: context,
+                                  itemBuilder: (context, index) {
+                                    return Image.network(controller
+                                        .propertyDetails['houseImages'][index]);
+                                  },
+                                  initialIndex: index,
+                                  itemCount: controller
+                                      .propertyDetails['houseImages'].length,
+                                ).show();
+                              },
+                              child: Container(
                                 margin: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 5),
                                 child: ClipRRect(
@@ -114,7 +115,7 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                                   ),
                                 ),
                               ),
-                          );
+                            );
                     },
                   ),
                 ),
@@ -211,13 +212,30 @@ class PropertyDetailView extends GetView<PropertyDetailController> {
                       fontWeight: FontWeight.w400,
                       color: lightBlack),
                 ),
-                Text('Show on Map',
-                    style: TextStyle(
-                        fontSize: Get.width * 0.04,
-                        decoration: TextDecoration.underline,
-                        fontFamily: ubuntu,
-                        fontWeight: FontWeight.w400,
-                        color: primaryColor)),
+                InkWell(
+                  onTap: () async {
+                    log('you clicked on map');
+                    String query = Uri.encodeComponent(
+                        '${controller.propertyDetails['address']},${controller.propertyDetails['city']},${controller.propertyDetails['state']}');
+                    String googleUrl =
+                        "https://www.google.com/maps/search/?api=1&query=$query";
+                    // ignore: deprecated_member_use
+                    if (await canLaunch(googleUrl)) {
+                      // ignore: deprecated_member_use
+                      await launch(googleUrl);
+                    }
+                    // Uri googleUrl = Uri.parse(
+                    //     "https://www.google.com/maps/search/?api=1&query=$query");
+                    // launchUrl(googleUrl);
+                  },
+                  child: Text('Show on Map',
+                      style: TextStyle(
+                          fontSize: Get.width * 0.04,
+                          decoration: TextDecoration.underline,
+                          fontFamily: ubuntu,
+                          fontWeight: FontWeight.w400,
+                          color: primaryColor)),
+                ),
                 const SizedBox(
                   height: 10,
                 ),

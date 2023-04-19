@@ -170,8 +170,8 @@ class HomeController extends GetxController {
     bool locationEnabled;
     locationEnabled = await Geolocator.isLocationServiceEnabled();
     if (!locationEnabled) {
-      Get.snackbar(
-          "Warning", "Please enable location to find the current location");
+      // Get.snackbar(
+      //     "Warning", "Please enable location to find the current location");
     }
 
     LocationPermission permission = await Geolocator.checkPermission();

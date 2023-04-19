@@ -14,7 +14,6 @@ import 'package:ask4rent/core/widgets/custom_outlinebutton.dart';
 import 'package:ask4rent/core/widgets/custom_textform.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/feature/dashboardPages/addProperty/controller/add_property_controller.dart';
-import 'package:ask4rent/feature/dashboardPages/addProperty/view/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

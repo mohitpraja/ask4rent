@@ -984,6 +984,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           'Tardeo is an important arterial road in south Mumbai that connects significant commercial locations in the region. It is also home to India’s richest man',
       "image": 'assets/city/mumbai/tardeo.jpg'
     },
+    {
+      "city": '',
+    },
   ],
   "Gwalior": [
     {
@@ -1033,6 +1036,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "description":
           'Alkapuri is a luxury locality situated in Gwalior. The pincode of this locality is 474011. This locality is near City Center, Govindpuri and Madhuwan Enclave. ',
       "image": 'assets/city/gwalior/alkapuri.jpg'
+    },
+    {
+      "city": '',
     },
   ],
   "Bengaluru": [
@@ -1084,6 +1090,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           'Bellandur is a developed, well placed area near ORR and Sarjapur Road junction, located in South-East Bengaluru.',
       "image": 'assets/city/bengluru/bellandur.jpg'
     },
+    {
+      "city": '',
+    },
   ],
   "Indore": [
     {
@@ -1127,6 +1136,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "description":
           'It is located in the northeast side of suburbs of Indore and is easily accessible to Vijay nagar, the new business district.',
       "image": 'assets/city/indore/Tulsi.jpg'
+    },
+    {
+      "city": '',
     },
   ],
   "New Delhi": [
@@ -1178,6 +1190,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           'When we talk about established, posh residential areas of Delhi, the list is incomplete without Dwarka Sub City.',
       "image": 'assets/city/newdelhi/DwarkaSubCity.jpg'
     },
+    {
+      "city": '',
+    },
   ],
   "Kolkata": [
     {
@@ -1215,6 +1230,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           "Gariahat is a prestigious neighbourhood on Kolkata’s southern outskirts. It is a residential as well as a commercial neighbourhood.",
       "image": 'assets/city/kolkata/Gariahat.jpg'
     },
+    {
+      "city": '',
+    },
   ],
   "Chennai": [
     {
@@ -1231,7 +1249,8 @@ Map<String, List<Map<String, String>>> popularLocalities = {
     },
     {
       "city": 'Besant Nagar',
-      "description": 'If you are not looking for one of the most expensive, but one of the best posh areas in Chennai, look no further than the beach attraction of the city.',
+      "description":
+          'If you are not looking for one of the most expensive, but one of the best posh areas in Chennai, look no further than the beach attraction of the city.',
       "image": 'assets/city/chennai/BesantNagar.jpeg'
     },
     {
@@ -1252,6 +1271,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           "Located in southern Chennai, Thiruvanmiyur is a prime residential area. ",
       "image": 'assets/city/chennai/Thiruvanmiyur.jpeg'
     },
+    {
+      "city": '',
+    },
   ],
   "Hyderabad": [
     {
@@ -1268,7 +1290,8 @@ Map<String, List<Map<String, String>>> popularLocalities = {
     },
     {
       "city": 'Gachibowli',
-      "description": 'Gachibowli is a well-known posh residential area in Hyderabad. It is close to Hitech City and is home to a number of well-known corporations (Accenture, Microsoft, TCS, Amazon etc)',
+      "description":
+          'Gachibowli is a well-known posh residential area in Hyderabad. It is close to Hitech City and is home to a number of well-known corporations (Accenture, Microsoft, TCS, Amazon etc)',
       "image": 'assets/city/hyderabad/Gachibowli.jpg'
     },
     {
@@ -1289,6 +1312,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
           "Sanjeeva Reddy Nagar, a.k.a. Hyderabad’s SR Nagar is mostly residential. Neelam Sanjeeva Reddy, India’s sixth president, named it. ",
       "image": 'assets/city/hyderabad/SR-Nagar.jpg'
     },
+    {
+      "city": '',
+    },
   ],
   "Agra": [
     {
@@ -1305,7 +1331,8 @@ Map<String, List<Map<String, String>>> popularLocalities = {
     },
     {
       "city": 'Sikandra',
-      "description": 'Sikandra is a affordable locality situated in Agra. The pincode of this locality is 282007. This locality has 70+ properties to buy and 30+ properties to rent.',
+      "description":
+          'Sikandra is a affordable locality situated in Agra. The pincode of this locality is 282007. This locality has 70+ properties to buy and 30+ properties to rent.',
       "image": 'assets/city/agra/'
     },
     {
@@ -1331,6 +1358,9 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "description":
           "Khandari is one of the localities in Agra. The pincode of this locality is 282002. ",
       "image": 'assets/city/agra/'
+    },
+    {
+      "city": '',
     },
   ],
 };
