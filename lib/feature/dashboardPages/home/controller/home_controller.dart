@@ -11,6 +11,7 @@ import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:geocode/geocode.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
@@ -171,14 +172,14 @@ class HomeController extends GetxController {
     isLoader.value = true;
     bool locationEnabled;
 
-    locationEnabled = await Geolocator.isLocationServiceEnabled();
-    print("request called");
-    print(locationEnabled);
-    if (!locationEnabled) {
-      print("location is not enabled");
-      Get.snackbar(
-          "Warning", "Please enable location to find the current location");
-    }
+    // locationEnabled = await Geolocator.isLocationServiceEnabled();
+    // print("request called");
+    // print(locationEnabled);
+    // if (!locationEnabled) {
+    //   print("location is not enabled");
+    //   Get.snackbar(
+    //       "Warning", "Please enable location to find the current location");
+    // }
 
     LocationPermission permission = await Geolocator.checkPermission();
     // if (permission == LocationPermission.denied ||
@@ -203,14 +204,20 @@ class HomeController extends GetxController {
         desiredAccuracy: LocationAccuracy.high);
 
     //convert into address [geocoding]
-    List<Placemark> placemark = await placemarkFromCoordinates(
-        currentPosition.latitude, currentPosition.longitude);
+    GeoCode geoCode = GeoCode();
+    Address placemark = await geoCode.reverseGeocoding(latitude: currentPosition.latitude, longitude: currentPosition.longitude );
+    // List<Placemark> placemark = await placemarkFromCoordinates(
+    //     currentPosition.latitude, currentPosition.longitude);
 
-    address =
-        '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
-    String locality = placemark[0].subAdministrativeArea!.split(' ').first;
+    print('placemark');
+    print(placemark);
+    print('placemark');
 
-    currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
+    // address =
+    //     '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+    // String locality = placemark[0].subAdministrativeArea!.split(' ').first;
+    //
+    // currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
     setLoclity();
     isLoader.value = false;
 
