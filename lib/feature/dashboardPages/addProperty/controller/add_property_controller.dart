@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
@@ -18,8 +21,8 @@ class AddPropertyController extends GetxController {
   RxDouble commissionAmt = (0.0).obs;
   RxDouble receiveRent = (0.0).obs;
   RxList finalImages = [].obs;
-  
 
+  TextEditingController title = TextEditingController();
   TextEditingController propertyType = TextEditingController();
   TextEditingController address = TextEditingController();
   TextEditingController houseNum = TextEditingController();
@@ -77,6 +80,9 @@ class AddPropertyController extends GetxController {
                     final List<XFile> images =
                         await ImagePicker().pickMultiImage();
                     finalImages.addAll(images);
+                    for (var element in finalImages) {
+                      log('ele :${element.path}');
+                    }
                   },
                 ),
                 const SizedBox(
@@ -117,9 +123,15 @@ class AddPropertyController extends GetxController {
   }
 
   addProperty() {
-    checkInternet(() {
+    checkInternet(() async {
+      propertyImagesUrls!.clear();
       CustomLoader().loader();
-      Fbase.addProperty(
+      log('img empty urls : $propertyImagesUrls');
+      await Fbase.uploadPropertyImages(finalImages).then((value) {
+        log('images : $propertyImagesUrls');
+
+        Fbase.addProperty(
+          title.text,
           propertyType.text,
           address.text,
           houseNum.text,
@@ -132,15 +144,15 @@ class AddPropertyController extends GetxController {
           phone.text,
           email.text,
           rent.text,
-          finalImages
-          ).then((value) {
-      Get.back();
-      CustomDialog(
-        isDismissable: false,
-        descText: 'Your property added successfully',
-        btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
-      ).success();
-    });
+        ).then((value) {
+          Get.back();
+          CustomDialog(
+            isDismissable: false,
+            descText: 'Your property added successfully',
+            btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
+          ).success();
+        });
+      });
     });
   }
 }

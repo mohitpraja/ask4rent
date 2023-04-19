@@ -8,25 +8,29 @@ class CustomWhiteAppBar extends GetView with PreferredSizeWidget {
   // final Color? color;
   // final Color? colors;
   // final TextStyle? style;
+  final double? height;
 
   const CustomWhiteAppBar({
+    this.height,
     super.key,
   });
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: white,
+      toolbarHeight: height??50,
       elevation: 0,
+      leadingWidth: 20,
       leading: IconButton(
         onPressed: () => Get.back(),
         icon: const Icon(
           Icons.arrow_back,
-          color: lightBlack,
+          color: Colors.black,
         ),
       ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(55);
+  Size get preferredSize =>  Size.fromHeight( height??50);
 }

@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:ask4rent/core/global/global_var.dart';
-import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
@@ -17,6 +15,8 @@ class Fbase {
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
   static FirebaseAuth auth = FirebaseAuth.instance;
   static FirebaseStorage storage = FirebaseStorage.instance;
+  static Stream<QuerySnapshot<Object?>> propertyStream =
+      Fbase.firestore.collection('property').snapshots();
   static Stream<DocumentSnapshot<Object>> profileStream(id) {
     return firestore.collection('users').doc(id).snapshots();
   }
@@ -156,43 +156,63 @@ class Fbase {
   }
 
   static Future addProperty(
-      propertyType,
-      address,
-      houseNum,
-      pin,
-      city,
-      state,
-      area,
-      furnishingStatus,
-      propertyDescription,
-      phone,
-      email,
-      rent,
-      images) async {
+    title,
+    propertyType,
+    address,
+    houseNum,
+    pin,
+    city,
+    state,
+    area,
+    furnishingStatus,
+    propertyDescription,
+    phone,
+    email,
+    rent,
+  ) async {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
     String date = DateFormat('dd-MM-yyyy').format(currDate);
-    uploadFiles(images).then((value) {
-      log('final urls : $imagesUrls');
-      return firestore.collection('property').doc(id).set({
-        'id': id,
-        'date': date,
-        'time': time,
-        'propertyType': propertyType,
-        'address': address,
-        'houseNum': houseNum,
-        'pin': pin,
-        'city': city,
-        'state': state,
-        'area': area,
-        'furnishingStatus': furnishingStatus,
-        'propertyDescription': propertyDescription,
-        'phone': phone,
-        'email': email ?? '',
-        'rent': rent,
-        'houseImages': imagesUrls
-      });
+    log('img urls : $propertyImagesUrls');
+    return firestore.collection('property').doc(id).set({
+      'id': id,
+      'date': date,
+      'time': time,
+      'title':title,
+      'propertyType': propertyType,
+      'address': address,
+      'houseNum': houseNum,
+      'pin': pin,
+      'city': city,
+      'state': state,
+      'area': area,
+      'furnishingStatus': furnishingStatus,
+      'propertyDescription': propertyDescription,
+      'phone': phone,
+      'email': email ?? '',
+      'rent': rent,
+      'houseImages': propertyImagesUrls
     });
+  }
+
+  static Future<List<String>?> uploadPropertyImages(images) async {
+    if (images.isEmpty) return null;
+
+    List<String> downloadUrls = [];
+
+    await Future.forEach(images, (dynamic file) async {
+      String id = DateTime.now().millisecondsSinceEpoch.toString();
+      final ext = file.path.split('.').last;
+      Reference ref = FirebaseStorage.instance
+          .ref()
+          .child('houses/${userInfo['id']}/$id.$ext');
+      final UploadTask uploadTask = ref.putFile(File(file.path));
+      final TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
+      final url = await taskSnapshot.ref.getDownloadURL();
+      downloadUrls.add(url);
+    });
+    propertyImagesUrls = downloadUrls;
+    return downloadUrls;
   }
 }

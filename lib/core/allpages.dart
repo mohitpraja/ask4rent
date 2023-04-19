@@ -11,12 +11,18 @@ import 'package:ask4rent/feature/forgotpass/binding/forgotpass_binding.dart';
 import 'package:ask4rent/feature/forgotpass/view/forgotpass_view.dart';
 import 'package:ask4rent/feature/login/binding/login_bind.dart';
 import 'package:ask4rent/feature/login/view/login_view.dart';
+import 'package:ask4rent/feature/map/binding/address_map_binding.dart';
+import 'package:ask4rent/feature/map/view/address_map_view.dart';
 import 'package:ask4rent/feature/otp/binding/otp_binding.dart';
 import 'package:ask4rent/feature/otp/view/otp_view.dart';
 import 'package:ask4rent/feature/ownerSeeker/binding/owner_seeker_binding.dart';
 import 'package:ask4rent/feature/ownerSeeker/view/owner_seeker_view.dart';
 import 'package:ask4rent/feature/property/binding/property_binding.dart';
 import 'package:ask4rent/feature/property/view/property_page.dart';
+import 'package:ask4rent/feature/propertyDetail/binding/property_detail_binding.dart';
+import 'package:ask4rent/feature/propertyDetail/view/property_detail_view.dart';
+import 'package:ask4rent/feature/savedProperty/binding/saved_property_binding.dart';
+import 'package:ask4rent/feature/savedProperty/view/saved_property_view.dart';
 import 'package:ask4rent/feature/signup/binding/signup_binding.dart';
 import 'package:ask4rent/feature/signup/view/signup_view.dart';
 import 'package:ask4rent/feature/splash/binding/splash_bind.dart';
@@ -68,6 +74,17 @@ List<GetPage> allpages = [
       name: Routes.adminHome,
       page: () => const AdminHomeView(),
       binding: AdminHomeBinding()),
+      name: Routes.propertyDetail,
+      page: () => const PropertyDetailView(),
+      binding: PropertyDetailBinding()),
+  GetPage(
+      name: Routes.savedProperty,
+      page: () => const SavedPropertyView(),
+      binding: SavedPropertyBinding()),
+  GetPage(
+      name: Routes.addressMap,
+      page: () => const AddressMapView(),
+      binding: AddressMapBinding()),
 ];
 
 

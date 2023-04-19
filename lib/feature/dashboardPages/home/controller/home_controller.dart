@@ -9,7 +9,6 @@ import 'package:ask4rent/core/widgets/nodatafound.dart';
 import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocode/geocode.dart';
 import 'package:geocoding/geocoding.dart';
@@ -23,7 +22,6 @@ class HomeController extends GetxController {
     db = await Hive.openBox('ask4rent');
     userId = db.get('userId');
     filterData('');
-    // setLoclity();
     getCurrentPosition();
     super.onInit();
   }
@@ -172,14 +170,11 @@ class HomeController extends GetxController {
     isLoader.value = true;
     bool locationEnabled;
 
-    // locationEnabled = await Geolocator.isLocationServiceEnabled();
-    // print("request called");
-    // print(locationEnabled);
-    // if (!locationEnabled) {
-    //   print("location is not enabled");
-    //   Get.snackbar(
-    //       "Warning", "Please enable location to find the current location");
-    // }
+    locationEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!locationEnabled) {
+      // Get.snackbar(
+      //     "Warning", "Please enable location to find the current location");
+    }
 
     LocationPermission permission = await Geolocator.checkPermission();
     // if (permission == LocationPermission.denied ||
@@ -194,34 +189,36 @@ class HomeController extends GetxController {
       }
     }
 
-      if (permission == LocationPermission.deniedForever) {
-        CustomDialog(
-                descText:
-                    'Location forever denied Please give permission form settings')
-            .warning();
-      }
-    Position currentPosition = await Geolocator.getCurrentPosition(
+    if (permission == LocationPermission.deniedForever) {
+      CustomDialog(
+              descText:
+                  'Location forever denied Please give permission form settings')
+          .warning();
+    }
+    currentPosition = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
 
     //convert into address [geocoding]
-    GeoCode geoCode = GeoCode();
-    Address placemark = await geoCode.reverseGeocoding(latitude: currentPosition.latitude, longitude: currentPosition.longitude );
-    // List<Placemark> placemark = await placemarkFromCoordinates(
-    //     currentPosition.latitude, currentPosition.longitude);
 
-    print('placemark');
-    print(placemark);
-    print('placemark');
+    List<Placemark> placemark = await placemarkFromCoordinates(
+        currentPosition!.latitude, currentPosition!.longitude);
 
-    // address =
-    //     '${placemark[0].name},${placemark[0].thoroughfare},${placemark[0].subLocality},${placemark[0].locality},${placemark[0].administrativeArea},${placemark[0].postalCode},${placemark[0].country}';
+    currAddress.value =
+        '${placemark[0].name},${placemark[0].street},${placemark[0].isoCountryCode},${placemark[0].country},${placemark[0].postalCode},${placemark[0].administrativeArea},${placemark[0].subAdministrativeArea},${placemark[0].locality},${placemark[0].subLocality},${placemark[0].thoroughfare},${placemark[0].subThoroughfare}';
+    List addressArray = currAddress.split(',');
+    for (var element in addressArray) {
+      cities.contains(element)
+          ? currLocation.value = element
+          : currLocation.value = placemark[0].locality!;
+    }
+
+
     // String locality = placemark[0].subAdministrativeArea!.split(' ').first;
-    //
+
     // currLocation.value = placemark[0].locality == '' ? 'Gwalior' : locality;
     setLoclity();
     isLoader.value = false;
 
-    print("this is placemark : --> $placemark <--end");
+    log("this is placemark : --> $placemark <--end");
   }
-
 }
