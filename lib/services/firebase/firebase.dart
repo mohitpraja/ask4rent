@@ -21,7 +21,7 @@ class Fbase {
     return firestore.collection('users').doc(id).snapshots();
   }
 
-  static Future createUser(name, email, password, phone) {
+  static Future createUser(name, email, password, phone, [designation]) {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
@@ -36,7 +36,8 @@ class Fbase {
       'savedProperty':[],
       'id': id,
       'date': date,
-      'time': time
+      'time': time,
+      'designation': designation
     });
   }
 
