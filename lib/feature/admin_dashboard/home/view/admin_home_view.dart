@@ -2,11 +2,11 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/routes.dart';
-import 'package:ask4rent/core/widgets/custom_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/feature/admin_dashboard/home/controller/admin_home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class AdminHomeView extends GetView<AdminHomeController> {
   const AdminHomeView({super.key});
@@ -22,257 +22,318 @@ class AdminHomeView extends GetView<AdminHomeController> {
         titleSpacing: 1,
       ),
       drawer: const CustomDrawer(),
-      body: Column(
-        children: [
-          commonSpace(),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: [
-                        const BoxShadow(
-                          offset: Offset(-4, 0),
-                          color: primaryColor,
-                        ),
-                        BoxShadow(
-                          color: shadowColor,
-                          blurRadius: 8,
-                          offset: const Offset(0, 9),
-                        ),
-                      ]),
+      body: Container(
+        margin: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            commonSpace(),
+            Row(
+              children: [
+                Expanded(
                   child: Container(
                     margin: const EdgeInsets.all(5),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '100',
-                                  style: TextStyle(
-                                    fontSize: Get.width * 0.065,
-                                    fontFamily: alata,
-                                  ),
-                                ),
-                                Text(
-                                  'Last month : 80',
-                                  style: TextStyle(
-                                    fontSize: Get.width * 0.035,
-                                    fontFamily: alata,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Image.asset(
-                                'assets/images/executive.png',
-                              ),
-                            )
-                          ],
-                        ),
-                        Text(
-                          'Total Executives',
-                          style: TextStyle(
-                            fontSize: Get.width * 0.05,
-                            fontFamily: alata,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          const BoxShadow(
+                            offset: Offset(-4, 0),
+                            color: primaryColor,
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: [
-                        const BoxShadow(
-                          offset: Offset(-4, 0),
-                          color: Colors.green,
-                        ),
-                        BoxShadow(
-                          color: shadowColor,
-                          blurRadius: 8,
-                          offset: const Offset(0, 9),
-                        ),
-                      ]),
-                  child: Container(
-                    margin: const EdgeInsets.all(5),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '100',
-                                  style: TextStyle(
-                                    fontSize: Get.width * 0.065,
-                                    fontFamily: alata,
-                                  ),
-                                ),
-                                Text(
-                                  'Last month : 80',
-                                  style: TextStyle(
-                                    fontSize: Get.width * 0.035,
-                                    fontFamily: alata,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Image.asset(
-                                'assets/images/house.png',
-                              ),
-                            )
-                          ],
-                        ),
-                        Text(
-                          'Total Properties',
-                          style: TextStyle(
-                            fontSize: Get.width * 0.05,
-                            fontFamily: alata,
+                          BoxShadow(
+                            color: shadowColor,
+                            blurRadius: 8,
+                            offset: const Offset(0, 9),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          commonSpace(),
-          Container(
-            margin: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  const BoxShadow(
-                    offset: Offset(-4, 0),
-                    color: Colors.teal,
-                  ),
-                  BoxShadow(
-                    color: shadowColor,
-                    blurRadius: 8,
-                    offset: const Offset(0, 9),
-                  ),
-                ]),
-            child: Container(
-              margin: const EdgeInsets.all(5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin:
-                        const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                    child: IntrinsicHeight(
-                      child: Row(
+                        ]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Row(
                             children: [
-                              Text(
-                                'Owners',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.06,
-                                  fontFamily: alata,
-                                ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '100',
+                                    style: TextStyle(
+                                      fontSize: Get.width * 0.065,
+                                      fontFamily: alata,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Last month : 80',
+                                    style: TextStyle(
+                                      fontSize: Get.width * 0.035,
+                                      fontFamily: alata,
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                '80',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.05,
-                                  fontFamily: alata,
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/images/executive.png',
                                 ),
-                              ),
+                              )
                             ],
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const VerticalDivider(
-                            color: lightBlack,
-                            thickness: 1.5,
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Seekers',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.06,
-                                  fontFamily: alata,
-                                ),
-                              ),
-                              Text(
-                                '80',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.05,
-                                  fontFamily: alata,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: Image.asset(
-                              'assets/images/users.png',
+                          Text(
+                            'Total Executives',
+                            style: TextStyle(
+                              fontSize: Get.width * 0.05,
+                              fontFamily: alata,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  Container(
-                    margin:
-                        const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                    child: Text(
-                      'Total Users : 200',
-                      style: TextStyle(
-                        fontSize: Get.width * 0.055,
-                        fontFamily: alata,
+                ),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: white,
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          const BoxShadow(
+                            offset: Offset(-4, 0),
+                            color: Colors.green,
+                          ),
+                          BoxShadow(
+                            color: shadowColor,
+                            blurRadius: 8,
+                            offset: const Offset(0, 9),
+                          ),
+                        ]),
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '100',
+                                    style: TextStyle(
+                                      fontSize: Get.width * 0.065,
+                                      fontFamily: alata,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Last month : 80',
+                                    style: TextStyle(
+                                      fontSize: Get.width * 0.035,
+                                      fontFamily: alata,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/images/house.png',
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(
+                            'Total Properties',
+                            style: TextStyle(
+                              fontSize: Get.width * 0.05,
+                              fontFamily: alata,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  commonSpace()
-                ],
+                ),
+              ],
+            ),
+            commonSpace(),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    const BoxShadow(
+                      offset: Offset(-4, 0),
+                      color: Colors.teal,
+                    ),
+                    BoxShadow(
+                      color: shadowColor,
+                      blurRadius: 8,
+                      offset: const Offset(0, 9),
+                    ),
+                  ]),
+              child: Container(
+                margin: const EdgeInsets.all(5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 20),
+                      child: IntrinsicHeight(
+                        child: Row(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Owners',
+                                  style: TextStyle(
+                                    fontSize: Get.width * 0.06,
+                                    fontFamily: alata,
+                                  ),
+                                ),
+                                Text(
+                                  '80',
+                                  style: TextStyle(
+                                    fontSize: Get.width * 0.05,
+                                    fontFamily: alata,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const VerticalDivider(
+                              color: lightBlack,
+                              thickness: 1.5,
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Seekers',
+                                  style: TextStyle(
+                                    fontSize: Get.width * 0.06,
+                                    fontFamily: alata,
+                                  ),
+                                ),
+                                Text(
+                                  '80',
+                                  style: TextStyle(
+                                    fontSize: Get.width * 0.05,
+                                    fontFamily: alata,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: Image.asset(
+                                'assets/images/users.png',
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 0, horizontal: 20),
+                      child: Text(
+                        'Total Users : 200',
+                        style: TextStyle(
+                          fontSize: Get.width * 0.055,
+                          fontFamily: alata,
+                        ),
+                      ),
+                    ),
+                    commonSpace()
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+            commonSpace(),
+            SizedBox(
+                height: 300,
+                child: SfCartesianChart(
+                    plotAreaBorderColor: white,
+                    margin: const EdgeInsets.all(5),
+
+                    primaryXAxis: CategoryAxis(
+                        majorGridLines: const MajorGridLines(width: 0),
+                        majorTickLines: const MajorTickLines(width: 0),
+                        axisLine: AxisLine(color: white, width: 0),
+                        labelAlignment: LabelAlignment.center,
+                        labelStyle: TextStyle(
+                            color: lightBlack,
+                            fontFamily: alata,
+                            fontWeight: FontWeight.w500,
+                            fontSize: Get.width * 0.035)),
+                    legend: Legend(isVisible: true,textStyle: TextStyle(
+                            color: lightBlack,
+                            fontFamily: alata,
+                            fontWeight: FontWeight.w500,
+                            fontSize: Get.width * 0.035)),
+                    series: <LineSeries<SalesData, String>>[
+                      LineSeries<SalesData, String>(
+                          isVisibleInLegend: true,
+                          legendItemText: 'Users',
+                           legendIconType: LegendIconType.rectangle,
+                          dataSource: <SalesData>[
+                            SalesData('Jan', 10),
+                            SalesData('Feb', 28),
+                            SalesData('Mar', 15),
+                            SalesData('Apr', 32),
+                            SalesData('May', 40)
+                          ],
+                          xValueMapper: (SalesData sales, _) => sales.year,
+                          yValueMapper: (SalesData sales, _) => sales.sales),
+                      LineSeries<SalesData, String>(
+                          color: primaryColor,
+                          isVisibleInLegend: true,
+                          legendIconType: LegendIconType.rectangle,
+                          legendItemText: 'Properties',
+                          dataSource: <SalesData>[
+                            SalesData('Jan', 5),
+                            SalesData('Feb', 15),
+                            SalesData('Mar', 20),
+                            SalesData('Apr', 29),
+                            SalesData('May', 35)
+                          ],
+                          xValueMapper: (SalesData sales, _) => sales.year,
+                          yValueMapper: (SalesData sales, _) => sales.sales)
+                    ]))
+          ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton.extended(onPressed: () {
-        Get.toNamed(Routes.addExecutive);
-      }, 
-      backgroundColor: primaryColor,
-      label: Row(children: [
-        const Icon(Icons.add),
-        const SizedBox(width: 5,),
-        Text('Add Execute',style: TextStyle(fontFamily: alata),)
-      ],
-      )),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Get.toNamed(Routes.addExecutive);
+          },
+          backgroundColor: primaryColor,
+          label: Row(
+            children: [
+              const Icon(Icons.add),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Add Execute',
+                style: TextStyle(fontFamily: alata),
+              )
+            ],
+          )),
     );
   }
 }
