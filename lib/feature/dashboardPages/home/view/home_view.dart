@@ -105,7 +105,6 @@ class HomeView extends GetView<HomeController> {
                               log(currAddress.value);
                               List word = currAddress.split(',');
                               log('word :$word');
-                              Get.toNamed(Routes.adminHome);
                             },
                             icon: Icon(
                               Icons.notifications,

@@ -13,8 +13,12 @@ class AdminHomeView extends GetView<AdminHomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Admin',
+      appBar: AppBar(
+        title: Text(
+          'Admin',
+          style: TextStyle(fontFamily: alata),
+        ),
+        titleSpacing: 1,
       ),
       drawer: const CustomDrawer(),
       body: Column(
@@ -27,21 +31,22 @@ class AdminHomeView extends GetView<AdminHomeController> {
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: const [
-                        BoxShadow(
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        const BoxShadow(
                           offset: Offset(-4, 0),
                           color: primaryColor,
                         ),
-                         BoxShadow(
-                          color: Color(0x3fd0d0d0),
+                        BoxShadow(
+                          color: shadowColor,
                           blurRadius: 8,
-                          offset: Offset(0, 9),
+                          offset: const Offset(0, 9),
                         ),
                       ]),
                   child: Container(
-                     margin: const EdgeInsets.all(5),
-                     padding: const EdgeInsets.symmetric(vertical:10,horizontal: 5),
+                    margin: const EdgeInsets.all(5),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -73,39 +78,39 @@ class AdminHomeView extends GetView<AdminHomeController> {
                             )
                           ],
                         ),
-                         Text(
-                                'Total Executives',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.05,
-                                  fontFamily: alata,
-                                ),
-                              ),
+                        Text(
+                          'Total Executives',
+                          style: TextStyle(
+                            fontSize: Get.width * 0.05,
+                            fontFamily: alata,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-            
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: const [
-                        BoxShadow(
+                      color: white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        const BoxShadow(
                           offset: Offset(-4, 0),
                           color: Colors.green,
                         ),
-                         BoxShadow(
-                          color: Color(0x3fd0d0d0),
+                        BoxShadow(
+                          color: shadowColor,
                           blurRadius: 8,
-                          offset: Offset(0, 9),
+                          offset: const Offset(0, 9),
                         ),
                       ]),
                   child: Container(
-                     margin: const EdgeInsets.all(5),
-                      padding: const EdgeInsets.symmetric(vertical:10,horizontal: 5),
+                    margin: const EdgeInsets.all(5),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -137,127 +142,141 @@ class AdminHomeView extends GetView<AdminHomeController> {
                             )
                           ],
                         ),
-                         Text(
-                                'Total Properties',
-                                style: TextStyle(
-                                  fontSize: Get.width * 0.05,
-                                  fontFamily: alata,
-                                ),
-                              ),
+                        Text(
+                          'Total Properties',
+                          style: TextStyle(
+                            fontSize: Get.width * 0.05,
+                            fontFamily: alata,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-            
             ],
           ),
           commonSpace(),
-           Container(
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: const [
-                        BoxShadow(
-                          offset: Offset(-4, 0),
-                          color: Colors.blue,
-                        ),
-                         BoxShadow(
-                          color: Color(0x3fd0d0d0),
-                          blurRadius: 8,
-                          offset: Offset(0, 9),
-                        ),
-                      ]),
-                  child: Container(
-                     margin: const EdgeInsets.all(5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
-                          child: IntrinsicHeight(
-                            child: Row(
-                              children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Owners',
-                                      style: TextStyle(
-                                        fontSize: Get.width * 0.06,
-                                        fontFamily: alata,
-                                      ),
-                                    ),
-                                    Text(
-                                      '80',
-                                      style: TextStyle(
-                                        fontSize: Get.width * 0.05,
-                                        fontFamily: alata,
-                                      ),
-                                    ),
-                                  ],
+          Container(
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: [
+                  const BoxShadow(
+                    offset: Offset(-4, 0),
+                    color: Colors.teal,
+                  ),
+                  BoxShadow(
+                    color: shadowColor,
+                    blurRadius: 8,
+                    offset: const Offset(0, 9),
+                  ),
+                ]),
+            child: Container(
+              margin: const EdgeInsets.all(5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                    child: IntrinsicHeight(
+                      child: Row(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Owners',
+                                style: TextStyle(
+                                  fontSize: Get.width * 0.06,
+                                  fontFamily: alata,
                                 ),
-                                 const SizedBox(width: 10,),
-                                const VerticalDivider(color: lightBlack,thickness: 1.5,),
-                                 const SizedBox(width: 15,),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Seekers',
-                                      style: TextStyle(
-                                        fontSize: Get.width * 0.06,
-                                        fontFamily: alata,
-                                      ),
-                                    ),
-                                    Text(
-                                      '80',
-                                      style: TextStyle(
-                                        fontSize: Get.width * 0.05,
-                                        fontFamily: alata,
-                                      ),
-                                    ),
-                                  ],
+                              ),
+                              Text(
+                                '80',
+                                style: TextStyle(
+                                  fontSize: Get.width * 0.05,
+                                  fontFamily: alata,
                                 ),
-                                const SizedBox(width: 10,),
-                                Expanded(
-                                  child: Image.asset(
-                                    'assets/images/users.png',
-                                  ),
-                                )
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ),
-                         Container(
-                          margin: const EdgeInsets.symmetric(vertical: 0,horizontal: 20),
-                           child: Text(
-                                  'Total Users : 200',
-                                  style: TextStyle(
-                                    fontSize: Get.width * 0.055,
-                                    fontFamily: alata,
-                                  ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const VerticalDivider(
+                            color: lightBlack,
+                            thickness: 1.5,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Seekers',
+                                style: TextStyle(
+                                  fontSize: Get.width * 0.06,
+                                  fontFamily: alata,
                                 ),
-                         ),
-                         commonSpace()
-                      ],
+                              ),
+                              Text(
+                                '80',
+                                style: TextStyle(
+                                  fontSize: Get.width * 0.05,
+                                  fontFamily: alata,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Image.asset(
+                              'assets/images/users.png',
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-
+                  Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                    child: Text(
+                      'Total Users : 200',
+                      style: TextStyle(
+                        fontSize: Get.width * 0.055,
+                        fontFamily: alata,
+                      ),
+                    ),
+                  ),
+                  commonSpace()
+                ],
+              ),
+            ),
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(onPressed: () {
-        
-      }, 
-      backgroundColor: primaryColor,
-      label: Row(children: [
-        const Icon(Icons.add),
-        const SizedBox(width: 5,),
-        Text('Add Execute',style: TextStyle(fontFamily: alata),)
-      ],
-      )),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          backgroundColor: primaryColor,
+          label: Row(
+            children: [
+              const Icon(Icons.add),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Add Execute',
+                style: TextStyle(fontFamily: alata),
+              )
+            ],
+          )),
     );
   }
 }

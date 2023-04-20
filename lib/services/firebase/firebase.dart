@@ -33,6 +33,7 @@ class Fbase {
       'password': password,
       'phone': phone,
       'image': '',
+      'savedProperty':[],
       'id': id,
       'date': date,
       'time': time
@@ -60,6 +61,7 @@ class Fbase {
               'id': data['id'],
               'image': data['image'],
               'phone': data['phone'],
+              'savedProperty': data['savedProperty'],
             });
             db.put('isLogin', true);
           }
@@ -192,6 +194,7 @@ class Fbase {
       'phone': phone,
       'email': email ?? '',
       'rent': rent,
+      'isSaved':false,
       'houseImages': propertyImagesUrls
     });
   }
