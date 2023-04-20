@@ -1,4 +1,3 @@
-
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
@@ -73,7 +72,11 @@ class PropertyPage extends GetView<PropertyController> {
                   stream: Fbase.propertyStream,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(child: CircularProgressIndicator());
+                      return const Center(
+                          child: CircularProgressIndicator(
+                        color: Colors.white,
+                        backgroundColor: primaryColor,
+                      ));
                     }
                     if (snapshot.hasData) {
                       controller.propertyList.clear();
@@ -102,7 +105,8 @@ class PropertyPage extends GetView<PropertyController> {
                       itemBuilder: (BuildContext context, int index) {
                         return GestureDetector(
                           onTap: () {
-                             Get.toNamed(Routes.propertyDetail,arguments: controller.propertyList[index]);
+                            Get.toNamed(Routes.propertyDetail,
+                                arguments: controller.propertyList[index]);
                           },
                           child: CardComponent(
                             innerPadding: EdgeInsets.zero,
@@ -121,42 +125,82 @@ class PropertyPage extends GetView<PropertyController> {
                                         borderRadius: BorderRadius.circular(5),
                                         child: CachedNetworkImage(
                                           fit: BoxFit.fill,
-                                          imageUrl: controller.propertyList[index]
-                                              ['houseImages'][0],
+                                          imageUrl:
+                                              controller.propertyList[index]
+                                                  ['houseImages'][0],
                                           errorWidget: (context, url, error) =>
                                               CircleAvatar(
                                             backgroundColor:
                                                 Colors.indigo.shade100,
-                                            child: const Icon(Icons.house_sharp),
+                                            child:
+                                                const Icon(Icons.house_sharp),
                                           ),
                                         ),
                                       ),
                                     ),
                                     SizedBox(
-                                      height: Get.width * 0.05,
+                                      height: Get.width * 0.02,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        SizedBox(width: Get.width * 0.04),
-                                        Text(
-                                            controller.propertyList[index]
-                                                ['title'],
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: Get.width * 0.045)),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: Get.width * 0.025,
-                                    ),
-                                    Row(
-                                      children: [
-                                        SizedBox(width: Get.width * 0.04),
-                                        Text(
-                                            "Post on : ${controller.propertyList[index]['date']}",
-                                            style: const TextStyle(
-                                              fontWeight: FontWeight.normal,
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                    width: Get.width * 0.04),
+                                                Text(
+                                                    controller
+                                                            .propertyList[index]
+                                                        ['title'],
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize:
+                                                            Get.width * 0.045)),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: Get.width * 0.025,
+                                            ),
+                                            Row(
+                                              children: [
+                                                SizedBox(
+                                                    width: Get.width * 0.04),
+                                                Text(
+                                                    "Post on : ${controller.propertyList[index]['date']}",
+                                                    style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ))
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        IconButton(
+                                            onPressed: () {
+                                              
+                                            },
+                                            icon: Icon(
+                                              controller.propertyList[index]
+                                                          ['isSaved'] ==
+                                                      'true'
+                                                  ? Icons.bookmark
+                                                  : Icons
+                                                      .bookmark_border_outlined,
+                                              size: 30,
+                                              color:
+                                                  controller.propertyList[index]
+                                                              ['isSaved'] ==
+                                                          'true'
+                                                      ? primaryColor
+                                                      : lightBlack,
                                             ))
                                       ],
                                     ),
@@ -223,7 +267,8 @@ class PropertyPage extends GetView<PropertyController> {
                                       ],
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         SizedBox(width: Get.width * 0.035),
                                         TextButton(

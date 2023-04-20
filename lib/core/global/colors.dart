@@ -5,6 +5,7 @@ const Color primaryColor = Color(0xffFF581A);
 Color primaryShade1 = Colors.deepOrange.shade200;
 Color primaryShade2 = Colors.deepOrange.shade300;
 Color white = Colors.white;
+Color shadowColor = const Color(0x3fd0d0d0);
 const Color drawerIconColor= Colors.black54;
 
 const Color lightBlack = Colors.black54;
