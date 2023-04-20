@@ -263,7 +263,9 @@ class AdminHomeView extends GetView<AdminHomeController> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
+          onPressed: () {
+            
+          },
           backgroundColor: primaryColor,
           label: Row(
             children: [
