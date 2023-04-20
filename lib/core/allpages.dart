@@ -1,4 +1,6 @@
 import 'package:ask4rent/core/routes.dart';
+import 'package:ask4rent/feature/admin_dashboard/addExecutive/binding/add_executive_binding.dart';
+import 'package:ask4rent/feature/admin_dashboard/addExecutive/view/add_executive_view.dart';
 import 'package:ask4rent/feature/admin_dashboard/home/binding/admin_home_binding.dart';
 import 'package:ask4rent/feature/admin_dashboard/home/view/admin_home_view.dart';
 import 'package:ask4rent/feature/dashboard/binding/dashboard_binding.dart';
@@ -87,6 +89,11 @@ List<GetPage> allpages = [
       name: Routes.addressMap,
       page: () => const AddressMapView(),
       binding: AddressMapBinding()),
+  GetPage(
+      name: Routes.addExecutive,
+      page: () => const AddExecutiveView(),
+      binding: AddExecutiveBinding()),
+
 ];
 
 

@@ -1,6 +1,7 @@
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/globals.dart';
+import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_appbar.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
 import 'package:ask4rent/feature/admin_dashboard/home/controller/admin_home_controller.dart';
@@ -249,7 +250,7 @@ class AdminHomeView extends GetView<AdminHomeController> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(onPressed: () {
-        
+        Get.toNamed(Routes.addExecutive);
       }, 
       backgroundColor: primaryColor,
       label: Row(children: [
