@@ -918,10 +918,8 @@ List stateWithCities = [
 List cities = [
   'Agra',
   'Ahmedabad',
-  'Amritsar',
   'Bengaluru',
   'Bhopal',
-  'Chandigarh',
   'Chennai',
   'Faridabad',
   'Gwalior',
@@ -1321,46 +1319,105 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "city": 'Shastripuram',
       "description":
           "Shastripuram is a mid segment locality situated in Agra. The pincode of this locality is 282007",
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/shastripuram.jpg'
     },
     {
       "city": 'Dayal Bagh',
       "description":
           "Dayal Bagh is a luxury locality situated in Agra. The pincode of this locality is 282005.",
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/dayalbagh.jpg'
     },
     {
       "city": 'Sikandra',
       "description":
           'Sikandra is a affordable locality situated in Agra. The pincode of this locality is 282007. This locality has 70+ properties to buy and 30+ properties to rent.',
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/sikandra.jpg'
     },
     {
       "city": 'Avas Vikas Colony',
       "description":
           'Avas Vikas Colony is a mid segment locality situated in Agra.',
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/avasvikascolony.jpg'
     },
     {
       "city": 'Kamla Nagar,',
       "description":
           "Kamla Nagar is a luxury locality situated in Agra. The pincode of this locality is 282004.",
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/kamlanagar.jpg'
     },
     {
       "city": 'Rohta',
       "description":
-          "hta is one of the localities in Agra. This locality is near Nainana Jat, Taal Semri and Bagichi. ",
-      "image": 'assets/city/agra/'
+          "Rohta is one of the localities in Agra. This locality is near Nainana Jat, Taal Semri and Bagichi. ",
+      "image": 'assets/city/agra/rohta.jpg'
     },
     {
       "city": 'Khandari',
       "description":
           "Khandari is one of the localities in Agra. The pincode of this locality is 282002. ",
-      "image": 'assets/city/agra/'
+      "image": 'assets/city/agra/khandari.jpg'
     },
     {
       "city": '',
     },
   ],
+  "Ahmedabad": [
+    {
+      "city": 'Thaltej',
+      "description":
+          "The west Ahmedabad trio comprising of Thaltej, Satellite, and Bodakdev is the most sought-after place for buying a house in Ahmedabad.",
+      "image": 'assets/city/ahemdabad/thaltej.jpg'
+    },
+    {
+      "city": 'Ambli',
+      "description":
+          "Ambli – Bopal is the fastest developing residential micro market in Ahmedabad, situated along the SP Ring Road, in the western part of the city.",
+      "image": 'assets/city/ahemdabad/ambli.jpg'
+    },
+    {
+      "city": 'Prahlad Nagar',
+      "description":
+          'Prahlad Nagar is an up-market residential-cum-commercial locality in west Ahmedabad.',
+      "image": 'assets/city/ahemdabad/prahladnagar.jpg'
+    },
+    {
+      "city": 'Chandkheda',
+      "description":
+          'Chandkheda is commercial-cum-residential locality in northwestern Ahmedabad.',
+      "image": 'assets/city/ahemdabad/chandkheda.jpg'
+    },
+    {
+      "city": '',
+    },
+  ],
+  "Bhopal": [
+    {
+      "city": 'Arera colony',
+      "description":
+          "It has many different residential buildings ranging from luxurious villas to multistorey apartment blocks and hotels for visitors who want more space on their private property while still being close by when needed",
+      "image": 'assets/city/bhopal/areracolony.jpg'
+    },
+    {
+      "city": 'Katara Hills',
+      "description":
+          "Katara Hills is accessible by two main roads, one of which leads to the airport.",
+      "image": 'assets/city/bhopal/katarahills.jpg'
+    },
+    {
+      "city": 'Kolar Road',
+      "description":
+          'It is located in Bhopal district in Madhya Pradesh. 462042 is the pincode (Postal code) of Kolar Road.',
+      "image": 'assets/city/bhopal/kolarroad.jpg'
+    },
+    {
+      "city": 'Ayodhya Bypass',
+      "description":
+          'Ayodhya Bypass Road is a great option if you are looking for a residential area close to the city center. ',
+      "image": 'assets/city/bhopal/ayodhyabypass.jpg'
+    },
+    {
+      "city": '',
+    },
+  ],
+ 
 };
