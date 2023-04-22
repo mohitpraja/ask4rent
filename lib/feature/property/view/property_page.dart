@@ -87,6 +87,7 @@ class PropertyPage extends GetView<PropertyController> {
                     }
                     if (controller.propertyList.isEmpty) {
                       return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset('assets/images/noproperty.png'),
                           Text(

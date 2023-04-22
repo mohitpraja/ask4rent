@@ -49,7 +49,7 @@ class AdminHomeView extends GetView<AdminHomeController> {
             ),
             titleSpacing: 1,
             actions: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.notifications))
+              IconButton(onPressed: () {}, icon: const Icon(Icons.notifications))
             ],
           ),
           drawer: const CustomDrawer(),

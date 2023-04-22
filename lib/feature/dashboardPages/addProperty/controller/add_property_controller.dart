@@ -131,20 +131,21 @@ class AddPropertyController extends GetxController {
         log('images : $propertyImagesUrls');
 
         Fbase.addProperty(
-          title.text,
-          propertyType.text,
-          address.text,
-          houseNum.text,
-          pin.text,
-          city.text,
-          state.text,
-          area.text,
-          furnishingStatus.text,
-          propertyDescription.text,
-          phone.text,
-          email.text,
-          rent.text,
-        ).then((value) {
+                title.text,
+                propertyType.text,
+                address.text,
+                houseNum.text,
+                pin.text,
+                city.text,
+                state.text,
+                area.text,
+                furnishingStatus.text,
+                propertyDescription.text,
+                phone.text,
+                email.text,
+                rent.text,
+                postStatus.value == '2' ? 'Approved' : 'Pending to executive')
+            .then((value) {
           Get.back();
           CustomDialog(
             isDismissable: false,

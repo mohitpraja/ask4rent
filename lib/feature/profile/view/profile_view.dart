@@ -29,8 +29,7 @@ class ProfileView extends GetView <ProfileController>{
             userInfo['image'] = data['image'];
           }
           return Scaffold(
-              body: Obx(
-            () => SizedBox(
+              body:SizedBox(
               width: Get.width,
               height: Get.height,
               child: Stack(
@@ -163,7 +162,7 @@ class ProfileView extends GetView <ProfileController>{
                 ],
               ),
             ),
-          ));
+          );
         });
   }
 }

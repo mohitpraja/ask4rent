@@ -16,4 +16,5 @@ class ExecutiveHomeController extends GetxController {
   Stream<QuerySnapshot<Object?>> profileStream =
       Fbase.firestore.collection('users').snapshots();
   List userList = [];
+  List houseList = [];
 }

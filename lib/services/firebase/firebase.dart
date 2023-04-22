@@ -185,6 +185,7 @@ class Fbase {
     phone,
     email,
     rent,
+    status
   ) async {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
@@ -208,6 +209,7 @@ class Fbase {
       'phone': phone,
       'email': email ?? '',
       'rent': rent,
+      'status':status,
       'isSaved': false,
       'houseImages': propertyImagesUrls
     });

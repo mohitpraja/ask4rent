@@ -44,7 +44,7 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
                                 radius: 60,
                                 backgroundColor: Colors.grey.shade100,
                                 backgroundImage:
-                                    AssetImage('assets/images/executive.png'),
+                                    const AssetImage('assets/images/executive.png'),
                               ),
                                commonSpace(),
                                commonSpace(),

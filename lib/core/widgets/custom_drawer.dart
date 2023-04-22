@@ -62,7 +62,7 @@ class CustomDrawer extends GetView {
               ),
             ),
           ),
-          ListTile(
+          postStatus.value=='1'||postStatus.value=='2'? const SizedBox():ListTile(
             leading: const Icon(
               Icons.dashboard,
               color: drawerIconColor,
