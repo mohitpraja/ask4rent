@@ -9,7 +9,6 @@ class AddExecutiveController extends GetxController{
   TextEditingController phoneController = TextEditingController();
 
 
-  String designation = "Executive";
 
   final addExecutiveFormKey = GlobalKey<FormState>();
 

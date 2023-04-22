@@ -21,7 +21,9 @@ class Fbase {
     return firestore.collection('users').doc(id).snapshots();
   }
 
-  static Future createUser(name, email, password, phone, [designation]) {
+  static String post = '';
+
+  static Future createUser(name, email, password, phone, post) {
     String id = DateTime.now().millisecondsSinceEpoch.toString();
     var currDate = DateTime.now();
     String time = DateFormat('jm').format(currDate);
@@ -29,22 +31,20 @@ class Fbase {
     return firestore.collection('users').doc(id).set({
       'name': name,
       'email': email,
-      'post': '',
+      'post': post,
       'password': password,
       'phone': phone,
       'image': '',
-      'savedProperty':[],
+      'savedProperty': [],
       'id': id,
       'date': date,
       'time': time,
-      'designation': designation
     });
   }
 
   static Future login(phone, pass) async {
     CustomLoader().loader();
     bool isMatch = false;
-
     Box<dynamic> db = await Hive.openBox('ask4rent');
     firestore.collection('users').get().then((snapshot) {
       // ignore: avoid_function_literals_in_foreach_calls
@@ -54,10 +54,12 @@ class Fbase {
           if ((data['phone'] == phone || data['email'] == phone) &&
               data['password'] == pass) {
             isMatch = true;
+            post = data['post'];
             db.put('userId', data['id']);
             db.put('userInfo', {
               'name': data['name'],
               'email': data['email'],
+              'post': data['post'],
               'password': data['password'],
               'id': data['id'],
               'image': data['image'],
@@ -72,7 +74,18 @@ class Fbase {
       Get.back();
       if (isMatch) {
         isMatch = false;
-        Get.offAllNamed(Routes.dashboard);
+        if (post == 'Admin') {
+          log('post : $post');
+          isMatch = false;
+          Get.offAllNamed(Routes.adminHome);
+        } else if (post == 'Executive') {
+          log('post : $post');
+          isMatch = false;
+          Get.offAllNamed(Routes.executiveHome);
+        } else {
+          isMatch = false;
+          Get.offAllNamed(Routes.dashboard);
+        }
       } else {
         Get.back();
         CustomDialog(descText: 'Invalid Creadentials').warning();
@@ -182,7 +195,7 @@ class Fbase {
       'id': id,
       'date': date,
       'time': time,
-      'title':title,
+      'title': title,
       'propertyType': propertyType,
       'address': address,
       'houseNum': houseNum,
@@ -195,7 +208,7 @@ class Fbase {
       'phone': phone,
       'email': email ?? '',
       'rent': rent,
-      'isSaved':false,
+      'isSaved': false,
       'houseImages': propertyImagesUrls
     });
   }

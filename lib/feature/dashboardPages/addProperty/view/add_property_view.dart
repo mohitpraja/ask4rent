@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
+import 'package:ask4rent/core/global/global_var.dart';
 import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/global/validation.dart';
@@ -26,7 +27,13 @@ class AddPropertyView extends GetView<AddPropertyController> {
       onTap: () => Get.focusScope!.unfocus(),
       child: WillPopScope(
         onWillPop: () {
-          Get.offAllNamed(Routes.dashboard);
+          if (postStatus.value == '1') {
+                Get.offAllNamed(Routes.adminHome);
+              } else if (postStatus.value == '2') {
+                Get.offAllNamed(Routes.executiveHome);
+              } else {
+                Get.offAllNamed(Routes.dashboard);
+              }
           return Future(() => true);
         },
         child: Scaffold(
@@ -140,11 +147,11 @@ class AddPropertyView extends GetView<AddPropertyController> {
                                         value, 'Property-type Required'),
                                   ),
                                   commonSpace1(),
-                                  CustomElevatedButton(
-                                      onPress: () {
-                                        Get.toNamed(Routes.addressMap);
-                                      },
-                                      title: 'Address'),
+                                  // CustomElevatedButton(
+                                  //     onPress: () {
+                                  //       Get.toNamed(Routes.addressMap);
+                                  //     },
+                                  //     title: 'Address'),
                                   Text('City where your property located *',
                                       style: AppStyle.listPropSubHeading),
                                   commonSpace1(),

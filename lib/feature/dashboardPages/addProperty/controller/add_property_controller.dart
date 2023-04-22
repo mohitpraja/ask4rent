@@ -149,7 +149,15 @@ class AddPropertyController extends GetxController {
           CustomDialog(
             isDismissable: false,
             descText: 'Your property added successfully',
-            btnOkOnPress: () => Get.offAllNamed(Routes.dashboard),
+            btnOkOnPress: () {
+              if (postStatus.value == '1') {
+                Get.offAllNamed(Routes.adminHome);
+              } else if (postStatus.value == '2') {
+                Get.offAllNamed(Routes.executiveHome);
+              } else {
+                Get.offAllNamed(Routes.dashboard);
+              }
+            },
           ).success();
         });
       });

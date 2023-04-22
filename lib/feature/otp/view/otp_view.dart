@@ -138,7 +138,7 @@ class OtpView extends GetView<OtpController> {
                                               controller.name,
                                               controller.email,
                                               controller.password,
-                                              controller.phone)
+                                              controller.phone,'')
                                           .then((value) {
                                         isButtonDisable.value = false;
                                         CustomDialog(

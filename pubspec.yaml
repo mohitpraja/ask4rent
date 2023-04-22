@@ -33,6 +33,7 @@ dependencies:
   cached_network_image: ^3.2.3
   cloud_firestore: ^4.4.4
   cupertino_icons: ^1.0.2
+  feather_icons: ^1.2.0
   firebase_auth: ^4.2.10
   firebase_core: ^2.7.0
   firebase_storage: ^11.0.16
@@ -60,9 +61,9 @@ dependencies:
   pinput: ^2.2.31
   shimmer: ^2.0.0
   swipe_image_gallery: ^0.8.3
+  syncfusion_flutter_charts: ^21.1.39
   url_launcher: ^6.1.10
   water_drop_nav_bar: ^2.2.0+5
-  syncfusion_flutter_charts: ^21.1.39
 
 flutter_icons:
   android: "launcher_icon"

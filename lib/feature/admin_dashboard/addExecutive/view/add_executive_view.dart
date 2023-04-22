@@ -3,6 +3,7 @@ import 'package:ask4rent/core/global/globals.dart';
 import 'package:ask4rent/core/global/validation.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/custom_appbar.dart';
+import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_elevatedbutton.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/core/widgets/custom_passwordfield.dart';
@@ -22,11 +23,13 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
         backgroundColor: white,
-        appBar: const CustomAppBar(title: "Add Executive",showBackButton: true,),
+        appBar: const CustomAppBar(
+          title: "Add Executive",
+          showBackButton: true,
+        ),
         body: ScrollGlowRemover(
           child: SingleChildScrollView(
             child: Obx(() => Container(
-              height: Get.height*0.8,
                   margin: const EdgeInsets.all(10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -35,6 +38,16 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
                           key: controller.addExecutiveFormKey,
                           child: Column(
                             children: [
+                              commonSpace(),
+                              commonSpace(),
+                              CircleAvatar(
+                                radius: 60,
+                                backgroundColor: Colors.grey.shade100,
+                                backgroundImage:
+                                    AssetImage('assets/images/executive.png'),
+                              ),
+                               commonSpace(),
+                               commonSpace(),
                               CustomTextFormField(
                                 hintText: 'Enter Name',
                                 prefixIcon: const Icon(Icons.person),
@@ -136,16 +149,21 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
                                               !(Fbase.isEmailExist.value)) {
                                             CustomLoader().loader();
                                             Fbase.createUser(
-                                                controller.nameController.text,
-                                                controller.emailController.text,
-                                                controller.passwordController.text,
-                                                controller.phoneController.text,
-                                                controller.designation);
-                                            Get.offAllNamed(Routes.dashboard);
+                                              controller.nameController.text,
+                                              controller.emailController.text,
+                                              controller
+                                                  .passwordController.text,
+                                              controller.phoneController.text,
+                                              'Executive',
+                                            ).then((value) {CustomDialog(
+                                                  isDismissable: false,
+                                                  btnOkOnPress: () =>
+                                                      Get.offAllNamed(
+                                                          Routes.adminHome),
+                                                ).success();});
                                           }
                                         });
                                       });
-                  
                                     }
                                   },
                                 ),

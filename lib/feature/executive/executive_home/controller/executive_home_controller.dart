@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
-class AdminHomeController extends GetxController {
+class ExecutiveHomeController extends GetxController {
   @override
   Future<void> onInit() async {
     db = await Hive.openBox('ask4rent');
@@ -16,10 +16,4 @@ class AdminHomeController extends GetxController {
   Stream<QuerySnapshot<Object?>> profileStream =
       Fbase.firestore.collection('users').snapshots();
   List userList = [];
-}
-
-class SalesData {
-  SalesData(this.year, this.sales);
-  final String year;
-  final double sales;
 }

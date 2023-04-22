@@ -1,5 +1,5 @@
+import 'dart:developer';
 import 'dart:io';
-
 import 'package:ask4rent/core/global/colors.dart';
 import 'package:ask4rent/core/global/fonts.dart';
 import 'package:ask4rent/core/global/global_var.dart';
@@ -17,6 +17,7 @@ class ProfileView extends GetView <ProfileController>{
 
   @override
   Widget build(BuildContext context) {
+    log('is id : ${userInfo['id']}');
     return StreamBuilder(
         stream: Fbase.profileStream(userInfo['id']),
         builder: (context, snapshot) {

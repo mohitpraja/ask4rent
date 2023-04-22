@@ -37,6 +37,14 @@ class HomeView extends GetView<HomeController> {
               userInfo['phone'] = e['phone'];
               userInfo['image'] = e['image'];
               userInfo['id'] = e['id'];
+               userInfo['post'] = e['post'];
+              if (userInfo['post'] == 'Admin') {
+                postStatus.value = '1';
+              } else if (userInfo['post'] == 'Executive') {
+                postStatus.value = '2';
+              } else {
+                postStatus.value = '0';
+              }
             }
           }).toList();
         }
