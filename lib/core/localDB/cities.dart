@@ -921,7 +921,6 @@ List cities = [
   'Bengaluru',
   'Bhopal',
   'Chennai',
-  'Faridabad',
   'Gwalior',
   'Hyderabad',
   'Indore',
@@ -1414,6 +1413,111 @@ Map<String, List<Map<String, String>>> popularLocalities = {
       "description":
           'Ayodhya Bypass Road is a great option if you are looking for a residential area close to the city center. ',
       "image": 'assets/city/bhopal/ayodhyabypass.jpg'
+    },
+    {
+      "city": '',
+    },
+  ],
+  "Jaipur": [
+    {
+      "city": 'Jagatpura',
+      "description":
+          "It is an excellent and well-planned residential project that includes different types of properties such as multistorey apartments, villas, residential plots, etc. ",
+      "image": 'assets/city/jaipur/jagatpura.jpg'
+    },
+    {
+      "city": 'Kalwar road',
+      "description":
+          "The locality comes with well-developed residential projects offering majorly 2 BHK and 3 BHK flats",
+      "image": 'assets/city/jaipur/kalwarroad.jpg'
+    },
+    {
+      "city": 'Civil Lines',
+      "description":
+          'The locality is known for its greenery and healthy surroundings.',
+      "image": 'assets/city/jaipur/civillines.jpg'
+    },
+    {
+      "city": 'C-Scheme',
+      "description":
+          'C-Scheme is one of the most popular, expensive and best places to live in Jaipur.',
+      "image": 'assets/city/jaipur/cscheme.jpg'
+    },
+    {
+      "city": 'Malviya Nagar',
+      "description":
+          'Working professionals consider Malviya Nagar as one of the best places to live in Jaipur.',
+      "image": 'assets/city/jaipur/malviyanagar.jpg'
+    },
+    {
+      "city": 'Vaishali Nagar',
+      "description":
+         'Vaishali Nagar is one of the best posh localities in Jaipur. It has good connectivity to Delhi ByPass and Ajmer Road which makes it one of the well-connected localities as well. ',
+      "image": 'assets/city/jaipur/vaishalinagar.jpg'
+    },
+    {
+      "city": '',
+    },
+  ],
+  "Kanpur": [
+    {
+      "city": 'Kalyanpur',
+      "description":
+          "Kalyanpur is a luxury locality situated in Kanpur. The pincode of this locality is 227816.",
+      "image": 'assets/city/kanpur/kalyanpur.jpg'
+    },
+    {
+      "city": 'Swaroop Nagar',
+      "description":
+          "Swaroop Nagar is a luxury locality situated in Kanpur. The pincode of this locality is 208002.",
+      "image": 'assets/city/kanpur/swaroopnagar.jpg'
+    },
+    {
+      "city": 'Panki',
+      "description":
+          'Panki is a mid segment locality situated in Kanpur. The pincode of this locality is 208020.',
+      "image": 'assets/city/kanpur/panki.jpg'
+    },
+    {
+      "city": 'Shyam Nagar',
+      "description":
+          'Shyam Nagar is a mid segment locality situated in Kanpur. This locality is near Jawahar Puram, Ramadevi and Krishna Nagar',
+      "image": 'assets/city/kanpur/shyamnagar.jpg'
+    },
+    {
+      "city": '',
+    },
+  ],
+  "Lucknow": [
+    {
+      "city": 'Hazratganj',
+      "description":
+          "Parallels are often drawn between this heritage locality in the UP capital with Delhi’s Connaught Place",
+      "image": 'assets/city/lucknow/hazratganj.jpg'
+    },
+    {
+      "city": 'Gomti Nagar',
+      "description":
+          "This residential-cum-business neighbourhood is named after the river upon whose banks it is located.",
+      "image": 'assets/city/lucknow/gomtinagar.jpg'
+    },
+    {
+      "city": 'Indira Nagar',
+      "description":
+          'One of the largest residential colonies in India and certainly the largest in Lucknow, Indira Nagar has a locational advantage.',
+      "image": 'assets/city/lucknow/indiranagar.jpg'
+    },
+    {
+      "city": 'Mahanagar',
+      "description":
+          'A residential area with an equally thriving commercial base, Mahanagar is dotted with large independent bungalows, along with apartment complexes. ',
+      "image": 'assets/city/lucknow/mahanagar.jpg'
+    },
+    {
+      "city": 'Aliganj',
+      "description":
+          'Counted among the most expensive residential areas in Lucknow, Aliganj is one neighbourhood that has managed to retain its serenity amid the hustle and bustle of a fast-developing city.',
+      "image": 'assets/city/lucknow/aliganj.jpg'
     },
     {
       "city": '',
