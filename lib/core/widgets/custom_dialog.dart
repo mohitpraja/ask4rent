@@ -124,6 +124,7 @@ class CustomDialog {
             const SizedBox(
               height: 10,
             ),
+            
             descText == null
                 ? const SizedBox()
                 : Text(
