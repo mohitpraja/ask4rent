@@ -7,6 +7,7 @@ import 'package:ask4rent/core/global/typography.dart';
 import 'package:ask4rent/core/routes.dart';
 import 'package:ask4rent/core/widgets/card_component.dart';
 import 'package:ask4rent/core/widgets/custom_drawer.dart';
+import 'package:ask4rent/core/widgets/scrollglowremover.dart';
 import 'package:ask4rent/feature/executive/executive_home/controller/executive_home_controller.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -144,12 +145,12 @@ class ExecutiveHomeView extends GetView<ExecutiveHomeController> {
                   top: Get.height * 0.16,
                   child: Container(
                       width: Get.width,
-                      height: Get.height * 0.6,
+                      height: Get.height,
                       decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30))),
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15))),
                       child: Container(
                         margin: const EdgeInsets.all(10),
                         child: Column(
@@ -195,99 +196,102 @@ class ExecutiveHomeView extends GetView<ExecutiveHomeController> {
                                         ],
                                       );
                                     } else {
-                                      return ListView.builder(
-                                        itemCount: controller.houseList.length,
-                                        itemBuilder: (context, index) {
-                                          return CardComponent(
-                                            child: Column(
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  children: [
-                                                    Text(
-                                                      controller
-                                                              .houseList[index]
-                                                          ['date'],
-                                                      style: TextStyle(
-                                                          fontSize:
-                                                              Get.width * 0.036,
-                                                          fontFamily: alata,
-                                                          color: primaryColor),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10),
-                                                      child: CachedNetworkImage(
-                                                        width: 70,
-                                                        height: 70,
-                                                        fit: BoxFit.cover,
-                                                        imageUrl: controller
-                                                                    .houseList[
-                                                                index]
-                                                            ['houseImages'][0],
-                                                        errorWidget: (context,
-                                                                url, error) =>
-                                                            const Icon(
-                                                          CupertinoIcons.photo,
-                                                          size: 40,
-                                                          color: lightBlack,
+                                      return ScrollGlowRemover(
+                                        child: ListView.builder(
+                                          itemCount: controller.houseList.length,
+                                          itemBuilder: (context, index) {
+                                            return CardComponent(
+                                              outerPadding: EdgeInsets.all(5),
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: [
+                                                      Text(
+                                                        controller
+                                                                .houseList[index]
+                                                            ['date'],
+                                                        style: TextStyle(
+                                                            fontSize:
+                                                                Get.width * 0.036,
+                                                            fontFamily: alata,
+                                                            color: primaryColor),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                10),
+                                                        child: CachedNetworkImage(
+                                                          width: 70,
+                                                          height: 70,
+                                                          fit: BoxFit.cover,
+                                                          imageUrl: controller
+                                                                      .houseList[
+                                                                  index]
+                                                              ['houseImages'][0],
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              const Icon(
+                                                            CupertinoIcons.photo,
+                                                            size: 40,
+                                                            color: lightBlack,
+                                                          ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            controller
-                                                                    .houseList[
-                                                                index]['title'],
-                                                            style: AppStyle
-                                                                .appCityGrey,
-                                                          ),
-                                                          Text(
-                                                            controller.houseList[
-                                                                    index][
-                                                                'propertyDescription'],
-                                                            style: AppStyle
-                                                                .priceTableStyle,
-                                                          ),
-                                                          Row(
-                                                            children: [
-                                                              Text(
-                                                                'Rent :',
-                                                                style: AppStyle
-                                                                    .priceTableStyle,
-                                                              ),
-                                                              Text(
-                                                                controller.houseList[
-                                                                        index]
-                                                                    ['rent'],
-                                                                style: AppStyle
-                                                                    .priceTableStyle,
-                                                              )
-                                                            ],
-                                                          ),
-                                                        ],
+                                                      const SizedBox(
+                                                        width: 10,
                                                       ),
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          );
-                                        },
+                                                      Expanded(
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              controller
+                                                                      .houseList[
+                                                                  index]['title'],
+                                                              style: AppStyle
+                                                                  .appCityGrey,
+                                                            ),
+                                                            Text(
+                                                              controller.houseList[
+                                                                      index][
+                                                                  'propertyDescription'],
+                                                              style: AppStyle
+                                                                  .priceTableStyle,
+                                                            ),
+                                                            Row(
+                                                              children: [
+                                                                Text(
+                                                                  'Rent :',
+                                                                  style: AppStyle
+                                                                      .priceTableStyle,
+                                                                ),
+                                                                Text(
+                                                                  controller.houseList[
+                                                                          index]
+                                                                      ['rent'],
+                                                                  style: AppStyle
+                                                                      .priceTableStyle,
+                                                                )
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            );
+                                          },
+                                        ),
                                       );
                                     }
                                   }),

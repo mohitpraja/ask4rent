@@ -1,4 +1,3 @@
-
 import 'package:ask4rent/core/widgets/custom_dialog.dart';
 import 'package:ask4rent/core/widgets/custom_loader.dart';
 import 'package:ask4rent/services/firebase/firebase.dart';
@@ -74,7 +73,7 @@ verifyOTP(otp, verifyId, fun) async {
     }
   } on FirebaseAuthException {
     // Get.back();
-    isButtonDisable.value=false;
+    isButtonDisable.value = false;
     CustomDialog(
       descText: 'Invalid OTP',
     ).error();
@@ -82,6 +81,5 @@ verifyOTP(otp, verifyId, fun) async {
     // Get.back();
   }
 }
-
 
 
