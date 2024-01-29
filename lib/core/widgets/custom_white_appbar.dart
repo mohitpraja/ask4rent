@@ -2,7 +2,7 @@ import 'package:ask4rent/core/global/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomWhiteAppBar extends GetView with PreferredSizeWidget {
+class CustomWhiteAppBar extends GetView implements PreferredSizeWidget {
   // final String title;
   // final VoidCallback? onPress;
   // final Color? color;

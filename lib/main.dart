@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: primarySwatch,
+        useMaterial3: false
       ),
       initialRoute: Routes.splash,
       getPages: allpages,

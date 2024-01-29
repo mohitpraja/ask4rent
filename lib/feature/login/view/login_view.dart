@@ -34,8 +34,8 @@ class LoginView extends GetView<LoginController> {
               child: Column(
                 children: [
                   commonSpace(),
-                  Column(
-                    children: const [
+                  const Column(
+                    children: [
                       AppTitle(),
                       Text(
                         'LOG IN TO YOUR ACCOUNT',

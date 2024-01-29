@@ -62,8 +62,8 @@ class AddPropertyController extends GetxController {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       Icon(
                         Icons.photo,
                         size: 30,
@@ -89,8 +89,8 @@ class AddPropertyController extends GetxController {
                   width: 60,
                 ),
                 InkWell(
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       Icon(
                         Icons.camera,
                         size: 30,

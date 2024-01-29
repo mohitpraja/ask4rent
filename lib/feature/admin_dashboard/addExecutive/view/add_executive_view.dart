@@ -69,8 +69,8 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
                                   ? Column(
                                       children: [
                                         commonSpace1(),
-                                        Row(
-                                          children: const [
+                                        const Row(
+                                          children: [
                                             Text(
                                               'Email already existed',
                                               style: TextStyle(
@@ -101,8 +101,8 @@ class AddExecutiveView extends GetView<AddExecutiveController> {
                                   ? Column(
                                       children: [
                                         commonSpace1(),
-                                        Row(
-                                          children: const [
+                                        const Row(
+                                          children: [
                                             Text(
                                               'Phone number already existed',
                                               style: TextStyle(

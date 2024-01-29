@@ -84,8 +84,8 @@ class ForgotView extends GetView<ForgotController> {
                               ? Column(
                                   children: [
                                     commonSpace1(),
-                                    Row(
-                                      children: const [
+                                    const Row(
+                                      children: [
                                         Text(
                                           'Phone number not registered',
                                           style: TextStyle(
