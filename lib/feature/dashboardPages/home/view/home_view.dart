@@ -308,7 +308,8 @@ class HomeView extends GetView<HomeController> {
                                                             ],
                                                           ),
                                                         )
-                                                      : Container(
+                                                      : 
+                                                      Container(
                                                           height: 250,
                                                           width:
                                                               Get.width * 0.51,
@@ -443,6 +444,7 @@ class HomeView extends GetView<HomeController> {
                                                             ),
                                                           ),
                                                         );
+                                        
                                         },
                                       ),
                                     ),
