@@ -93,9 +93,23 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/city/
     - assets/gifs/
     - assets/images/
+    - assets/city/
+    - assets/city/agra/
+    - assets/city/ahemdabad/
+    - assets/city/bengluru/
+    - assets/city/bhopal/
+    - assets/city/chennai/
+    - assets/city/gwalior/
+    - assets/city/hyderabad/
+    - assets/city/indore/
+    - assets/city/jaipur/
+    - assets/city/kanpur/
+    - assets/city/kolkata/
+    - assets/city/lucknow/
+    - assets/city/mumbai/
+    - assets/city/newdelhi/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
